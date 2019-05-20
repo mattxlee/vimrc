@@ -277,15 +277,15 @@ nmap K :on<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-hi Visual cterm=None
-hi SignColumn cterm=None ctermbg=None
+hi Visual cterm=NONE
+hi SignColumn cterm=NONE ctermbg=NONE
 
-hi GruvboxRedSign ctermfg=167 ctermbg=None guifg=#fb4934 guibg=None
-hi GruvboxGreenSign ctermfg=142 ctermbg=None guifg=#b8bb26 guibg=None
-hi GruvboxYellowSign ctermfg=214 ctermbg=None guifg=#fabd2f guibg=None
-hi GruvboxBlueSign ctermfg=109 ctermbg=None guifg=#83a598 guibg=None
-hi GruvboxPurpleSign ctermfg=175 ctermbg=None guifg=#d3869b guibg=None
-hi GruvboxAquaSign ctermfg=108 ctermbg=None guifg=#8ec07c guibg=None
+hi GruvboxRedSign ctermfg=167 ctermbg=NONE guifg=#fb4934 guibg=NONE
+hi GruvboxGreenSign ctermfg=142 ctermbg=NONE guifg=#b8bb26 guibg=NONE
+hi GruvboxYellowSign ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
+hi GruvboxBlueSign ctermfg=109 ctermbg=NONE guifg=#83a598 guibg=NONE
+hi GruvboxPurpleSign ctermfg=175 ctermbg=NONE guifg=#d3869b guibg=NONE
+hi GruvboxAquaSign ctermfg=108 ctermbg=NONE guifg=#8ec07c guibg=NONE
 hi CursorLine ctermbg=233 guibg=#111111
 hi ColorColumn ctermbg=233 guibg=#111111
 hi CursorLineNr ctermfg=214 ctermbg=233 guifg=#fabd2f guibg=#111111
