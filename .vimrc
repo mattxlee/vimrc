@@ -199,7 +199,7 @@ silent! colorscheme gruvbox
 filetype indent off
 set autoindent
 
-set guifont=Menlo:h14
+set guifont=Menlo:h15
 
 set hidden
 set tabstop=2
