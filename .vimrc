@@ -189,16 +189,6 @@ Plug 'ludovicchabant/vim-gutentags' "Building tags
 " ==== Code formatting ====
 Plug 'sbdchd/neoformat' "Format source
 
-" ==== Code error/warning checking ====
-let g:ale_linters_explicit=1
-let g:ale_linters={'javascript': ['eslint']}
-let g:airline#extensions#ale#enabled=1
-let g:ale_sign_error='◉'
-let g:ale_sign_warning='◉'
-nmap gd :ALEGoToDefinition<cr>
-nmap gh :ALEHover<cr>
-Plug 'w0rp/ale' "Ale lints
-
 " All of your Plugs must be added before the following line
 call plug#end()
 
