@@ -217,6 +217,8 @@ silent! colorscheme gruvbox
 filetype indent off
 set autoindent
 
+set guifont=Hack\ Nerd\ Font:h14
+
 set hidden
 set tabstop=2
 set softtabstop=0
