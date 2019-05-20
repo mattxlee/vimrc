@@ -7,7 +7,7 @@ if [ ! -f $PLUGVIMPATH ]; then
 fi
 
 if [ ! -f $HOME/.vimrc ]; then
-    echo "Copying .vimrc file..."
+    echo "Copying file .vimrc ..."
     cp .vimrc $HOME/.vimrc
 fi
 
