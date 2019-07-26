@@ -221,6 +221,8 @@ let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_complete_in_strings=1
 let g:ycm_key_invoke_completion='<c-space>'
 set completeopt=menu,menuone
+nnoremap gh :YcmCompleter GoToDeclaration<CR>
+nnoremap gd :YcmCompleter GoToDefinition<CR>
 
 let g:ycm_semantic_triggers =  {
            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
