@@ -272,6 +272,3 @@ hi GruvboxYellowSign ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
 hi GruvboxBlueSign ctermfg=109 ctermbg=NONE guifg=#83a598 guibg=NONE
 hi GruvboxPurpleSign ctermfg=175 ctermbg=NONE guifg=#d3869b guibg=NONE
 hi GruvboxAquaSign ctermfg=108 ctermbg=NONE guifg=#8ec07c guibg=NONE
-hi CursorLine ctermbg=233 guibg=#111111
-hi ColorColumn ctermbg=233 guibg=#111111
-hi CursorLineNr ctermfg=214 ctermbg=233 guifg=#fabd2f guibg=#111111
