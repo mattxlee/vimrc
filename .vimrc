@@ -221,6 +221,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings=0
 let g:ycm_complete_in_strings=0
 set completeopt=menu,menuone
 nnoremap gd :YcmCompleter GoToDeclaration<CR>
+nnoremap gh :YcmCompleter GetType<CR>
 
 let g:ycm_semantic_triggers =  {
            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
