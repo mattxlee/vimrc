@@ -261,6 +261,7 @@ nmap M :make<CR>:copen<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd BufWritePost,WinEnter * GitGutter
 
 hi Visual cterm=NONE
 hi SignColumn cterm=NONE ctermbg=NONE
