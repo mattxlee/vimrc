@@ -1,4 +1,4 @@
-"=======================================================================================================================
+"===================================================================================================
 " ___    ______________  ___                     ____________
 " __ |  / /___  _/__   |/  /  ______________________  __/__(_)______ ____  _____________
 " __ | / / __  / __  /|_/ /   _  ___/  __ \_  __ \_  /_ __  /__  __ `/  / / /_  ___/  _ \
@@ -7,7 +7,7 @@
 "                                                            /____/
 " Github: https://github.com/mattxlee/nconf
 " Contact me at mattxlee@gmail.com
-"=======================================================================================================================
+"===================================================================================================
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -165,6 +165,8 @@ Plug 'nathanaelkane/vim-indent-guides' "Indent guides
 Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
+let g:airline_left_sep = "\uE0B4"
+let g:airline_right_sep = "\uE0B6"
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
@@ -188,6 +190,12 @@ Plug 'ludovicchabant/vim-gutentags' "Building tags
 
 " ==== Code formatting ====
 Plug 'sbdchd/neoformat' "Format source
+
+" ==== Starts up screen ====
+Plug 'mhinz/vim-startify'
+
+" ==== Nerd icons replacement ====
+Plug 'ryanoasis/vim-devicons'
 
 " All of your Plugs must be added before the following line
 call plug#end()
@@ -261,7 +269,7 @@ nmap M :make<CR>:copen<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd BufWritePost,WinEnter * GitGutter
+autocmd BufWritePost * GitGutter
 
 hi Visual cterm=NONE
 hi SignColumn cterm=NONE ctermbg=NONE
