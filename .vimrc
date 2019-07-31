@@ -78,7 +78,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
 
 " ==== Quick jump for tags ====
 let g:Lf_ShortcutB='<Leader>n'
-let g:Lf_ShortcutF='<C-P>'
 let g:Lf_WildIgnore={
     \ 'dir': ['.svn','.git','.hg','node_modules'],
     \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
@@ -93,6 +92,9 @@ let g:Lf_HideHelp=1
 let g:Lf_StlColorscheme='powerline'
 let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+
+" ==== Quick jump for files ====
+Plug 'ctrlpvim/ctrlp.vim'
 
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
