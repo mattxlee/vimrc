@@ -217,8 +217,8 @@ let g:ycm_add_preview_to_completeopt=1
 let g:ycm_show_diagnostics_ui=1
 let g:ycm_server_log_level='info'
 let g:ycm_min_num_identifier_candidate_chars=2
-let g:ycm_collect_identifiers_from_comments_and_strings=0
-let g:ycm_complete_in_strings=0
+let g:ycm_collect_identifiers_from_comments_and_strings=1
+let g:ycm_complete_in_strings=1
 set completeopt=menu,menuone
 nnoremap gd :YcmCompleter GoToDeclaration<CR>
 nnoremap gh :YcmCompleter GetType<CR>
