@@ -220,8 +220,8 @@ let g:ycm_server_log_level='info'
 let g:ycm_min_num_identifier_candidate_chars=2
 let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_complete_in_strings=1
-let g:ycm_warning_symbol="\uF06A"
-let g:ycm_error_symbol="\uF188"
+let g:ycm_warning_symbol="??"
+let g:ycm_error_symbol="!!"
 set completeopt=menu,menuone
 nnoremap gd :YcmCompleter GoToDeclaration<CR>
 nnoremap gh :YcmCompleter GetType<CR>
