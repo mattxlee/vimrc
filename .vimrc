@@ -275,7 +275,6 @@ nmap <C-J> :edit .<CR>
 nmap <C-H> :FSHere<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
-nmap <C-R> :Gitv<CR>
 nmap <C-T> :TrailerTrim<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
