@@ -283,6 +283,8 @@ nmap Y <C-W>w
 nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
 
+noremap gd g<C-]>
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
