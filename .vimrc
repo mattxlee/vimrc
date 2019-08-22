@@ -223,8 +223,6 @@ let g:ycm_complete_in_strings=1
 let g:ycm_warning_symbol="??"
 let g:ycm_error_symbol="!!"
 set completeopt=menu,menuone
-nnoremap gd :YcmCompleter GoToDeclaration<CR>
-nnoremap gh :YcmCompleter GetType<CR>
 
 let g:ycm_semantic_triggers =  {
            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
