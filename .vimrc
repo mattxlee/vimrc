@@ -289,8 +289,8 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
 
-hi Visual cterm=NONE
-hi SignColumn cterm=NONE ctermbg=NONE
+hi Visual cterm=NONE gui=NONE
+hi SignColumn cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
 
 hi GruvboxRedSign ctermfg=167 ctermbg=NONE guifg=#fb4934 guibg=NONE
 hi GruvboxGreenSign ctermfg=142 ctermbg=NONE guifg=#b8bb26 guibg=NONE
