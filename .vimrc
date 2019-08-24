@@ -222,6 +222,7 @@ let g:ycm_collect_identifiers_from_comments_and_strings=1
 let g:ycm_complete_in_strings=1
 let g:ycm_warning_symbol="??"
 let g:ycm_error_symbol="!!"
+let g:ycm_always_populate_location_list=1
 set completeopt=menu,menuone
 
 let g:ycm_semantic_triggers =  {
