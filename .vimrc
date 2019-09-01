@@ -20,6 +20,9 @@ set background=dark
 let g:gruvbox_contrast_dark='medium'
 Plug 'morhetz/gruvbox'
 
+" ==== Dracula colorscheme ====
+Plug 'dracula/vim', { 'as': 'dracula' }
+
 " ==== Rainbow ====
 let g:rainbow_active=1
 let g:rainbow_conf={
@@ -219,7 +222,7 @@ call plug#end()
 
 syntax enable
 
-silent! colorscheme gruvbox
+silent! colorscheme dracula
 
 filetype indent off
 set autoindent
