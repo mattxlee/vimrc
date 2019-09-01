@@ -20,12 +20,6 @@ set background=dark
 let g:gruvbox_contrast_dark='medium'
 Plug 'morhetz/gruvbox'
 
-" ==== Dracula colorscheme ====
-Plug 'dracula/vim', { 'as': 'dracula' }
-
-" ==== One colorscheme ====
-Plug 'rakr/vim-one'
-
 " ==== Rainbow ====
 let g:rainbow_active=1
 let g:rainbow_conf={
@@ -186,9 +180,7 @@ Plug 'nathanaelkane/vim-indent-guides' "Indent guides
 Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
-let g:airline_left_sep="\uE0B4"
-let g:airline_right_sep="\uE0B6"
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 let airline#extensions#fugitiveline#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
@@ -225,13 +217,12 @@ call plug#end()
 
 syntax enable
 
-silent! colorscheme one
-set background=dark
+silent! colorscheme gruvbox
 
 filetype indent off
 set autoindent
 
-set guifont=Hack\ Nerd\ Font:h16
+set guifont=RobotoMono\ Nerd\ Font:h16
 
 set hidden
 set tabstop=2
