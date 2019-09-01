@@ -213,17 +213,15 @@ endif
 Plug 'ludovicchabant/vim-gutentags' "Building tags
 
 " ==== You complete me ====
-let g:ycm_min_num_of_chars_for_completion=2
-let g:ycm_min_num_identifier_candidate_chars=2
-let g:ycm_confirm_extra_conf=0
+let g:ycm_always_populate_location_list=1
+let g:ycm_min_num_of_chars_for_completion=0
 let g:ycm_add_preview_to_completeopt=1
-let g:ycm_show_diagnostics_ui=1
-let g:ycm_server_log_level='info'
-let g:ycm_collect_identifiers_from_comments_and_strings=0
 let g:ycm_complete_in_strings=0
+let g:ycm_confirm_extra_conf=0
+let g:ycm_auto_trigger=0
+let g:ycm_server_log_level='info'
 let g:ycm_warning_symbol="??"
 let g:ycm_error_symbol="!!"
-let g:ycm_always_populate_location_list=1
 set completeopt=menu,menuone
 
 let g:ycm_semantic_triggers =  {
