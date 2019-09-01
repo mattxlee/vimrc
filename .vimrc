@@ -23,6 +23,9 @@ Plug 'morhetz/gruvbox'
 " ==== Dracula colorscheme ====
 Plug 'dracula/vim', { 'as': 'dracula' }
 
+" ==== One colorscheme ====
+Plug 'rakr/vim-one'
+
 " ==== Rainbow ====
 let g:rainbow_active=1
 let g:rainbow_conf={
@@ -222,7 +225,8 @@ call plug#end()
 
 syntax enable
 
-silent! colorscheme dracula
+silent! colorscheme one
+set background=dark
 
 filetype indent off
 set autoindent
