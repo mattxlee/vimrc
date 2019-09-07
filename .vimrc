@@ -66,9 +66,8 @@ let g:ctrlsf_extra_root_markers=['.project', '.root', '.svn', '.git']
 Plug 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 
-" ==== Quick file jump ====
-let g:fsnonewfiles=1
-Plug 'mattxlee/vim-fswitch' "Switch head/source file
+" ==== Quick header/source jump ====
+Plug 'vim-scripts/a.vim'
 
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
@@ -291,7 +290,7 @@ nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-J> :edit .<CR>
-nmap <C-H> :FSHere<CR>
+nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
