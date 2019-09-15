@@ -280,7 +280,6 @@ nmap Y <C-W>w
 nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
 nmap W :q<CR>
-nmap S :w<CR>
 
 noremap gd g<C-]>
 noremap ge :lfirst<CR>
