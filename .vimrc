@@ -38,6 +38,13 @@ let g:rainbow_conf={
 \}
 Plug 'luochen1990/rainbow'
 
+" ==== Auto complete pairs ====
+Plug 'tpope/vim-endwise'
+Plug 'Raimondi/delimitMate'
+let g:delimitMate_jump_expansion=1
+let g:delimitMate_expand_cr=2
+imap <CR> <Plug>delimitMateCR
+
 " ==== Project support ====
 Plug 'editorconfig/editorconfig-vim' "Editor config file manager
 
@@ -67,7 +74,7 @@ Plug 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 
 " ==== Quick header/source jump ====
-Plug 'vim-scripts/a.vim'
+Plug 'micbou/a.vim'
 
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
@@ -301,7 +308,6 @@ nmap Y <C-W>w
 nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
 nmap W :q<CR>
-nmap S :w<CR>
 
 noremap gd g<C-]>
 noremap ge :lfirst<CR>
