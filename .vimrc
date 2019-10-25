@@ -210,6 +210,7 @@ endif
 Plug 'ludovicchabant/vim-gutentags' "Building tags
 
 " ==== Code formatting ====
+let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
 
 " ==== Starts up screen ====
