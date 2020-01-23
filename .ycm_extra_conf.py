@@ -63,6 +63,15 @@ flags = [
     '-isystem', '/usr/local/opt/openssl/include',
     '-isystem', '/usr/local/opt/llvm/include/c++/v1',
 
+    # For wxWidgets.
+    '-isystem', '/usr/local/lib/wx/include/osx_cocoa-unicode-3.0',
+    '-isystem', '/usr/local/include/wx-3.0',
+    '-D_FILE_OFFSET_BITS=64',
+    '-DWXUSINGDLL',
+    '-D__WXMAC__',
+    '-D__WXOSX__',
+    '-D__WXOSX_COCOA__',
+
     # For Qt
     '-DQT_CORE_LIB',
     '-DQT_GUI_LIB',
