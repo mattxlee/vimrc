@@ -231,6 +231,7 @@ nmap gh :YcmCompleter GetType<CR>
 Plug 'ycm-core/YouCompleteMe' " You complete me plugin on github
 
 " ==== Code formatting ====
+let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
 
 " ==== Starts up screen ====
