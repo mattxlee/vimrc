@@ -34,7 +34,7 @@ flags = [
     # a "-std=<something>".
     # For a C project, you would set this to something like 'c99' instead of
     # 'c++11'.
-    '-std=c++11',
+    '-std=c++17',
     '-stdlib=libc++',
     # ...and the same thing goes for the magic -x option which specifies the
     # language that the files to be compiled are written in. This is mostly
@@ -53,15 +53,18 @@ flags = [
     # For Common headers.
     '-isystem', '/usr/include',
     '-isystem', '/usr/local/include',
+    '-isystem', '/usr/local/opt/llvm/include/c++/v1',
 
     # For MacOS system headers.
     '-sysroot', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk',
     '-isystem', '/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include',
     '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
-    '-isystem', '../llvm/include',
-    '-isystem', '../llvm/tools/clang/include',
+
+    # OpenSSL headers
     '-isystem', '/usr/local/opt/openssl/include',
-    '-isystem', '/usr/local/opt/llvm/include/c++/v1',
+
+    # For SQLite3
+    '-system', '/usr/local/opt/sqlite/include',
 
     # For wxWidgets.
     '-isystem', '/usr/local/lib/wx/include/osx_cocoa-unicode-3.0',
@@ -168,6 +171,12 @@ flags = [
     '-isystem', '/usr/local/opt/qt/include/Qt3DQuickRender',
     '-isystem', '/usr/local/opt/qt/include/Qt3DQuickScene2D',
     '-isystem', '/usr/local/opt/qt/include/Qt3DRender',
+
+    # For google test
+    '-isystem', './googletest/googletest/include',
+
+    # For local headers
+    '-isystem', './include',
 
     # For your own header files, please add '-iquote', '[your local include directory]'
 ]
