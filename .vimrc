@@ -287,7 +287,7 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
-nmap W :q<CR>
+nmap Q :q<CR>
 
 noremap gd g<C-]>
 noremap ge :lfirst<CR>
