@@ -38,13 +38,6 @@ let g:rainbow_conf={
 \}
 Plug 'luochen1990/rainbow'
 
-" ==== Auto complete pairs ====
-Plug 'tpope/vim-endwise'
-Plug 'Raimondi/delimitMate'
-let g:delimitMate_jump_expansion=1
-let g:delimitMate_expand_cr=2
-imap <CR> <Plug>delimitMateCR
-
 " ==== Project support ====
 Plug 'editorconfig/editorconfig-vim' "Editor config file manager
 
