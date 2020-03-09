@@ -222,7 +222,7 @@ silent! colorscheme gruvbox
 filetype indent off
 set autoindent
 
-set guifont=RobotoMono\ Nerd\ Font:h16
+set guifont=RobotoMono\ Nerd\ Font:h14
 
 set hidden
 set tabstop=2
