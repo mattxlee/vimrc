@@ -180,7 +180,9 @@ Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
 let g:airline_powerline_fonts=0
-let airline#extensions#fugitiveline#enabled=1
+let g:airline#extensions#fugitiveline#enabled=1
+let g:airline#extensions#ycm#enabled=1
+let g:airline#extensions#ale#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
@@ -201,6 +203,9 @@ if !isdirectory(s:vim_tags)
   silent! call mkdir(s:vim_tags, 'p')
 endif
 Plug 'ludovicchabant/vim-gutentags' "Building tags
+
+" ==== ALE language lint ====
+Plug 'dense-analysis/ale'
 
 " ==== Code formatting ====
 let g:neoformat_enabled_javascript=['prettier']
