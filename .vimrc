@@ -180,8 +180,9 @@ Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
 let g:airline_powerline_fonts=0
-let airline#extensions#fugitiveline#enabled=1
-let airline#extensions#ycm#enabled=1
+let g:airline#extensions#fugitiveline#enabled=1
+let g:airline#extensions#ycm#enabled=1
+let g:airline#extensions#ale#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
@@ -203,6 +204,9 @@ if !isdirectory(s:vim_tags)
 endif
 Plug 'ludovicchabant/vim-gutentags' "Building tags
 
+" ==== ALE language lint ====
+Plug 'dense-analysis/ale'
+
 " ==== You complete me ====
 let g:ycm_always_populate_location_list=1
 let g:ycm_min_num_of_chars_for_completion=0
@@ -213,14 +217,12 @@ let g:ycm_confirm_extra_conf=0
 let g:ycm_auto_trigger=0
 let g:ycm_server_log_level='info'
 set completeopt=menu,menuone
-
 let g:ycm_semantic_triggers =  {
            \ 'c,cpp,python,java,go,erlang,perl': ['re!\w{2}'],
            \ 'cs,lua,javascript': ['re!\w{2}'],
            \ }
 
 nmap gh :YcmCompleter GetType<CR>
-
 Plug 'ycm-core/YouCompleteMe' " You complete me plugin on github
 
 " ==== Code formatting ====
