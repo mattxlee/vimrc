@@ -253,6 +253,7 @@ endif
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> ge <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -412,8 +413,6 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap M :make<CR>:copen<CR>
 nmap Q :q<CR>
-
-noremap ge :lfirst<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
