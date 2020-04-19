@@ -425,7 +425,6 @@ nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
 nmap Q :q<CR>
 
-noremap gd g<C-]>
 noremap ge :lfirst<CR>
 
 autocmd StdinReadPre * let s:std_in=1
