@@ -110,15 +110,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
-Plug 'vim-scripts/ShowTrailingWhitespace' "Show white space characters
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
 Plug 'easymotion/vim-easymotion' "Easy motion
-Plug 'csexton/trailertrash.vim' "Trim unwanted spaces
 
-" ==== Align text ====
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-Plug 'junegunn/vim-easy-align' "Easy align code
+" ==== Unwant spaces ====
+Plug 'vim-scripts/ShowTrailingWhitespace' "Show white space characters
+Plug 'csexton/trailertrash.vim' "Trim unwanted spaces
 
 " ==== Git support ====
 Plug 'airblade/vim-gitgutter' " git status
@@ -166,14 +163,6 @@ let g:mta_filetypes = {
     \ 'vue': 1,
     \}
 Plug 'Valloric/MatchTagAlways' "Show the match tags
-
-" ==== Indent guides plugin ====
-let g:indent_guides_enable_on_vim_startup=0
-let g:indent_guides_auto_colors=0
-let g:indent_guides_guide_size=1
-let g:indent_guides_start_level=2
-let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
-Plug 'nathanaelkane/vim-indent-guides' "Indent guides
 
 " ==== VUE syntax support ====
 Plug 'posva/vim-vue' "Show VUE syntax
