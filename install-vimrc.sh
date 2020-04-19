@@ -6,16 +6,16 @@ if [ ! -f $PLUGVIMPATH ]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-if [ ! -f $HOME/.vimrc ]; then
-    echo "Copying file .vimrc ..."
-    cp .vimrc $HOME/.vimrc
-fi
+[ ! -d $HOME/.config/nvim ] && mkdir -p $HOME/.config/nvim
+echo "Copying NeoVim config file..."
+cp init.vim $HOME/.config/nvim/init.vim
 
-if [ ! -f $HOME/.ctags ]; then
-    echo "Copying $HOME/.ctags..."
-    cp .ctags $HOME/.ctags
-fi
+echo "Copying file .vimrc ..."
+cp .vimrc $HOME/.vimrc
 
-if [ "command -v vim > /dev/null 2>&1" ]; then
-    vim +PlugUpdate
+echo "Copying $HOME/.ctags..."
+cp .ctags $HOME/.ctags
+
+if [ "command -v nvim > /dev/null 2>&1" ]; then
+    nvim +PlugUpdate
 fi

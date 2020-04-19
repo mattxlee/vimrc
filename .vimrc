@@ -5,6 +5,9 @@
 " __ |/ / __/ /  _  /  / /    / /__ / /_/ /  / / /  __/ _  / _  /_/ // /_/ /_  /   /  __/
 " _____/  /___/  /_/  /_/     \___/ \____//_/ /_//_/    /_/  _\__, / \__,_/ /_/    \___/
 "                                                            /____/
+"
+" !!!Please use NeoVim!!!
+"
 " Github: https://github.com/mattxlee/vimrc
 " Contact me at mattxlee@gmail.com
 "===================================================================================================
@@ -358,10 +361,10 @@ set autoindent
 set guifont=RobotoMono\ Nerd\ Font:h14
 
 set hidden
-set tabstop=2
+set tabstop=4
 set softtabstop=0
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 
 set signcolumn=yes
 set cmdheight=2
