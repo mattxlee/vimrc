@@ -278,7 +278,6 @@ nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap K :on<CR>
 nmap M :make<CR>:copen<CR>
 nmap Q :q<CR>
 
