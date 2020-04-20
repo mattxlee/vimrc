@@ -74,7 +74,9 @@ Plug 'micbou/a.vim'
 
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
-Plug 'scrooloose/nerdtree' "ctrl+j to open it
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=38
+Plug 'preservim/nerdtree' "ctrl+j to open it
 
 let g:NERDTreeShowIgnoredStatus=0
 let g:NERDTreeIndicatorMapCustom={
@@ -261,7 +263,7 @@ nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
-nmap <C-J> :edit .<CR>
+nmap <C-J> :NERDTree<CR>
 nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
@@ -278,6 +280,9 @@ noremap ge :lfirst<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
+
+" Will close vim if there is only a nerdtree window exists
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 hi Visual cterm=NONE gui=NONE
 hi SignColumn cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
