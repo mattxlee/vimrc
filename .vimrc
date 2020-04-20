@@ -201,6 +201,8 @@ let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
 
 " ==== Starts up screen ====
+let g:startify_change_to_dir=0
+let g:startify_change_to_vcs_root=1
 Plug 'mhinz/vim-startify'
 
 " ==== Nerd icons replacement ====
