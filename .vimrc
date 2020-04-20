@@ -217,9 +217,6 @@ syntax enable
 silent! colorscheme gruvbox
 
 filetype indent off
-set autoindent
-
-set guifont=RobotoMono\ Nerd\ Font:h14
 
 set hidden
 set tabstop=4
