@@ -127,21 +127,21 @@ Plug 'airblade/vim-gitgutter' " git status
 Plug 'tpope/vim-fugitive' "git command support
 Plug 'gregsexton/gitv' "git tree view
 
-" ==== Syntax support ====
+" ==== Solidity compiler support ====
+Plug 'dmdque/solidity.vim'
+Plug 'tomlion/vim-solidity' "Solidity syntax support
+
+
+" ==== Markdown support ====
+let g:vim_markdown_folding_disabled=1
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" ==== Misc Syntax support ====
 Plug 'ekalinin/Dockerfile.vim' "Dockerfile syntax
 Plug 'uarun/vim-protobuf' "protobuf file highlights
 Plug 'hdima/python-syntax' "Enhance python syntax display
 Plug 'ap/vim-css-color' "VIM css color preview
-
-" ==== Markdown support ====
-Plug 'godlygeek/tabular'
-
-let g:vim_markdown_folding_disabled=1
-Plug 'plasticboy/vim-markdown'
-
-" ==== Solidity compiler support ====
-Plug 'dmdque/solidity.vim'
-Plug 'tomlion/vim-solidity' "Solidity syntax support
 
 " ==== Javascript syntax support ====
 let g:javascript_plugin_jsdoc=1
@@ -153,6 +153,7 @@ Plug 'mxw/vim-jsx' "Enhance react js syntax display
 
 " ==== Typescript syntax support ====
 Plug 'leafgarland/typescript-vim' "TypeScript language support
+Plug 'peitalin/vim-jsx-typescript' "Typescript (tsx)
 
 " ==== C++ syntax enhanced ====
 let g:c_no_curly_error=1
