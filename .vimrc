@@ -263,7 +263,6 @@ nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
-nmap <C-J> :NERDTreeFind<CR>
 nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
@@ -276,6 +275,15 @@ nmap M :make<CR>:bot copen<CR>
 nmap Q :q<CR>
 
 noremap ge :lfirst<CR>
+function OpenNERDTree()
+    if bufname('%') == ''
+        :NERDTree
+    else
+        :NERDTreeFind
+    endif
+endfunction
+
+nmap <C-J> :call OpenNERDTree()<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
