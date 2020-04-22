@@ -416,7 +416,7 @@ nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap M :make<CR>:copen<CR>
+nmap M :make<CR>:bot copen<CR>
 nmap Q :q<CR>
 
 autocmd StdinReadPre * let s:std_in=1
