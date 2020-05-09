@@ -16,6 +16,6 @@ encoding = utf-8
 [push]
 default = simple
 [http]
-proxy = socks5://127.0.0.1:1087
+proxy = socks5://127.0.0.1:1080
 [https]
-proxy = socks5://127.0.0.1:1087
+proxy = socks5://127.0.0.1:1080
