@@ -392,6 +392,9 @@ nmap Y <C-W>w
 nmap M :make<CR>:bot copen<CR>
 nmap Q :q<CR>
 
+nmap <Leader>w <Plug>(coc-smartf-forward)
+nmap <Leader>b <Plug>(coc-smartf-backward)
+
 function OpenNERDTree()
     if bufname('%') == ''
         :NERDTree
