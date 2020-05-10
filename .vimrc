@@ -273,7 +273,7 @@ autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Set cursor mode
-set guicursor=n-v-c-sm:hor25-blinkon250,i-ci-ve:ver25,r-cr-o:ver25
+set guicursor=n-v-c-sm:ver25-blinkon250,i-ci-ve:ver25,r-cr-o:hor25
 
 hi Visual cterm=NONE gui=NONE
 hi SignColumn cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
