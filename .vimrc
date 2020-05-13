@@ -252,7 +252,7 @@ nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap M :make<CR>:bot copen<CR>
+nmap M :make -j9<CR>:bot copen<CR>
 nmap Q :q<CR>
 
 noremap ge :lfirst<CR>
