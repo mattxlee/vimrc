@@ -20,7 +20,7 @@ call plug#begin('~/.vim/plugged')
 set background=dark
 
 " ==== Gruvbox colorscheme ====
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='hard'
 Plug 'morhetz/gruvbox'
 
 " ==== Project support ====
@@ -32,7 +32,6 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 
 " ==== TODO Or make DOC comments ====
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
-Plug 'fadein/vim-FIGlet' "figlet command to generate text with fonts
 Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
 " ==== Global search ====
@@ -99,6 +98,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
+Plug 'easymotion/vim-easymotion' "Easy motion
 
 " ==== Unwant spaces ====
 Plug 'vim-scripts/ShowTrailingWhitespace' "Show white space characters
@@ -107,7 +107,6 @@ Plug 'csexton/trailertrash.vim' "Trim unwanted spaces
 " ==== Git support ====
 Plug 'airblade/vim-gitgutter' " git status
 Plug 'tpope/vim-fugitive' "git command support
-Plug 'gregsexton/gitv' "git tree view
 
 " ==== Solidity compiler support ====
 Plug 'dmdque/solidity.vim'
@@ -123,7 +122,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim' "Dockerfile syntax
 Plug 'uarun/vim-protobuf' "protobuf file highlights
 Plug 'hdima/python-syntax' "Enhance python syntax display
-Plug 'ap/vim-css-color' "VIM css color preview
 
 " ==== Javascript syntax support ====
 let g:javascript_plugin_jsdoc=1
@@ -244,6 +242,7 @@ nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
+nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
