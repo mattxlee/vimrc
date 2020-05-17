@@ -6,8 +6,6 @@
 " _____/  /___/  /_/  /_/     \___/ \____//_/ /_//_/    /_/  _\__, / \__,_/ /_/    \___/
 "                                                            /____/
 "
-" !!!Please use NeoVim!!!
-"
 " Github: https://github.com/mattxlee/vimrc
 " Contact me at mattxlee@gmail.com
 "===================================================================================================
@@ -92,9 +90,6 @@ let g:Lf_StlColorscheme='powerline'
 let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
-" ==== Quick jump for files ====
-Plug 'ctrlpvim/ctrlp.vim'
-
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
@@ -112,10 +107,8 @@ Plug 'tpope/vim-fugitive' "git command support
 Plug 'dmdque/solidity.vim'
 Plug 'tomlion/vim-solidity' "Solidity syntax support
 
-
 " ==== Markdown support ====
 let g:vim_markdown_folding_disabled=1
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " ==== Misc Syntax support ====
@@ -126,6 +119,9 @@ Plug 'hdima/python-syntax' "Enhance python syntax display
 " ==== Javascript syntax support ====
 let g:javascript_plugin_jsdoc=1
 Plug 'pangloss/vim-javascript' "Enhance javascript syntax display
+
+" ==== VUE syntax support ====
+Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== React syntax support ====
 let g:jsx_ext_required=0
@@ -138,20 +134,6 @@ Plug 'peitalin/vim-jsx-typescript' "Typescript (tsx)
 " ==== C++ syntax enhanced ====
 let g:c_no_curly_error=1
 Plug 'octol/vim-cpp-enhanced-highlight' "C++ syntax highlighting
-
-" ==== HTML tag pair match ====
-let g:mta_filetypes = {
-    \ 'html': 1,
-    \ 'xhtml': 1,
-    \ 'xml': 1,
-    \ 'jinja': 1,
-    \ 'javascript': 1,
-    \ 'vue': 1,
-    \}
-Plug 'Valloric/MatchTagAlways' "Show the match tags
-
-" ==== VUE syntax support ====
-Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
 let g:airline_powerline_fonts=0
@@ -247,12 +229,14 @@ nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
+nmap <C-P> :LeaderfFile<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
 nmap M :make -j9<CR>:bot copen<CR>
 nmap Q :q<CR>
+nmap gd <C-]>
 
 noremap ge :lfirst<CR>
 function OpenNERDTree()
@@ -272,12 +256,8 @@ autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
 " Will close vim if there is only a nerdtree window exists
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Set cursor mode
-set guicursor=n-v-c-sm:ver25-blinkon250,i-ci-ve:ver25,r-cr-o:hor25
-
 hi Visual cterm=NONE gui=NONE
 hi SignColumn cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
-
 hi GruvboxRedSign ctermfg=167 ctermbg=NONE guifg=#fb4934 guibg=NONE
 hi GruvboxGreenSign ctermfg=142 ctermbg=NONE guifg=#b8bb26 guibg=NONE
 hi GruvboxYellowSign ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
