@@ -171,6 +171,10 @@ Plug 'mhinz/vim-startify'
 " ==== Nerd icons replacement ====
 Plug 'ryanoasis/vim-devicons'
 
+" ==== Run command in async mode ====
+let g:asyncrun_open=10
+Plug 'skywind3000/asyncrun.vim'
+
 " All of your Plugs must be added before the following line
 call plug#end()
 
@@ -232,7 +236,7 @@ nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap M :make -j9<CR>:bot copen<CR>
+nmap M :AsyncRun make -j9<CR>
 nmap Q :q<CR>
 nmap gd <C-]>
 
