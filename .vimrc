@@ -178,8 +178,6 @@ syntax enable
 
 silent! colorscheme gruvbox
 
-filetype indent off
-
 set hidden
 set tabstop=4
 set softtabstop=0
