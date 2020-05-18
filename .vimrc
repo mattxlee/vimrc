@@ -55,7 +55,7 @@ Plug 'micbou/a.vim'
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeWinSize=38
+let g:NERDTreeWinSize=45
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
 let g:NERDTreeShowIgnoredStatus=0
@@ -236,11 +236,13 @@ nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap M :AsyncRun make -j9<CR>
 nmap Q :q<CR>
 nmap gd <C-]>
 
-noremap ge :lfirst<CR>
+nmap M :AsyncRun make -j9<CR>
+noremap mm :cclose<CR>
+noremap ge :cn<CR>
+
 function OpenNERDTree()
     if bufname('%') == ''
         :NERDTree
