@@ -242,6 +242,7 @@ nmap gd <C-]>
 nmap M :AsyncRun make -j9<CR>
 noremap mm :cclose<CR>
 noremap ge :cn<CR>
+noremap gu :AsyncRun git push<CR>
 
 function OpenNERDTree()
     if bufname('%') == ''
