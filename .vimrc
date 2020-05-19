@@ -188,6 +188,10 @@ set softtabstop=0
 set expandtab
 set shiftwidth=4
 
+set nosmartindent
+set autoindent
+set cinkeys-=:
+
 set signcolumn=yes
 set cmdheight=1
 set guioptions=
