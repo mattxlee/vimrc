@@ -395,7 +395,6 @@ nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
-nmap gd <C-]>
 
 nmap M :AsyncRun make -j9<CR>
 noremap mm :cclose<CR>
