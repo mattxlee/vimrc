@@ -6,8 +6,6 @@
 " _____/  /___/  /_/  /_/     \___/ \____//_/ /_//_/    /_/  _\__, / \__,_/ /_/    \___/
 "                                                            /____/
 "
-" !!!Please use NeoVim!!!
-"
 " Github: https://github.com/mattxlee/vimrc
 " Contact me at mattxlee@gmail.com
 "===================================================================================================
@@ -20,8 +18,26 @@ call plug#begin('~/.vim/plugged')
 set background=dark
 
 " ==== Gruvbox colorscheme ====
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='soft'
 Plug 'morhetz/gruvbox'
+
+" ==== Rainbow ====
+let g:rainbow_active=1
+let g:rainbow_conf={
+\      'operators': '_,\|&\|*\|=\|-\|>\|<\||\|:\|\._',
+\      'separately': {
+\              '*': {},
+\              'markdown': {
+\                      'parentheses_options': 'containedin=markdownCode contained',
+\              },
+\              'vim': {
+\                      'parentheses_options': 'containedin=vimFuncBody',
+\              },
+\              'css': 0,
+\       'cmake': 0,
+\      }
+\}
+Plug 'frazrepo/vim-rainbow'
 
 " ==== Project support ====
 Plug 'editorconfig/editorconfig-vim' "Editor config file manager
@@ -32,7 +48,6 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 
 " ==== TODO Or make DOC comments ====
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
-Plug 'fadein/vim-FIGlet' "figlet command to generate text with fonts
 Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
 " ==== Global search ====
@@ -58,7 +73,7 @@ Plug 'micbou/a.vim'
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeWinSize=38
+let g:NERDTreeWinSize=45
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
 let g:NERDTreeShowIgnoredStatus=0
@@ -93,9 +108,6 @@ let g:Lf_StlColorscheme='powerline'
 let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
-" ==== Quick jump for files ====
-Plug 'ctrlpvim/ctrlp.vim'
-
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
@@ -107,27 +119,26 @@ Plug 'csexton/trailertrash.vim' "Trim unwanted spaces
 " ==== Git support ====
 Plug 'airblade/vim-gitgutter' " git status
 Plug 'tpope/vim-fugitive' "git command support
-Plug 'gregsexton/gitv' "git tree view
 
 " ==== Solidity compiler support ====
 Plug 'dmdque/solidity.vim'
 Plug 'tomlion/vim-solidity' "Solidity syntax support
 
-
 " ==== Markdown support ====
 let g:vim_markdown_folding_disabled=1
-Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " ==== Misc Syntax support ====
 Plug 'ekalinin/Dockerfile.vim' "Dockerfile syntax
 Plug 'uarun/vim-protobuf' "protobuf file highlights
 Plug 'hdima/python-syntax' "Enhance python syntax display
-Plug 'ap/vim-css-color' "VIM css color preview
 
 " ==== Javascript syntax support ====
 let g:javascript_plugin_jsdoc=1
 Plug 'pangloss/vim-javascript' "Enhance javascript syntax display
+
+" ==== VUE syntax support ====
+Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== React syntax support ====
 let g:jsx_ext_required=0
@@ -140,20 +151,6 @@ Plug 'peitalin/vim-jsx-typescript' "Typescript (tsx)
 " ==== C++ syntax enhanced ====
 let g:c_no_curly_error=1
 Plug 'octol/vim-cpp-enhanced-highlight' "C++ syntax highlighting
-
-" ==== HTML tag pair match ====
-let g:mta_filetypes = {
-    \ 'html': 1,
-    \ 'xhtml': 1,
-    \ 'xml': 1,
-    \ 'jinja': 1,
-    \ 'javascript': 1,
-    \ 'vue': 1,
-    \}
-Plug 'Valloric/MatchTagAlways' "Show the match tags
-
-" ==== VUE syntax support ====
-Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== Status line ====
 let g:airline_powerline_fonts=0
@@ -329,6 +326,10 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" ==== Run command in async mode ====
+let g:asyncrun_open=20
+Plug 'skywind3000/asyncrun.vim'
+
 " All of your Plugs must be added before the following line
 call plug#end()
 
@@ -336,13 +337,15 @@ syntax enable
 
 silent! colorscheme gruvbox
 
-filetype indent off
-
 set hidden
 set tabstop=4
 set softtabstop=0
 set expandtab
 set shiftwidth=4
+
+set nosmartindent
+set autoindent
+set cinkeys-=:
 
 set signcolumn=yes
 set cmdheight=2
@@ -386,12 +389,17 @@ nmap <C-H> :A<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
+nmap <C-P> :LeaderfFile<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
-nmap M :make -j9<CR>:bot copen<CR>
 nmap Q :q<CR>
+nmap gd <C-]>
+
+nmap M :AsyncRun make -j9<CR>
+noremap mm :cclose<CR>
+noremap gu :AsyncRun git push<CR>
 
 nmap <Leader>w <Plug>(coc-smartf-forward)
 nmap <Leader>b <Plug>(coc-smartf-backward)
@@ -413,12 +421,8 @@ autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
 " Will close vim if there is only a nerdtree window exists
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Set cursor mode
-set guicursor=n-v-c-sm:ver25-blinkon250,i-ci-ve:ver25,r-cr-o:hor25
-
 hi Visual cterm=NONE gui=NONE
 hi SignColumn cterm=NONE ctermbg=NONE gui=NONE guibg=NONE
-
 hi GruvboxRedSign ctermfg=167 ctermbg=NONE guifg=#fb4934 guibg=NONE
 hi GruvboxGreenSign ctermfg=142 ctermbg=NONE guifg=#b8bb26 guibg=NONE
 hi GruvboxYellowSign ctermfg=214 ctermbg=NONE guifg=#fabd2f guibg=NONE
