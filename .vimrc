@@ -190,7 +190,7 @@ Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 " ==== Run command in async mode ====
-let g:asyncrun_open=10
+let g:asyncrun_open=20
 Plug 'skywind3000/asyncrun.vim'
 
 " All of your Plugs must be added before the following line
