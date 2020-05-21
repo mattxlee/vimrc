@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 set background=dark
 
 " ==== Gruvbox colorscheme ====
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='soft'
 Plug 'morhetz/gruvbox'
 
 " ==== Rainbow ====
