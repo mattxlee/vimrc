@@ -401,9 +401,6 @@ nmap M :AsyncRun make -j9<CR>
 noremap mm :cclose<CR>
 noremap gu :AsyncRun git push<CR>
 
-nmap <Leader>w <Plug>(coc-smartf-forward)
-nmap <Leader>b <Plug>(coc-smartf-backward)
-
 function OpenNERDTree()
     if bufname('%') == ''
         :NERDTree
