@@ -21,6 +21,24 @@ set background=dark
 let g:gruvbox_contrast_dark='hard'
 Plug 'morhetz/gruvbox'
 
+" ==== Rainbow ====
+let g:rainbow_active=1
+let g:rainbow_conf={
+\      'operators': '_,\|&\|*\|=\|-\|>\|<\||\|:\|\._',
+\      'separately': {
+\              '*': {},
+\              'markdown': {
+\                      'parentheses_options': 'containedin=markdownCode contained',
+\              },
+\              'vim': {
+\                      'parentheses_options': 'containedin=vimFuncBody',
+\              },
+\              'css': 0,
+\       'cmake': 0,
+\      }
+\}
+Plug 'frazrepo/vim-rainbow'
+
 " ==== Project support ====
 Plug 'editorconfig/editorconfig-vim' "Editor config file manager
 
