@@ -263,7 +263,7 @@ nmap Q :q<CR>
 nmap gd <C-]>
 
 nmap M :AsyncRun make -j9<CR>
-noremap mm :cclose<CR>
+noremap mk :cclose<CR>
 noremap ge :cn<CR>
 noremap gu :AsyncRun git push<CR>
 
