@@ -199,7 +199,7 @@ call plug#end()
 syntax enable
 
 silent! colorscheme gruvbox
-set guifont=JetBrainsMono\ Nerd\ Font\ Mono:18
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18
 
 set hidden
 set tabstop=4
