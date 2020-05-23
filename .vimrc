@@ -199,6 +199,7 @@ call plug#end()
 syntax enable
 
 silent! colorscheme gruvbox
+set guifont=JetBrainsMono\ Nerd\ Font\ Mono:18
 
 set hidden
 set tabstop=4
@@ -206,7 +207,7 @@ set softtabstop=0
 set expandtab
 set shiftwidth=4
 
-set nosmartindent
+set smartindent
 set autoindent
 set cinkeys-=:
 
