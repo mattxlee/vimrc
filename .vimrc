@@ -328,7 +328,7 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " ==== Run command in async mode ====
-let g:asyncrun_open=20
+let g:asyncrun_open=10
 Plug 'skywind3000/asyncrun.vim'
 
 " All of your Plugs must be added before the following line
