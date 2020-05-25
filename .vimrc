@@ -398,8 +398,8 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
 
-nmap M :AsyncRun make -j9<CR>
-noremap mk :cclose<CR>
+nmap M :cclose<CR>
+noremap mk :AsyncRun make -j9<CR>
 noremap gu :AsyncRun git push<CR>
 
 function OpenNERDTree()
