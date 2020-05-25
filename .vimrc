@@ -398,6 +398,9 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
 
+nmap f <Plug>(coc-smartf-forward)
+nmap F <Plug>(coc-smartf-backward)
+
 nmap M :cclose<CR>
 noremap mk :AsyncRun make -j9<CR>
 noremap gu :AsyncRun git push<CR>
