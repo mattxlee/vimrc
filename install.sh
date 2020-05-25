@@ -11,6 +11,10 @@ if [ ! -f $PLUGVIMPATH ]; then
     fi
 fi
 
+[ ! -d $HOME/.config/nvim ] && mkdir -p $HOME/.config/nvim
+echo "Copying NeoVim config file..."
+cp init.vim $HOME/.config/nvim/init.vim
+
 cp .vimrc $HOME/.vimrc
 cp .ctags $HOME/.ctags
 cp .gitconfig $HOME/.gitconfig
