@@ -68,7 +68,8 @@ Plug 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 
 " ==== Quick header/source jump ====
-Plug 'micbou/a.vim'
+let g:fsnonewfiles=1
+Plug 'mattxlee/vim-fswitch'
 
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
