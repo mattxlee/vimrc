@@ -251,7 +251,7 @@ nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
-nmap <C-H> :A<CR>
+nmap <C-H> :FSHere<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
