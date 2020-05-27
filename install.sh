@@ -25,5 +25,5 @@ cp .clang-format $HOME/.clang-format
 cp .editorconfig $HOME/.editorconfig
 
 if [ "command -v vim > /dev/null 2>&1" ]; then
-    vim +PlugUpdate
+    vim +'PlugInstall --sync' +qa
 fi
