@@ -15,7 +15,7 @@ autocrlf = input
 encoding = utf-8
 [push]
 default = simple
-[http]
-proxy = socks5://127.0.0.1:1080
-[https]
-proxy = socks5://127.0.0.1:1080
+# [http]
+# proxy = socks5://127.0.0.1:1080
+# [https]
+# proxy = socks5://127.0.0.1:1080

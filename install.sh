@@ -11,6 +11,9 @@ if [ ! -f $PLUGVIMPATH ]; then
     fi
 fi
 
+mkdir -p ~/.vim/files/info
+touch ~/.vim/files/info/viminfo
+
 [ ! -d $HOME/.config/nvim ] && mkdir -p $HOME/.config/nvim
 echo "Copying NeoVim config file..."
 cp init.vim $HOME/.config/nvim/init.vim
@@ -22,5 +25,5 @@ cp .clang-format $HOME/.clang-format
 cp .editorconfig $HOME/.editorconfig
 
 if [ "command -v vim > /dev/null 2>&1" ]; then
-    vim +PlugUpdate
+    vim +'PlugInstall --sync' +qa
 fi
