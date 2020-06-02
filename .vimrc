@@ -16,7 +16,11 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 set background=dark
+
+" Disallow NeoVIM changes the cursor
 set guicursor=
+" Workaround some broken plugins which set guicursor indiscriminately.
+autocmd OptionSet guicursor noautocmd set guicursor=
 
 " ==== Gruvbox colorscheme ====
 let g:gruvbox_contrast_dark='soft'
