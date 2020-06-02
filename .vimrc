@@ -16,6 +16,7 @@ filetype off                  " required
 call plug#begin('~/.vim/plugged')
 
 set background=dark
+set guicursor=
 
 " ==== Gruvbox colorscheme ====
 let g:gruvbox_contrast_dark='soft'
