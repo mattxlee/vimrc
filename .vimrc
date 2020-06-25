@@ -37,6 +37,9 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
 Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
+" ==== Quick file jump CTRL+P ====
+Plug 'ctrlpvim/ctrlp.vim'
+
 " ==== Global search ====
 let g:ctrlsf_ackprg='ag'
 let g:ctrlsf_regex_pattern=0
@@ -54,10 +57,7 @@ let g:ctrlsf_extra_root_markers=['.project', '.root', '.svn', '.git']
 Plug 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 
-" ==== Quick header/source jump ====
-let g:fsnonewfiles=1
-Plug 'mattxlee/vim-fswitch'
-
+" ==== File tree control ====
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
@@ -173,9 +173,6 @@ let g:startify_change_to_dir=0
 let g:startify_change_to_vcs_root=1
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 Plug 'mhinz/vim-startify'
-
-" ==== Nerd icons replacement ====
-Plug 'ryanoasis/vim-devicons'
 
 " ==== Coc ====
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -376,11 +373,11 @@ nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
-nmap <C-H> :FSHere<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
-nmap <C-P> :LeaderfFile<CR>
+nmap <C-P> :CtrlP<CR>
+nmap <C-H> :CocCommand clangd.switchSourceHeader<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
