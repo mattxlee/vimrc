@@ -175,9 +175,6 @@ let g:startify_change_to_vcs_root=1
 set viminfo='100,n$HOME/.vim/files/info/viminfo
 Plug 'mhinz/vim-startify'
 
-" ==== Nerd icons replacement ====
-Plug 'ryanoasis/vim-devicons'
-
 " ==== Run command in async mode ====
 let g:asyncrun_open=10
 Plug 'skywind3000/asyncrun.vim'
