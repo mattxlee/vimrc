@@ -57,10 +57,7 @@ let g:ctrlsf_extra_root_markers=['.project', '.root', '.svn', '.git']
 Plug 'rking/ag.vim' "quick find, ctrlsf.vim depends on it
 Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 
-" ==== Quick header/source jump ====
-let g:fsnonewfiles=1
-Plug 'mattxlee/vim-fswitch'
-
+" ==== File tree control ====
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
