@@ -37,6 +37,9 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
 Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
+" ==== Quick file jump CTRL+P ====
+Plug 'ctrlpvim/ctrlp.vim'
+
 " ==== Global search ====
 let g:ctrlsf_ackprg='ag'
 let g:ctrlsf_regex_pattern=0
@@ -243,7 +246,7 @@ nmap <C-H> :FSHere<CR>
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
-nmap <C-P> :LeaderfFile<CR>
+nmap <C-P> :CtrlP<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
