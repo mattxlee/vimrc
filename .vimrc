@@ -130,8 +130,9 @@ Plug 'pangloss/vim-javascript' "Enhance javascript syntax display
 Plug 'posva/vim-vue' "Show VUE syntax
 
 " ==== React syntax support ====
-let g:jsx_ext_required=0
-Plug 'mxw/vim-jsx' "Enhance react js syntax display
+let g:vim_jsx_pretty_highlight_close_tag=1
+Plug 'yuezk/vim-js'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
 " ==== Typescript syntax support ====
 Plug 'leafgarland/typescript-vim' "TypeScript language support
