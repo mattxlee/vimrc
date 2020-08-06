@@ -37,9 +37,6 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
 Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
-" ==== Quick file jump CTRL+P ====
-Plug 'ctrlpvim/ctrlp.vim'
-
 " ==== Global search ====
 let g:ctrlsf_ackprg='ag'
 let g:ctrlsf_regex_pattern=0
@@ -88,12 +85,13 @@ let g:Lf_WildIgnore={
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
 let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode='Ac'
-let g:Lf_WindowHeight=0.30
 let g:Lf_CacheDirectory=expand('~/.vim/cache')
 let g:Lf_ShowRelativePath=0
-let g:Lf_HideHelp=1
-let g:Lf_StlColorscheme='powerline'
 let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+let g:Lf_WindowPosition='popup'
+let g:Lf_PreviewInPopup=1
+let g:Lf_ShortcutF='<C-P>'
+let g:Lf_ShowDevIcons=0
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " ==== Magic editor ====
@@ -240,7 +238,6 @@ nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
-nmap <C-P> :CtrlP<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
