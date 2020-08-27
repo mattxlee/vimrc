@@ -61,8 +61,8 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=45
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
-let g:NERDTreeShowIgnoredStatus=0
-let g:NERDTreeIndicatorMapCustom={
+let g:NERDTreeGitStatusShowIgnored=0
+let g:NERDTreeGitStatusIndicatorMapCustom={
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
