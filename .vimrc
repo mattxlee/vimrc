@@ -58,7 +58,6 @@ Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeWinSize=45
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
 let g:NERDTreeGitStatusShowIgnored=0
