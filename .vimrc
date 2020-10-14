@@ -96,7 +96,6 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
-Plug 'easymotion/vim-easymotion' "Easy motion
 
 " ==== Unwant spaces ====
 Plug 'vim-scripts/ShowTrailingWhitespace' "Show white space characters
@@ -314,20 +313,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
-let g:easymotion#is_active = 0
-function! EasyMotionCoc() abort
-  if EasyMotion#is_active()
-    let g:easymotion#is_active = 1
-    silent! CocDisable
-  else
-    if g:easymotion#is_active == 1
-      let g:easymotion#is_active = 0
-      silent! CocEnable
-    endif
-  endif
-endfunction
-autocmd TextChanged,CursorMoved * call EasyMotionCoc()
-
 " ==== Run command in async mode ====
 let g:asyncrun_open=10
 Plug 'skywind3000/asyncrun.vim'
@@ -380,7 +365,6 @@ set tags=./.tags;,.tags
 
 let mapleader=";"
 
-nmap <Leader> <Plug>(easymotion-prefix)
 nmap C :Neoformat<CR>
 nmap <Leader><Leader> <C-W>w
 nmap <Leader>' <C-W>W
