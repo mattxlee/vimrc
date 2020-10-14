@@ -1,7 +1,7 @@
 ---
 Language:                         Cpp
 BasedOnStyle:                     WebKit
-AccessModifierOffset:             -2
+AccessModifierOffset:             -4
 BreakBeforeBraces:                Allman
 ColumnLimit:                      120
 IndentWidth:                      4
