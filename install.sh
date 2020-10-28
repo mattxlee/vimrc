@@ -1,4 +1,10 @@
 #!/bin/sh
+
+INFODIR=~/.vim/files/info
+[ -d $INFODIR ] && rm -rf $INFODIR
+mkdir -p $INFODIR
+touch $INFODIR/viminfo
+
 PLUGVIMPATH=$HOME/.vim/autoload/plug.vim
 
 if [ ! -f $PLUGVIMPATH ]; then
@@ -10,9 +16,6 @@ if [ ! -f $PLUGVIMPATH ]; then
         exit 1
     fi
 fi
-
-mkdir -p ~/.vim/files/info
-touch ~/.vim/files/info/viminfo
 
 [ ! -d $HOME/.config/nvim ] && mkdir -p $HOME/.config/nvim
 echo "Copying NeoVim config file..."
