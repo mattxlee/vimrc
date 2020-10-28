@@ -93,6 +93,9 @@ let g:Lf_ShortcutF='<C-P>'
 let g:Lf_ShowDevIcons=0
 Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
+" ==== Switch header/source ====
+Plug 'mattxlee/vim-fswitch'
+
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
@@ -237,6 +240,7 @@ nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-L> :CtrlSF -G .*
 nmap <C-G> :Gstatus<CR>
 nmap <C-T> :TrailerTrim<CR>
+nmap <C-H> :FSHere<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
