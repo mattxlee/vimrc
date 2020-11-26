@@ -170,12 +170,6 @@ Plug 'ludovicchabant/vim-gutentags' "Building tags
 let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
 
-" ==== Starts up screen ====
-let g:startify_change_to_dir=0
-let g:startify_change_to_vcs_root=1
-set viminfo='100,n$HOME/.vim/files/info/viminfo
-Plug 'mhinz/vim-startify'
-
 " ==== Run command in async mode ====
 let g:asyncrun_open=10
 Plug 'skywind3000/asyncrun.vim'
