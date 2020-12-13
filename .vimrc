@@ -79,6 +79,9 @@ Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
 " ==== Switch header/source ====
 Plug 'mattxlee/vim-fswitch'
 
+" ==== Quick jump to files ====
+Plug 'ctrlpvim/ctrlp.vim'
+
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
