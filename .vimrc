@@ -76,24 +76,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom={
     \ }
 Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
 
-" ==== Quick jump for tags ====
-let g:Lf_ShortcutB='<Leader>n'
-let g:Lf_WildIgnore={
-    \ 'dir': ['.svn','.git','.hg','node_modules'],
-    \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
-    \}
-let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
-let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode='Ac'
-let g:Lf_CacheDirectory=expand('~/.vim/cache')
-let g:Lf_ShowRelativePath=0
-let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
-let g:Lf_WindowPosition='popup'
-let g:Lf_PreviewInPopup=1
-let g:Lf_ShortcutF='<C-P>'
-let g:Lf_ShowDevIcons=0
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-
 " ==== Switch header/source ====
 Plug 'mattxlee/vim-fswitch'
 
@@ -149,24 +131,6 @@ let g:airline#extensions#fugitiveline#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
-" ==== CTags settings ====
-let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
-let g:gutentags_ctags_tagfile='.tags'
-let g:gutentags_generate_on_empty_buffer=1
-let g:gutentags_generate_on_missing=1
-let s:vim_tags=expand('~/.cache/tags')
-let g:gutentags_ctags_exclude=['node_modules']
-let g:gutentags_cache_dir=s:vim_tags
-let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--exclude=node_modules']
-let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
-if !isdirectory(s:vim_tags)
-  silent! call mkdir(s:vim_tags, 'p')
-endif
-Plug 'ludovicchabant/vim-gutentags' "Building tags
-
 " ==== Code formatting ====
 let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
@@ -219,15 +183,12 @@ set ignorecase
 set incsearch
 set updatetime=250
 set timeoutlen=3000
-set tags=./.tags;,.tags
 
 let mapleader=";"
 
 nmap C :Neoformat<CR>
 nmap <Leader><Leader> <C-W>w
 nmap <Leader>' <C-W>W
-nmap <Leader>f :LeaderfFunction<CR>
-nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>h :winc =<CR>
