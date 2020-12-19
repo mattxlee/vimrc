@@ -80,6 +80,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
 Plug 'mattxlee/vim-fswitch'
 
 " ==== Quick jump to files ====
+let g:ctrlp_show_hidden=1
 Plug 'ctrlpvim/ctrlp.vim'
 
 " ==== Magic editor ====
