@@ -80,6 +80,7 @@ Plug 'mattxlee/vim-fswitch'
 
 " ==== Quick jump to files ====
 let g:ctrlp_show_hidden=1
+let g:ctrlp_custom_ignore='\v[\/](node_modules)|(\.(git|hg|svn|DS_Store))$'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " ==== Magic editor ====
