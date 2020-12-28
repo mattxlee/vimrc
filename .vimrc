@@ -35,7 +35,6 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 
 " ==== TODO Or make DOC comments ====
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
-Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
 " ==== Global search ====
 let g:ctrlsf_ackprg='ag'
