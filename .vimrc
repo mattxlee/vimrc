@@ -75,24 +75,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom={
     \ }
 Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
 
-" ==== Quick jump for tags ====
-let g:Lf_ShortcutB='<Leader>n'
-let g:Lf_WildIgnore={
-    \ 'dir': ['.svn','.git','.hg','node_modules'],
-    \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
-    \}
-let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
-let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
-let g:Lf_WorkingDirectoryMode='Ac'
-let g:Lf_CacheDirectory=expand('~/.vim/cache')
-let g:Lf_ShowRelativePath=0
-let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
-let g:Lf_WindowPosition='popup'
-let g:Lf_PreviewInPopup=1
-let g:Lf_ShortcutF='<C-P>'
-let g:Lf_ShowDevIcons=0
-Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
-
 " ==== Switch header/source ====
 Plug 'mattxlee/vim-fswitch'
 
@@ -171,6 +153,28 @@ if !isdirectory(s:vim_tags)
 endif
 Plug 'ludovicchabant/vim-gutentags' "Building tags
 
+" ==== Quick jump for tags ====
+let g:Lf_ShortcutB='<Leader>n'
+let g:Lf_WildIgnore={
+    \ 'dir': ['.svn','.git','.hg','node_modules'],
+    \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
+    \}
+let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
+let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode='Ac'
+let g:Lf_CacheDirectory=expand('~/.vim/cache')
+let g:Lf_ShowRelativePath=0
+let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+let g:Lf_WindowPosition='popup'
+let g:Lf_PreviewInPopup=1
+let g:Lf_ShortcutF='<C-P>'
+let g:Lf_ShowDevIcons=0
+Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
+
+" ==== ALE Linter for syntax checking and etc. ====
+let g:ale_sign_column_always=1
+Plug 'dense-analysis/ale'
+
 " ==== Code formatting ====
 let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
@@ -245,12 +249,15 @@ nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
-nmap gd <C-]>
+
+nmap gd :ALEGoToDefinition<CR>
+nmap gr :ALEFindReferences<CR>
+nmap ge :ALENextWrap<CR>
+nmap <C-N> :ALERename<CR>
 
 nmap M :cclose<CR>
-noremap mk :AsyncRun make -j9<CR>
-noremap ge :cn<CR>
-noremap gu :AsyncRun git push<CR>
+nmap mk :AsyncRun make -j9<CR>
+nmap gu :AsyncRun git push<CR>
 
 function OpenNERDTree()
     if bufname('%') == ''
