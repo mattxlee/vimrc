@@ -173,6 +173,7 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " ==== ALE Linter for syntax checking and etc. ====
 let g:ale_sign_column_always=1
+let g:ale_linters={'cpp':['clangd']}
 Plug 'dense-analysis/ale'
 
 " ==== Code formatting ====
@@ -253,6 +254,7 @@ nmap Q :q<CR>
 nmap gd :ALEGoToDefinition<CR>
 nmap gr :ALEFindReferences<CR>
 nmap ge :ALENextWrap<CR>
+nmap gh :ALEHover<CR>
 nmap <C-N> :ALERename<CR>
 
 nmap M :cclose<CR>
