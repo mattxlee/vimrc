@@ -129,6 +129,7 @@ Plug 'octol/vim-cpp-enhanced-highlight' "C++ syntax highlighting
 " ==== Status line ====
 let g:airline_powerline_fonts=0
 let g:airline#extensions#fugitiveline#enabled=1
+let g:airline#extensions#ale#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
