@@ -171,6 +171,7 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " ==== ALE Linter for syntax checking and etc. ====
 let g:ale_sign_column_always=1
+let g:ale_set_quickfix=1
 let g:ale_linters={'cpp':['clangd']}
 Plug 'dense-analysis/ale'
 
@@ -237,6 +238,7 @@ nmap <Leader>f :LeaderfFunction<CR>
 nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
+nmap <Leader>o :vertical resize 130<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-L> :CtrlSF -G .*
