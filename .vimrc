@@ -188,6 +188,7 @@ call plug#end()
 syntax enable
 
 silent! colorscheme gruvbox
+set termguicolors
 set guifont=Consolas:h14
 
 set hidden
