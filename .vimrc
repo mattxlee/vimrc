@@ -220,7 +220,6 @@ set breakindentopt=shift:4
 set nolist
 set textwidth=0
 set wrapmargin=0
-set cursorline
 set nobackup
 set noswapfile
 set ignorecase
