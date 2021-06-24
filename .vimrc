@@ -54,6 +54,8 @@ Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 " ==== File tree control ====
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=47
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
 let g:NERDTreeGitStatusShowIgnored=0
@@ -260,7 +262,15 @@ nmap M :cclose<CR>
 nmap mk :AsyncRun make -j9<CR>
 nmap gu :AsyncRun git push<CR>
 
-nmap <C-J> :edit .<CR>
+function OpenNERDTree()
+    if bufname('%') == ''
+        :NERDTree
+    else
+        :NERDTreeFind
+    endif
+endfunction
+
+nmap <C-J> :call OpenNERDTree()<CR>
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
