@@ -243,7 +243,7 @@ nmap <Leader>o :vertical resize 130<CR>
 nmap <Leader>h :winc =<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-L> :CtrlSF<Space>
-nmap <C-G> :Gstatus<CR>
+nmap <C-G> :Git<CR>
 nmap <C-T> :TrailerTrim<CR>
 nmap <C-H> :FSHere<CR>
 nmap L :CtrlSFToggle<CR>
