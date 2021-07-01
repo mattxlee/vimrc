@@ -241,6 +241,7 @@ nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
 nmap <Leader>o :vertical resize 130<CR>
 nmap <Leader>h :winc =<CR>
+nmap <Leader>c :term ++curwin<CR>
 nmap <Leader> <Plug>(easymotion-prefix)
 nmap <C-L> :CtrlSF<Space>
 nmap <C-G> :Git<CR>
