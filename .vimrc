@@ -191,7 +191,7 @@ syntax enable
 
 silent! colorscheme gruvbox
 set termguicolors
-set guifont=Consolas:h14
+set guifont=Consolas:h12
 
 set hidden
 set tabstop=4
