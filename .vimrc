@@ -58,21 +58,6 @@ let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=47
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
-let g:NERDTreeGitStatusShowIgnored=0
-let g:NERDTreeGitStatusIndicatorMapCustom={
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '~',
-    \ "Unknown"   : "?"
-    \ }
-Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
-
 " ==== Switch header/source ====
 Plug 'mattxlee/vim-fswitch'
 
