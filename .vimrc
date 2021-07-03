@@ -243,6 +243,8 @@ nmap gr :ALEFindReferences<CR>
 nmap ge :ALENextWrap<CR>
 nmap gh :ALEHover<CR>
 nmap <C-N> :ALERename<CR>
+nmap oo o<ESC>
+nmap OO O<ESC>
 
 nmap M :cclose<CR>
 nmap mk :AsyncRun make -j9<CR>
