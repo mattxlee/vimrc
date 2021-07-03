@@ -1,5 +1,8 @@
 #!/bin/sh
 
+NVIMTMP=~/.nvim/tmpfiles
+[ -d $NVIMTMP ] && rm -rf $NVIMTMP
+
 INFODIR=~/.vim/files/info
 [ -d $INFODIR ] && rm -rf $INFODIR
 mkdir -p $INFODIR
