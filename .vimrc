@@ -370,6 +370,9 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
 
+nmap oo o<ESC>
+nmap OO O<ESC>
+
 nmap M :cclose<CR>
 noremap mk :AsyncRun make -j9<CR>
 noremap gu :AsyncRun git push<CR>
