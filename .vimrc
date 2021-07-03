@@ -345,7 +345,7 @@ set noswapfile
 set ignorecase
 set incsearch
 set updatetime=300
-set timeoutlen=3000
+set timeoutlen=300
 set tags=./.tags;,.tags
 
 let mapleader=";"
