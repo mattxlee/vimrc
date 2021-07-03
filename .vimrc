@@ -35,7 +35,6 @@ Plug 'embear/vim-localvimrc' "Load .lvimrc file on startup
 
 " ==== TODO Or make DOC comments ====
 Plug 'vim-scripts/TaskList.vim' "<Leader>t to show all TODO tag of current file
-Plug 'vim-scripts/DoxygenToolkit.vim' "Generate doxy document
 
 " ==== Global search ====
 let g:ctrlsf_ackprg='ag'
@@ -45,9 +44,6 @@ let g:ctrlsf_position='bottom'
 let g:ctrlsf_winsize='30%'
 let g:ctrlsf_search_mode='async'
 let g:ctrlsf_ignore_dir=['node_modules']
-" let g:ctrlsf_extra_backend_args={
-"     \ 'ag': '-a'
-"     \ }
 let g:ctrlsf_auto_focus={
     \ "at": "start"
     \ }
@@ -59,25 +55,15 @@ Plug 'dyng/ctrlsf.vim' "ctrl+l to search in files
 let g:NERDTreeShowHidden=1
 let g:NERDTreeHijackNetrw=1
 let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=47
 Plug 'preservim/nerdtree' "ctrl+j to open it
 
-let g:NERDTreeGitStatusShowIgnored=0
-let g:NERDTreeGitStatusIndicatorMapCustom={
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '~',
-    \ "Unknown"   : "?"
-    \ }
-Plug 'Xuyuanp/nerdtree-git-plugin' "Nerd tree with git support
+" ==== Switch header/source ====
+Plug 'mattxlee/vim-fswitch'
 
 " ==== Quick jump to files ====
 let g:ctrlp_show_hidden=1
+let g:ctrlp_custom_ignore='\v[\/](node_modules)|(\.(git|hg|svn|DS_Store))$'
 Plug 'ctrlpvim/ctrlp.vim'
 
 " ==== Magic editor ====
@@ -130,6 +116,42 @@ let g:airline_powerline_fonts=0
 let g:airline#extensions#fugitiveline#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
+
+" ==== CTags settings ====
+let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile='.tags'
+let g:gutentags_generate_on_empty_buffer=1
+let g:gutentags_generate_on_missing=1
+let s:vim_tags=expand('~/.cache/tags')
+let g:gutentags_ctags_exclude=['node_modules']
+let g:gutentags_cache_dir=s:vim_tags
+let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--exclude=node_modules']
+let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+if !isdirectory(s:vim_tags)
+  silent! call mkdir(s:vim_tags, 'p')
+endif
+Plug 'ludovicchabant/vim-gutentags' "Building tags
+
+" ==== Quick jump for tags ====
+let g:Lf_ShortcutB='<Leader>n'
+let g:Lf_WildIgnore={
+    \ 'dir': ['.svn','.git','.hg','node_modules'],
+    \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
+    \}
+let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
+let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode='Ac'
+let g:Lf_CacheDirectory=expand('~/.vim/cache')
+let g:Lf_ShowRelativePath=0
+let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+let g:Lf_WindowPosition='popup'
+let g:Lf_PreviewInPopup=1
+let g:Lf_ShortcutF='<C-P>'
+let g:Lf_ShowDevIcons=0
+Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " ==== Code formatting ====
 let g:neoformat_enabled_javascript=['prettier']
@@ -286,7 +308,8 @@ call plug#end()
 syntax enable
 
 silent! colorscheme gruvbox
-set guifont=JetBrainsMono\ Nerd\ Font\ Mono:h18
+set termguicolors
+set guifont=Consolas:h12
 
 set hidden
 set tabstop=4
@@ -317,34 +340,35 @@ set breakindentopt=shift:4
 set nolist
 set textwidth=0
 set wrapmargin=0
-set cursorline
 set nobackup
 set noswapfile
 set ignorecase
 set incsearch
 set updatetime=300
 set timeoutlen=3000
+set tags=./.tags;,.tags
 
 let mapleader=";"
 
 nmap C :Neoformat<CR>
 nmap <Leader><Leader> <C-W>w
 nmap <Leader>' <C-W>W
+nmap <Leader>f :LeaderfFunction<CR>
+nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
 nmap <Leader>v :vsp<CR>
+nmap <Leader>o :vertical resize 130<CR>
 nmap <Leader>h :winc =<CR>
-nmap <C-L> :CtrlSF -G .*
-nmap <C-G> :Gstatus<CR>
+nmap <Leader>c :term ++curwin<CR>
+nmap <C-L> :CtrlSF<Space>
+nmap <C-G> :Git<CR>
 nmap <C-T> :TrailerTrim<CR>
-nmap <C-H> :CocCommand clangd.switchSourceHeader<CR>
+nmap <C-H> :FSHere<CR>
 nmap L :CtrlSFToggle<CR>
 nmap * :keepjumps normal! mi*`i<CR>
 nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
-
-nmap f <Plug>(coc-smartf-forward)
-nmap F <Plug>(coc-smartf-backward)
 
 nmap M :cclose<CR>
 noremap mk :AsyncRun make -j9<CR>
