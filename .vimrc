@@ -109,7 +109,6 @@ Plug 'peitalin/vim-jsx-typescript' "Typescript (tsx)
 
 " ==== C++ syntax enhanced ====
 let g:c_no_curly_error=1
-Plug 'octol/vim-cpp-enhanced-highlight' "C++ syntax highlighting
 
 " ==== Status line ====
 let g:airline_powerline_fonts=0
