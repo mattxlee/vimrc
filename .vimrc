@@ -344,8 +344,8 @@ set nobackup
 set noswapfile
 set ignorecase
 set incsearch
-set updatetime=100
-set timeoutlen=800
+set updatetime=999
+set timeoutlen=999
 set tags=./.tags;,.tags
 
 let mapleader=";"
