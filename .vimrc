@@ -391,6 +391,8 @@ autocmd BufWritePost,BufWinLeave,BufWinEnter  * GitGutterAll
 " Will close vim if there is only a nerdtree window exists
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" No beep
+set vb t_vb=
 set viminfo+=n~/.nvim/tmpfiles/viminfo
 
 hi Visual cterm=NONE gui=NONE
