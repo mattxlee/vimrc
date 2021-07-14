@@ -221,8 +221,6 @@ set tags=./.tags;,.tags
 let mapleader=";"
 
 nmap C :Neoformat<CR>
-nmap <Leader><Leader> <C-W>w
-nmap <Leader>' <C-W>W
 nmap <Leader>f :LeaderfFunction<CR>
 nmap <Leader>g :LeaderfTag<CR>
 nmap <Leader>V :sp<CR>
