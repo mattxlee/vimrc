@@ -238,7 +238,7 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
 
-nmap M :cclose<CR>:lclose<CR>
+nmap M :cclose<CR>:lclose<CR>:pclose<CR>
 noremap mk :AsyncRun make -j9<CR>
 noremap gu :AsyncRun git push<CR>
 
