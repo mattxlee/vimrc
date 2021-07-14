@@ -193,7 +193,7 @@ set autoindent
 set cinkeys-=:
 
 set signcolumn=yes
-set cmdheight=2
+set cmdheight=1
 set guioptions=
 set encoding=utf-8
 set termencoding=utf-8
