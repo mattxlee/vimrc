@@ -69,6 +69,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " ==== Magic editor ====
 Plug 'tpope/vim-surround' "Surround for tags or strings
 Plug 'tomtom/tcomment_vim' "gc to make comment of selected lines
+Plug 'easymotion/vim-easymotion' "Easy motion
 
 " ==== Unwant spaces ====
 Plug 'vim-scripts/ShowTrailingWhitespace' "Show white space characters
