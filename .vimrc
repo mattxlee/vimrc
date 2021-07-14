@@ -180,7 +180,7 @@ syntax enable
 
 silent! colorscheme gruvbox
 set termguicolors
-set guifont=JetBrainsMono\ NF:h11
+set guifont=Consolas:h13
 
 set hidden
 set tabstop=4
