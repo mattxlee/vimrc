@@ -113,6 +113,7 @@ let g:c_no_curly_error=1
 " ==== Status line ====
 let g:airline_powerline_fonts=0
 let g:airline#extensions#fugitiveline#enabled=1
+let g:airline#extensions#ycm#enabled=1
 Plug 'vim-airline/vim-airline' "beauty status-bar
 Plug 'vim-airline/vim-airline-themes' "beauty status-bar themes
 
@@ -156,83 +157,16 @@ Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 let g:neoformat_enabled_javascript=['prettier']
 Plug 'sbdchd/neoformat' "Format source
 
-" ==== Coc ====
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-inoremap <silent><expr> <c-@> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
-
-nmap <silent> ge <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gh :call <SID>show_documentation()<CR>
-nmap <silent> gp :call CocActionAsync('showSignatureHelp')<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <C-N> <Plug>(coc-rename)
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+" ==== You complete me ====
+nmap gd :YcmCompleter GoTo<CR>
+nmap gh :YcmCompleter GetDoc<CR>
+nmap ge :YcmDiags<CR>
+let g:syntastic_error_symbol = 'x'
+let g:syntastic_warning_symbol = '?'
+let g:ycm_auto_trigger=0
+let g:ycm_add_preview_to_completeopt='popup'
+let g:ycm_auto_hover=''
+Plug 'ycm-core/YouCompleteMe'
 
 " ==== Run command in async mode ====
 let g:asyncrun_open=10
@@ -305,7 +239,7 @@ nmap N :noh<CR>
 nmap Y <C-W>w
 nmap Q :q<CR>
 
-nmap M :cclose<CR>
+nmap M :cclose<CR>:lclose<CR>
 noremap mk :AsyncRun make -j9<CR>
 noremap gu :AsyncRun git push<CR>
 
