@@ -165,7 +165,7 @@ nmap ge :YcmDiags<CR>
 let g:syntastic_error_symbol='x'
 let g:syntastic_warning_symbol='?'
 let g:ycm_auto_trigger=0
-let g:ycm_add_preview_to_completeopt='popup'
+let g:ycm_add_preview_to_completeopt='1'
 let g:ycm_auto_hover=''
 Plug 'ycm-core/YouCompleteMe'
 
