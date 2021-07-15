@@ -162,8 +162,8 @@ Plug 'sbdchd/neoformat' "Format source
 nmap gd :YcmCompleter GoTo<CR>
 nmap gh :YcmCompleter GetDoc<CR>
 nmap ge :YcmDiags<CR>
-let g:syntastic_error_symbol = 'x'
-let g:syntastic_warning_symbol = '?'
+let g:syntastic_error_symbol='x'
+let g:syntastic_warning_symbol='?'
 let g:ycm_auto_trigger=0
 let g:ycm_add_preview_to_completeopt='popup'
 let g:ycm_auto_hover=''
