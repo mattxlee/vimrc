@@ -161,6 +161,7 @@ Plug 'sbdchd/neoformat' "Format source
 " ==== You complete me ====
 nmap gd :YcmCompleter GoTo<CR>
 nmap gh :YcmCompleter GetDoc<CR>
+nmap gr :YcmCompleter GoToReferences<CR>
 nmap ge :YcmDiags<CR>
 let g:syntastic_error_symbol='x'
 let g:syntastic_warning_symbol='?'
