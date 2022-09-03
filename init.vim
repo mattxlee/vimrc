@@ -4,7 +4,7 @@ Plug 'vim-scripts/a.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/LeaderF'
 Plug 'Yggdroot/indentLine'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'

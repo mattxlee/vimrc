@@ -62,3 +62,5 @@ if [ -x "$(command -v vim)" ]; then
     $(vim +PlugInstall! +qa > /dev/null 2>&1)
     echo " vim - done"
 fi
+
+echo "Run :LeaderfInstallCExtension to speed up LeaderF"
