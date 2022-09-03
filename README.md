@@ -1,7 +1,7 @@
 # Install under Linux/macOS
 
 ```bash
-curl -s -L https://raw.githubusercontent.com/mattxlee/vimrc/main/install.sh | bash
+curl -s -L https://raw.githubusercontent.com/mattxlee/vimrc/main/install.sh | sh
 ```
 
 # Install under Windows

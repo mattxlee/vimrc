@@ -43,15 +43,11 @@ cpfile .editorconfig
 cpfile .gitconfig
 cpfile .gitignore_global
 
+instplugins() {
+    $($1 +PlugInstall! +qa > /dev/null 2>&1)
+}
+
 echo "Installing plugins..."
-if [ -x "$(command -v nvim)" ]; then
-    echo " neovim - plugin manager"
-    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1'
-    echo " neovim - plugins"
-    $(nvim +PlugInstall! +qa > /dev/null 2>&1)
-    echo " neovim - done"
-fi
 if [ -x "$(command -v vim)" ]; then
     echo " vim - generate .vimrc"
     echo 'source ~/.config/nvim/init.vim' > $HOME/.vimrc
@@ -59,8 +55,16 @@ if [ -x "$(command -v vim)" ]; then
     $(curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1)
     echo " vim - plugins"
-    $(vim +PlugInstall! +qa > /dev/null 2>&1)
+    instplugins vim
     echo " vim - done"
+fi
+if [ -x "$(command -v nvim)" ]; then
+    echo " neovim - plugin manager"
+    $(curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim > /dev/null 2>&1)
+    echo " neovim - plugins"
+    instplugins nvim
+    echo " neovim - done"
 fi
 
 echo "Run :LeaderfInstallCExtension to speed up LeaderF"
