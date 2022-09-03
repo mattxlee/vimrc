@@ -89,6 +89,10 @@ silent! colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 " ---- end of Color scheme ----
 
+" ---- Startify settings ----
+let g:startify_change_to_dir=1
+let g:startify_change_to_vcs_root=1
+
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
