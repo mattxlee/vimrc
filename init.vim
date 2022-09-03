@@ -9,7 +9,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'eugen0329/vim-esearch'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-surround'
@@ -202,26 +201,6 @@ noremap <Leader>p :cp<CR>
 " ---- IndentLine settings ----
 let g:indentLine_char='▏'
 " ---- end of IndentLine settings ----
-
-" ---- NERDTree settings ----
-let g:NERDTreeShowHidden=1
-let g:NERDTreeGitStatusUseNerdFonts=0
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-function OpenTree()
-    if bufname('%') == ''
-        :silent! NERDTreeToggle
-    else
-        :silent! NERDTreeFind
-    endif
-endfunction
-noremap <C-J> :call OpenTree()<CR>
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-" ---- end of NERDTree settings ----
 
 " ---- Auto save ----
 let g:auto_save=1
