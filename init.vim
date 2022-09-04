@@ -188,6 +188,7 @@ nnoremap <silent> M :call ToggleQuickFix()<cr>
 " ---- end of Toggle quick-fix pane ----
 
 " ---- AsyncRun settings ----
+let g:asyncrun_open=10
 let g:asyncrun_bell=1
 noremap gu :Git push<CR>
 noremap <C-K> :AsyncStop<CR>
