@@ -25,6 +25,12 @@ Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 if has('nvim')
     Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
+    Plug 'hrsh7th/nvim-cmp'
 endif
 call plug#end()
 " ---- end of All plugins here ----
