@@ -13,7 +13,6 @@ Plug 'eugen0329/vim-esearch'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/BufOnly.vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'tomtom/tcomment_vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'ntpeters/vim-better-whitespace'
@@ -32,6 +31,8 @@ if has('nvim')
     Plug 'hrsh7th/cmp-vsnip'
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/nvim-cmp'
+else
+    Plug 'easymotion/vim-easymotion'
 endif
 call plug#end()
 " ---- end of All plugins here ----
