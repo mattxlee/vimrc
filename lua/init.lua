@@ -25,6 +25,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- Set up nvim-cmp.
 pcall(function()
+    require("nvim-lsp-installer").setup({})
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     require('lspconfig').clangd.setup({
         on_attach = on_attach,
