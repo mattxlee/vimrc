@@ -159,6 +159,7 @@ let g:vim_json_conceal=0
 " ---- end of Json settings ----
 
 " ---- Markdown settings ----
+hi link markdownError NONE
 let g:vim_markdown_conceal=0
 let g:vim_markdown_conceal_code_blocks=0
 let g:vim_markdown_folding_disabled=1
