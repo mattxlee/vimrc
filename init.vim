@@ -72,12 +72,7 @@ noremap <Leader>v :vsp<CR>
 noremap <Leader>w <c-w>w
 noremap <Leader>q :q<CR>
 noremap <Leader><Leader>d :BufOnly<CR>
-noremap <Leader><Leader>c "*y
-noremap <Leader><Leader>p "*p
 noremap <Leader><Leader>q :qa<CR>
-noremap <F4> :bd<CR>
-noremap <F5> :bp<CR>
-noremap <F6> :bn<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
