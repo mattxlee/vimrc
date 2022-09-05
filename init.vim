@@ -67,7 +67,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 let mapleader=';'
 noremap N :noh<CR>
 noremap * :keepjumps normal! mi*`i<CR>
-noremap <F12> :NERDTreeToggle<CR>
 noremap <Leader>s :sp<CR>
 noremap <Leader>v :vsp<CR>
 noremap <Leader>w <c-w>w
