@@ -25,7 +25,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- Set up nvim-cmp.
 pcall(function()
-    require("nvim-lsp-installer").setup({})
+    require('nvim-lsp-installer').setup()
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     require('lspconfig').clangd.setup({
         on_attach = on_attach,
@@ -42,18 +42,18 @@ pcall(function()
         mapping = cmp.mapping.preset.insert({
             ['<c-l>'] = cmp.mapping.complete(),
             ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ["<Tab>"] = cmp.mapping(function(fallback)
-                if vim.fn["vsnip#available"](1) == 1 then
-                    feedkey("<Plug>(vsnip-expand-or-jump)", "")
+            ['<Tab>'] = cmp.mapping(function(fallback)
+                if vim.fn['vsnip#available'](1) == 1 then
+                    feedkey('<Plug>(vsnip-expand-or-jump)', '')
                 else
                     fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
                 end
-            end, {"i", "s"}),
-            ["<S-Tab>"] = cmp.mapping(function()
-                if vim.fn["vsnip#jumpable"](-1) == 1 then
-                    feedkey("<Plug>(vsnip-jump-prev)", "")
+            end, {'i', 's'}),
+            ['<S-Tab>'] = cmp.mapping(function()
+                if vim.fn['vsnip#jumpable'](-1) == 1 then
+                    feedkey('<Plug>(vsnip-jump-prev)', '')
                 end
-            end, {"i", "s"})
+            end, {'i', 's'})
         }),
         sources = cmp.config.sources({
             { name = 'nvim_lsp' },
