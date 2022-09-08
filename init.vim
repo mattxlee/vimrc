@@ -171,6 +171,7 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
 
 " ---- Toggle quick-fix pane ----
+autocmd filetype qf wincmd J
 function! ToggleQuickFix()
     if empty(filter(getwininfo(), 'v:val.quickfix'))
         copen
