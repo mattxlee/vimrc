@@ -88,7 +88,6 @@ let g:gruvbox_italic=1
 let g:gruvbox_transparent_bg=1
 set background=dark
 silent! colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
 " ---- end of Color scheme ----
 
 " ---- Startify settings ----
