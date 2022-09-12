@@ -19,7 +19,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
 Plug 'bfrg/vim-cpp-modern'
-Plug '907th/vim-auto-save'
 Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 if has('nvim')
@@ -32,8 +31,6 @@ if has('nvim')
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
-else
-    Plug 'easymotion/vim-easymotion'
 endif
 call plug#end()
 " ---- end of All plugins here ----
