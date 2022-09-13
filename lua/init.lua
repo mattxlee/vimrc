@@ -63,8 +63,8 @@ pcall(function()
     })
     require("indent_blankline").setup {
         -- for example, context is off by default, use this to turn it on
-        show_current_context = true,
-        show_current_context_start = true,
+        show_current_context = false,
+        show_current_context_start = false,
     }
 
     require'nvim-treesitter.configs'.setup {
@@ -81,7 +81,8 @@ pcall(function()
       ignore_install = { "javascript" },
 
       ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-      -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
+      -- parser_install_dir = "/some/path/to/store/parsers",
+      -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
 
       highlight = {
         -- `false` will disable the whole extension
