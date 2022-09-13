@@ -208,10 +208,6 @@ noremap <Leader>p :cp<CR>
 let g:indentLine_char='▏'
 " ---- end of IndentLine settings ----
 
-" ---- Auto save ----
-let g:auto_save=1
-" ---- end of Auto save ----
-
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
