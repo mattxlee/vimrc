@@ -5,7 +5,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Yggdroot/LeaderF'
-Plug 'Yggdroot/indentLine'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -18,7 +17,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
-Plug 'bfrg/vim-cpp-modern'
 Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 if has('nvim')
@@ -31,6 +29,11 @@ if has('nvim')
     Plug 'hrsh7th/vim-vsnip'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+    Plug 'lukas-reineke/indent-blankline.nvim'
+    Plug 'nvim-treesitter/nvim-treesitter'
+else
+    Plug 'bfrg/vim-cpp-modern'
+    Plug 'Yggdroot/indentLine'
 endif
 call plug#end()
 " ---- end of All plugins here ----
