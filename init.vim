@@ -33,6 +33,7 @@ if has('nvim')
     Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
     Plug 'lukas-reineke/indent-blankline.nvim'
     Plug 'nvim-treesitter/nvim-treesitter'
+    Plug 'lvimuser/lsp-inlayhints.nvim'
 else
     Plug 'bfrg/vim-cpp-modern'
     Plug 'Yggdroot/indentLine'
@@ -188,7 +189,7 @@ nnoremap <silent> M :call ToggleQuickFix()<cr>
 let g:asyncrun_open=10
 let g:asyncrun_bell=1
 noremap gu :Git push<CR>
-noremap <C-K> :AsyncStop<CR>
+noremap st :AsyncStop<CR>
 function Build()
     if !empty(expand(glob("Makefile")))
         :AsyncRun make

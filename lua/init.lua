@@ -2,6 +2,7 @@ vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 
 local on_attach = function(client, bufnr)
+    require('lsp-inlayhints').on_attach(client, bufnr)
     -- diagnostic
     local opts = { noremap = true, silent = true }
     vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, bufopts)
@@ -99,7 +100,6 @@ pcall(function()
         show_current_context = false,
         show_current_context_start = false,
     }
-
     require'nvim-treesitter.configs'.setup {
       -- A list of parser names, or "all"
       ensure_installed = { "c", "cpp", "lua", "rust" },
@@ -134,4 +134,5 @@ pcall(function()
         additional_vim_regex_highlighting = false,
       },
     }
+    require('lsp-inlayhints').setup()
 end)
