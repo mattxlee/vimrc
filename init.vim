@@ -20,6 +20,8 @@ Plug 'preservim/vim-markdown'
 Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 if has('nvim')
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'neovim/nvim-lspconfig'
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -217,4 +219,5 @@ vnoremap <leader>y :OSCYank<CR>
 
 if has('nvim')
     lua require('init')
+    noremap <C-J> :NvimTreeFindFile<CR>
 endif
