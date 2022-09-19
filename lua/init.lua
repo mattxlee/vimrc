@@ -30,11 +30,24 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 pcall(function()
     require("nvim-tree").setup({
         sort_by = "case_sensitive",
+        remove_keymaps = true,
         view = {
           adaptive_size = true,
           mappings = {
+            custom_only = false,
             list = {
-              { key = "u", action = "dir_up" },
+                { key = "<CR>", action = "edit" },
+                { key = "a", action = "create" },
+                { key = "d", action = "remove" },
+                { key = "m", action = "rename" },
+                { key = "q", action = "close" },
+                { key = "-", action = "collapse_all" },
+                { key = "+", action = "expand_all" },
+                { key = "?", action = "toggle_help" },
+                { key = "[c", action = "prev_git_item" },
+                { key = "]c", action = "next_git_item" },
+                { key = "u", action = "dir_up" },
+                { key = "<C-]>", action = "cd" },
             },
           },
         },
