@@ -68,3 +68,4 @@ if [ -x "$(command -v nvim)" ]; then
 fi
 
 echo "Run :LeaderfInstallCExtension to speed up LeaderF"
+echo "You might need to install tree-sitter-cli, see more info: http://tree-sitter.github.io/tree-sitter/creating-parsers#installation"
