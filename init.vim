@@ -35,6 +35,7 @@ if has('nvim')
     Plug 'nvim-treesitter/nvim-treesitter'
     Plug 'lvimuser/lsp-inlayhints.nvim'
 else
+    Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'bfrg/vim-cpp-modern'
     Plug 'Yggdroot/indentLine'
 endif
@@ -222,4 +223,25 @@ if has('nvim')
     lua require('init')
     noremap <C-J> :NvimTreeFindFile<CR>
     noremap <F12> :NvimTreeToggle<CR>
+else
+    " ---- NERDTree settings ----
+    let g:NERDTreeShowHidden=1
+    let g:NERDTreeGitStatusUseNerdFonts=0
+    let g:NERDTreeDirArrowExpandable = '+'
+    let g:NERDTreeDirArrowCollapsible = '-'
+    function OpenTree()
+        if bufname('%') == ''
+            :silent! NERDTreeToggle
+        else
+            :silent! NERDTreeFind
+        endif
+    endfunction
+    noremap <C-J> :call OpenTree()<CR>
+    noremap <F12> :NERDTreeToggle<CR>
+    " Close the tab if NERDTree is the only window remaining in it.
+    autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+    " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+    autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+        \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+    " ---- end of NERDTree settings ----
 endif
