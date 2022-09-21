@@ -22,6 +22,7 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'Yggdroot/indentLine'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 " ---- end of All plugins here ----
 
@@ -222,3 +223,8 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
+
+" ---- Easymotion settings ----
+let g:EasyMotion_do_mapping=0
+noremap <Leader>s <Plug>(easymotion-s)
+" ---- end of Easymotion settings ----
