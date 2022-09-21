@@ -53,7 +53,7 @@ set nosmartindent
 filetype indent off
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " ---- Common shortcuts ----
-let mapleader='\'
+let mapleader=';'
 noremap N :noh<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <Leader>s :sp<CR>
