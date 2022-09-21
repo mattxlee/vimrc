@@ -228,5 +228,5 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " ---- Easymotion settings ----
 let g:EasyMotion_do_mapping=0
-noremap <Leader>s <Plug>(easymotion-s)
+noremap <Leader>l <Plug>(easymotion-s)
 " ---- end of Easymotion settings ----
