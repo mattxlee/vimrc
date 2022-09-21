@@ -51,7 +51,6 @@ set smartcase
 set noshowmode
 set showtabline=0
 set updatetime=666
-set nocursorline
 set hlsearch
 set linebreak
 set breakindent
@@ -220,10 +219,12 @@ vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
 
 if has('nvim')
+    set nocursorline
     lua require('init')
     noremap <C-J> :NvimTreeFindFile<CR>
     noremap <F12> :NvimTreeToggle<CR>
 else
+    set cursorline
     " ---- NERDTree settings ----
     let g:NERDTreeShowHidden=1
     let g:NERDTreeGitStatusUseNerdFonts=0
