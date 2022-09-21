@@ -82,6 +82,8 @@ silent! colorscheme gruvbox
 " ---- Startify settings ----
 let g:startify_change_to_dir=1
 let g:startify_change_to_vcs_root=1
+noremap <Leader>a :Startify<CR>
+" ---- end of Startify settings ----
 
 " ---- Airline ----
 let g:airline_symbols_ascii=1
