@@ -221,4 +221,5 @@ vnoremap <leader>y :OSCYank<CR>
 if has('nvim')
     lua require('init')
     noremap <C-J> :NvimTreeFindFile<CR>
+    noremap <F12> :NvimTreeToggle<CR>
 endif
