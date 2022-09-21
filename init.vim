@@ -216,7 +216,7 @@ function OpenTree()
     endif
 endfunction
 noremap <C-J> :call OpenTree()<CR>
-noremap <F12> :NERDTreeToggle<CR>
+noremap <Leader>j :NERDTreeToggle<CR>
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
