@@ -206,6 +206,7 @@ vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
 
 " ---- NERDTree settings ----
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
 let g:NERDTreeDirArrowExpandable = '+'
