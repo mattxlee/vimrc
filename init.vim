@@ -72,7 +72,7 @@ set go-=m
 " ---- end of Windows settings ----
 
 " ---- Color scheme ----
-let g:gruvbox_italic=1
+let g:gruvbox_italic=0
 let g:gruvbox_transparent_bg=1
 set background=dark
 silent! colorscheme gruvbox
