@@ -59,7 +59,6 @@ noremap * :keepjumps normal! mi*`i<CR>
 noremap <Leader>s :sp<CR>
 noremap <Leader>v :vsp<CR>
 noremap <Leader>w <c-w>w
-noremap <Leader><Leader>d :BufOnly<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
