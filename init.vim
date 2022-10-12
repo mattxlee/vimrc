@@ -59,7 +59,6 @@ noremap * :keepjumps normal! mi*`i<CR>
 noremap <Leader>s :sp<CR>
 noremap <Leader>v :vsp<CR>
 noremap <Leader>w <c-w>w
-noremap <Leader><Leader>w <c-w>W
 noremap <Leader><Leader>d :BufOnly<CR>
 " ---- end of Common settings ----
 
@@ -209,8 +208,6 @@ vnoremap <leader>y :OSCYank<CR>
 noremap <C-J> :Ex<CR>
 " ---- end of Vim-vinegar settings ---
 
-
 " ---- Easymotion settings ----
-let g:EasyMotion_do_mapping=0
-noremap <Leader>l <Plug>(easymotion-s)
+let g:EasyMotion_do_mapping=1
 " ---- end of Easymotion settings ----
