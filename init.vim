@@ -17,7 +17,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
-Plug 'mhinz/vim-startify'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'tpope/vim-vinegar'
 Plug 'bfrg/vim-cpp-modern'
@@ -76,12 +75,6 @@ let g:gruvbox_transparent_bg=1
 set background=dark
 silent! colorscheme gruvbox
 " ---- end of Color scheme ----
-
-" ---- Startify settings ----
-let g:startify_change_to_dir=1
-let g:startify_change_to_vcs_root=1
-noremap <Leader>a :Startify<CR>
-" ---- end of Startify settings ----
 
 " ---- Airline ----
 let g:airline_symbols_ascii=1
