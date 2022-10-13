@@ -18,7 +18,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
-Plug 'tpope/vim-vinegar'
+Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'Yggdroot/indentLine'
 Plug 'easymotion/vim-easymotion'
@@ -196,9 +196,27 @@ let g:indentLine_char='▏'
 vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
 
-" ---- Vim-vinegar settings ---
-noremap <C-J> :Ex<CR>
-" ---- end of Vim-vinegar settings ---
+" ---- NERDTree settings ----
+let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeShowHidden=1
+let g:NERDTreeGitStatusUseNerdFonts=0
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+function OpenTree()
+    if bufname('%') == ''
+        :silent! NERDTreeToggle
+    else
+        :silent! NERDTreeFind
+    endif
+endfunction
+noremap <C-J> :call OpenTree()<CR>
+noremap <Leader>j :NERDTreeToggle<CR>
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
+autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
+    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+" ---- end of NERDTree settings ----
 
 " ---- Easymotion settings ----
 let g:EasyMotion_do_mapping=1
