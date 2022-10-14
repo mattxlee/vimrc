@@ -74,6 +74,7 @@ let g:gruvbox_italic=0
 let g:gruvbox_transparent_bg=1
 set background=dark
 silent! colorscheme gruvbox
+hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 " ---- end of Color scheme ----
 
 " ---- Airline ----
