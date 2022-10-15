@@ -99,5 +99,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+setopt auto_cd
+cdpath=($HOME)
 #
 source $HOME/.profile
