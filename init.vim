@@ -57,6 +57,8 @@ noremap * :keepjumps normal! mi*`i<CR>
 noremap <Leader>s :sp<CR>
 noremap <Leader>v :vsp<CR>
 noremap <Leader>w <c-w>w
+noremap <C-M> :silent vertical resize +5<CR>
+noremap <C-N> :silent vertical resize -5<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
