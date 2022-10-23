@@ -64,8 +64,12 @@ noremap <C-N> :silent vertical resize -5<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
-set guifont=Consolas:h12
-au GUIEnter * simalt ~x
+if has("win32")
+    set guifont=Consolas:h12
+    au GUIEnter * simalt ~x
+elseif has("mac")
+    set guifont=FuraCode\ Nerd\ Font:h15
+endif
 set go-=T
 set go-=r
 set go-=L
