@@ -163,6 +163,12 @@ endfunction
 nnoremap <silent> M :call ToggleQuickFix()<cr>
 " ---- end of Toggle quick-fix pane ----
 
+" ---- ESearch settings ----
+let g:esearch = {}
+let g:esearch.name='[esearch]'
+let g:esearch.win_new={esearch -> esearch#buf#goto_or_open(esearch.name, 'new')}
+" ---- end of ESearch settings ----
+
 " ---- AsyncRun settings ----
 let g:asyncrun_open=10
 let g:asyncrun_bell=1
