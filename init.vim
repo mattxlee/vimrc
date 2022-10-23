@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Yggdroot/LeaderF'
+Plug 'eugen0329/vim-esearch'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -132,7 +133,7 @@ let g:Lf_RgConfig = [
     \ "--glob=!dist/*",]
 noremap <Leader>o :LeaderfFunction<CR>
 noremap <Leader>g :LeaderfTag<CR>
-noremap <Leader>ff :Leaderf rg<CR>
+noremap <Leader>l :Leaderf rg<CR>
 " ---- end of LeaderF related settings ----
 
 " ---- Editorconfig settings ----
