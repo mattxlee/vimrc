@@ -90,7 +90,7 @@ let g:airline_powerline_fonts=0
 " ---- end of Airline ----
 
 " ---- TrailerTrim settings ----
-noremap <C-T> :StripWhitespace<CR>
+noremap <Leader>t :StripWhitespace<CR>
 " ---- end of TrailerTrim settings ----
 
 " ---- Fugitive settings ----
