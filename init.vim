@@ -9,7 +9,6 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'eugen0329/vim-esearch'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/BufOnly.vim'
@@ -127,8 +126,13 @@ let g:Lf_CacheDirectory=expand('~/.vim/cache')
 let g:Lf_ShowRelativePath=0
 let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
 let g:Lf_ShowDevIcons=0
+let g:Lf_RgConfig = [
+    \ "--max-columns=150",
+    \ "--glob=!node_modules/*",
+    \ "--glob=!dist/*",]
 noremap <Leader>o :LeaderfFunction<CR>
 noremap <Leader>g :LeaderfTag<CR>
+noremap <Leader>ff :Leaderf rg<CR>
 " ---- end of LeaderF related settings ----
 
 " ---- Editorconfig settings ----
@@ -168,12 +172,6 @@ function! ToggleQuickFix()
 endfunction
 nnoremap <silent> M :call ToggleQuickFix()<cr>
 " ---- end of Toggle quick-fix pane ----
-
-" ---- ESearch settings ----
-let g:esearch = {}
-let g:esearch.name='[esearch]'
-let g:esearch.win_new={esearch -> esearch#buf#goto_or_open(esearch.name, 'new')}
-" ---- end of ESearch settings ----
 
 " ---- AsyncRun settings ----
 let g:asyncrun_open=10
