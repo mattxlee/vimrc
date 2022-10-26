@@ -70,7 +70,7 @@ if has("win32")
     set guifont=Consolas:h12
     au GUIEnter * simalt ~x
 elseif has("mac")
-    set guifont=FuraCode\ Nerd\ Font:h15
+    set guifont=Menlo:h15
 endif
 set go-=T
 set go-=r
