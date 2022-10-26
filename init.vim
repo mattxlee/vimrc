@@ -27,6 +27,7 @@ call plug#end()
 
 " ---- Common settings ----
 let c_no_curly_error=1
+let g:tex_conceal=""
 set mouse=
 set nu
 set ignorecase
