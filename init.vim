@@ -20,7 +20,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'bfrg/vim-cpp-modern'
-Plug 'Yggdroot/indentLine'
 Plug 'easymotion/vim-easymotion'
 call plug#end()
 " ---- end of All plugins here ----
@@ -223,10 +222,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
-
-" ---- IndentLine settings ----
-let g:indentLine_char='▏'
-" ---- end of IndentLine settings ----
 
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYank<CR>
