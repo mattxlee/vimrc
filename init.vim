@@ -256,5 +256,6 @@ let g:rainbow_conf={
 \		'css': 0,
 \		'nerdtree': 0,
 \       'cmake': 0,
+\       'qf': 0,
 \	}
 \}
