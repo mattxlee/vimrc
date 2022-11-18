@@ -259,3 +259,5 @@ let g:rainbow_conf={
 \       'qf': 0,
 \	}
 \}
+" ---- end of Rainbow settings ----
+
