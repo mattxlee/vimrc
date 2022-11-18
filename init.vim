@@ -235,7 +235,7 @@ let g:EasyMotion_do_mapping=1
 " ---- Rainbow settings ----
 let g:rainbow_active=1
 let g:rainbow_conf={
-\	'guifgs': ['darkorange3', 'seagreen3', 'firebrick', 'royalblue1'],
+\	'guifgs': ['darkorange3', 'seagreen3', 'royalblue1'],
 \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
 \	'operators': '__',
 \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
