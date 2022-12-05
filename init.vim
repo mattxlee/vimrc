@@ -47,11 +47,8 @@ set cursorline
 if has('termguicolors')
     set termguicolors
 endif
-set nocindent
 set autoindent
-set nosmartindent
-filetype indent off
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+set smartindent
 " ---- Common shortcuts ----
 set cmdheight=1
 let mapleader=';'
