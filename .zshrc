@@ -104,3 +104,4 @@ setopt auto_cd
 cdpath=($HOME)
 #
 source $HOME/.profile
+export GPG_TTY=$(tty)
