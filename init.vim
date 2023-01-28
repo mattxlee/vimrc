@@ -10,7 +10,6 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/BufOnly.vim'
 Plug 'tomtom/tcomment_vim'
@@ -171,31 +170,6 @@ function! ToggleQuickFix()
 endfunction
 nnoremap <silent> M :call ToggleQuickFix()<cr>
 " ---- end of Toggle quick-fix pane ----
-
-" ---- AsyncRun settings ----
-let g:asyncrun_open=10
-let g:asyncrun_bell=1
-noremap gu :Git push<CR>
-noremap st :AsyncStop<CR>
-function Build()
-    if !empty(expand(glob("Makefile")))
-        :AsyncRun make
-    else
-        :AsyncRun cmake --build ./build --config debug
-    endif
-endfunction
-function Clean()
-    if !empty(expand(glob("Makefile")))
-        :AsyncRun make clean
-    else
-        :AsyncRun cmake --build ./build --target clean
-    endif
-endfunction
-noremap mk :call Build()<CR>
-noremap mn :call Clean()<CR>
-noremap <Leader>n :cn<CR>
-noremap <Leader>p :cp<CR>
-" ---- end of AsyncRun settings ----
 
 " ---- NERDTree settings ----
 let g:NERDTreeMinimalMenu=1
