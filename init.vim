@@ -112,7 +112,7 @@ endif
 " ---- end of CTags settings ----
 
 " ---- LeaderF related settings ----
-let g:Lf_WindowPosition='popup'
+let g:Lf_WindowPosition='bottom'
 let g:Lf_ShortcutF='<C-P>'
 let g:Lf_WildIgnore={
             \ 'dir': ['.svn', '.git', '.hg', '.ccls-cache', 'node_modules'],
