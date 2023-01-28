@@ -52,6 +52,7 @@ set smartindent
 set cmdheight=1
 let mapleader=';'
 noremap N :noh<CR>
+noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <Leader>s :sp<CR>
 noremap <Leader>v :vsp<CR>
