@@ -18,7 +18,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
-Plug 'bfrg/vim-cpp-modern'
 Plug 'easymotion/vim-easymotion'
 Plug 'luochen1990/rainbow'
 call plug#end()
