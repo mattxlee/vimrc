@@ -207,7 +207,7 @@ let g:rainbow_active=1
 let g:rainbow_conf={
 \	'guifgs': ['darkorange3', 'seagreen3', 'royalblue1'],
 \	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\	'operators': '__',
+\	'operators': '_,\|;\|\.\|&\||\|:\|->\|=\|-\|<\|>\|!\|?\|+\|*_',
 \	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \	'separately': {
 \		'*': {},
