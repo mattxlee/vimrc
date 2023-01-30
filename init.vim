@@ -51,7 +51,7 @@ set autoindent
 set nocindent
 set nosmartindent
 filetype indent off
-set complete=]
+set complete=.,w,b,u,t
 " ---- Common shortcuts ----
 set cmdheight=1
 let mapleader=';'
