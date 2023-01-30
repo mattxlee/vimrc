@@ -88,6 +88,7 @@ hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
+let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
 " ---- TrailerTrim settings ----
