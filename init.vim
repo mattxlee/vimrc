@@ -175,18 +175,6 @@ let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
 
-" ---- Toggle quick-fix pane ----
-autocmd filetype qf wincmd J
-function! ToggleQuickFix()
-    if empty(filter(getwininfo(), 'v:val.quickfix'))
-        copen
-    else
-        cclose
-    endif
-endfunction
-nnoremap <silent> M :call ToggleQuickFix()<cr>
-" ---- end of Toggle quick-fix pane ----
-
 " ---- NERDTree settings ----
 let g:NERDTreeMinimalMenu=1
 let g:NERDTreeQuitOnOpen=0
