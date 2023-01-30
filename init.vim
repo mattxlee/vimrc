@@ -36,7 +36,7 @@ set updatetime=666
 set hlsearch
 set linebreak
 set breakindent
-set breakindentopt=shift:4
+set breakindentopt=shift:8
 set nobackup
 set nowritebackup
 set noswapfile
