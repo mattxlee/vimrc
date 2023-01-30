@@ -13,8 +13,16 @@ if [ ! -x "$(command -v ctags)" ]; then
     echo "Please install universal-ctags!"
 fi
 
+if [ ! -x "$(command -v global)" ]; then
+    echo "Please install global (gtags)!"
+fi
+
 if [ ! -x "$(command -v ag)" ]; then
     echo "Please install silversearcher-ag!"
+fi
+
+if [ ! -x "$(command -v rg)" ]; then
+    echo "Please install ripgrep!"
 fi
 
 if [ ! -x "$(command -v python3)" ]; then
