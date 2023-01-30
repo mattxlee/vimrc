@@ -48,7 +48,9 @@ if has('termguicolors')
     set termguicolors
 endif
 set autoindent
-set smartindent
+set nocindent
+set nosmartindent
+filetype indent off
 " ---- Common shortcuts ----
 set cmdheight=1
 let mapleader=';'
