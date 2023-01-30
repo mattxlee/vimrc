@@ -125,7 +125,8 @@ if !isdirectory(s:vim_tags)
 endif
 let g:gutentags_plus_nomap=1
 noremap <silent> gr :GscopeFind s <C-R><C-W><CR>
-noremap <silent> gh :GscopeFind z <C-R><C-W><CR>
+noremap <silent> gh :GscopeFind g <C-R><C-W><CR>
+noremap <silent> gd :GscopeFind z <C-R><C-W><CR>
 " ---- end of CTags settings ----
 
 " ---- Quickfix preview settings ----
