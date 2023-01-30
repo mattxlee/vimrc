@@ -123,6 +123,9 @@ let g:gutentags_exclude_filetypes=['gitcommit', 'gitconfig', 'gitrebase', 'gitse
 if !isdirectory(s:vim_tags)
     silent! call mkdir(s:vim_tags, 'p')
 endif
+let g:gutentags_plus_nomap=1
+noremap <silent> gr :GscopeFind c <C-R><C-W><CR>
+noremap <silent> gh :GscopeFind g <C-R><C-W><CR>
 " ---- end of CTags settings ----
 
 " ---- Quickfix preview settings ----
