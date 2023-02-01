@@ -22,6 +22,7 @@ Plug 'preservim/vim-markdown'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'easymotion/vim-easymotion'
 Plug 'luochen1990/rainbow'
+Plug 'tomlion/vim-solidity'
 call plug#end()
 " ---- end of All plugins here ----
 
