@@ -1,7 +1,7 @@
 " ---- All plugins here ----
 call plug#begin()
 Plug 'vim-scripts/a.vim'
-Plug 'morhetz/gruvbox'
+Plug 'tomasiser/vim-code-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'Yggdroot/LeaderF'
@@ -81,8 +81,9 @@ set go-=m
 " ---- end of Windows settings ----
 
 " ---- Color scheme ----
-set background=dark
-silent! colorscheme gruvbox
+set t_Co=256
+set t_ut=
+silent! colorscheme codedark
 hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 " ---- end of Color scheme ----
 
