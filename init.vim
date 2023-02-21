@@ -118,9 +118,6 @@ let g:gutentags_modules = []
 if executable('ctags')
     let g:gutentags_modules+=['ctags']
 endif
-if executable('gtags-cscope') && executable('gtags')
-    let g:gutentags_modules+=['gtags_cscope']
-endif
 let s:vim_tags=expand('~/.cache/tags')
 let g:gutentags_ctags_exclude=['node_modules', '.ccls-cache']
 let g:gutentags_cache_dir=s:vim_tags
