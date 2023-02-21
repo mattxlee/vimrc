@@ -23,6 +23,7 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'easymotion/vim-easymotion'
 Plug 'luochen1990/rainbow'
 Plug 'tomlion/vim-solidity'
+Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 " ---- end of All plugins here ----
 
