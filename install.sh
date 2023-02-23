@@ -47,7 +47,6 @@ cpfile() {
 }
 
 cpfile .tmux.conf
-cpfile .clangd
 cpfile .clang-format
 cpfile .editorconfig
 cpfile .gitconfig
