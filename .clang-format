@@ -1,12 +1,11 @@
 ---
 Language:                         Cpp
-BasedOnStyle:                     Google
+BasedOnStyle:                     Webkit
 AccessModifierOffset:             -4
-ColumnLimit:                      120
+BreakBeforeBraces:                Linux
+ColumnLimit:                      999
 IndentWidth:                      4
-ContinuationIndentWidth:          8
 DerivePointerAlignment:           false
 PointerAlignment:                 Left
 NamespaceIndentation:             None
-SortIncludes:                     false
-AlignAfterOpenBracket:            AlwaysBreak
+ContinuationIndentWidth:          8
