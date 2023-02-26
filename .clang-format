@@ -1,11 +1,14 @@
 ---
 Language:                         Cpp
-BasedOnStyle:                     Webkit
+BasedOnStyle:                     WebKit
 AccessModifierOffset:             -4
 BreakBeforeBraces:                Linux
 ColumnLimit:                      200
 IndentWidth:                      4
+ContinuationIndentWidth:          8
 DerivePointerAlignment:           false
 PointerAlignment:                 Left
+QualifierAlignment:               Right
 NamespaceIndentation:             None
-ContinuationIndentWidth:          8
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortLambdasOnASingleLine:   Empty
