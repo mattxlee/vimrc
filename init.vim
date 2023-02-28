@@ -204,7 +204,7 @@ noremap <leader>s <Plug>(easymotion-s)
 
 " ---- esearch settings ----
 noremap <leader>ff <plug>(esearch)
-noremap <C-]> <plug>(operator-esearch-prefill)
+noremap <c-]> <plug>(operator-esearch-exec)iw
 " ---- end of esearch settings ----
 
 " ---- Rainbow settings ----
