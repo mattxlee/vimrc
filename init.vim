@@ -198,6 +198,11 @@ let g:EasyMotion_do_mapping=0
 noremap <leader>s <Plug>(easymotion-s)
 " ---- end of Easymotion settings ----
 
+" ---- esearch settings ----
+noremap <leader>ff <plug>(esearch)
+noremap <C-]> <plug>(operator-esearch-prefill)
+" ---- end of esearch settings ----
+
 " ---- Rainbow settings ----
 let g:rainbow_active=1
 let g:rainbow_conf={
