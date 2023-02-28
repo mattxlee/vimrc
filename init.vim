@@ -183,6 +183,10 @@ let g:vim_markdown_folding_disabled=1
 noremap C :Neoformat<CR>
 " ---- end of Neoformat settings ----
 
+" ---- CtrlP settings ----
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
+" ---- end of CtrlP settings ----
+
 " ---- Switch header/source ----
 let g:fsnonewfiles='on'
 let g:alternateNoDefaultAlternate=1
