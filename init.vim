@@ -194,7 +194,8 @@ vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
 
 " ---- Easymotion settings ----
-let g:EasyMotion_do_mapping=1
+let g:EasyMotion_do_mapping=0
+noremap <leader>s <Plug>(easymotion-s)
 " ---- end of Easymotion settings ----
 
 " ---- Rainbow settings ----
