@@ -4,12 +4,11 @@ Plug 'vim-scripts/a.vim'
 Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'Yggdroot/LeaderF'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'eugen0329/vim-esearch'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -98,7 +97,7 @@ let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
 " ---- TrailerTrim settings ----
-noremap <Leader>t :StripWhitespace<CR>
+noremap <C-T> :StripWhitespace<CR>
 " ---- end of TrailerTrim settings ----
 
 " ---- Fugitive settings ----
@@ -189,29 +188,6 @@ let g:fsnonewfiles='on'
 let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
-
-" ---- NERDTree settings ----
-let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeGitStatusUseNerdFonts=0
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-function OpenTree()
-    if bufname('%') == ''
-        :silent! NERDTreeToggle
-    else
-        :silent! NERDTreeFind
-    endif
-endfunction
-noremap <C-J> :call OpenTree()<CR>
-noremap <Leader>j :NERDTreeToggle<CR>
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
-" ---- end of NERDTree settings ----
 
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYank<CR>
