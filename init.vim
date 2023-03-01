@@ -5,7 +5,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'eugen0329/vim-esearch'
 Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -202,11 +201,6 @@ vnoremap <leader>y :OSCYank<CR>
 let g:EasyMotion_do_mapping=0
 noremap <leader>s <Plug>(easymotion-s)
 " ---- end of Easymotion settings ----
-
-" ---- esearch settings ----
-noremap <leader>ff <plug>(esearch)
-noremap <c-]> <plug>(operator-esearch-exec)iw
-" ---- end of esearch settings ----
 
 " ---- Rainbow settings ----
 let g:rainbow_active=1
