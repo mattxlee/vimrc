@@ -57,8 +57,6 @@ let mapleader=';'
 noremap N :noh<CR>
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
-noremap <Leader>s :sp<CR>
-noremap <Leader>v :vsp<CR>
 noremap <Leader>wj :silent horizontal resize +5<CR>
 noremap <Leader>wk :silent horizontal resize -5<CR>
 noremap <Leader>wl :silent vertical resize +5<CR>
