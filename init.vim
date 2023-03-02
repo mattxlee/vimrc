@@ -138,7 +138,7 @@ autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<CR>
 " ---- end of Quickfix preview settings ----
 
 " ---- LeaderF related settings ----
-let g:Lf_WindowPosition='bottom'
+let g:Lf_WindowPosition='popup'
 let g:Lf_ShortcutF='<C-P>'
 let g:Lf_WildIgnore={
             \ 'dir': ['.svn', '.git', '.hg', '.ccls-cache', 'node_modules'],
@@ -157,7 +157,7 @@ let g:Lf_RgConfig = [
     \ "--glob=!dist/*",]
 noremap <Leader>o :LeaderfFunction<CR>
 noremap <Leader>g :LeaderfTag<CR>
-noremap <Leader>l :Leaderf rg<CR>
+noremap <Leader>ff :Leaderf rg<CR>
 " ---- end of LeaderF related settings ----
 
 " ---- Editorconfig settings ----
