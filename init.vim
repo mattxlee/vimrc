@@ -18,8 +18,8 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'preservim/vim-markdown'
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'easymotion/vim-easymotion'
-Plug 'luochen1990/rainbow'
 Plug 'tomlion/vim-solidity'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'mtdl9/vim-log-highlighting'
 call plug#end()
 " ---- end of All plugins here ----
@@ -195,32 +195,9 @@ let g:EasyMotion_do_mapping=0
 noremap <leader>s <Plug>(easymotion-s)
 " ---- end of Easymotion settings ----
 
-" ---- Rainbow settings ----
-let g:rainbow_active=1
-let g:rainbow_conf={
-\	'guifgs': ['darkorange3', 'seagreen3', 'royalblue1'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\	'operators': '_,\|;\|\.\|&\||\|:\|->\|=\|-\|<\|>\|!\|?\|+\|*_',
-\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\	'separately': {
-\		'*': {},
-\		'tex': {
-\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\		},
-\		'lisp': {
-\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\		},
-\		'vim': {
-\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\		},
-\		'html': {
-\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-\		},
-\		'css': 0,
-\		'nerdtree': 0,
-\       'cmake': 0,
-\       'qf': 0,
-\	}
-\}
-" ---- end of Rainbow settings ----
-
+" ---- C++ highlights settings ----
+let g:cpp_class_scope_highlight=1
+let g:cpp_class_decl_highlight=1
+let g:cpp_member_variable_highlight=0
+let g:cpp_posix_standard=1
+" ---- end of C++ highlights settings ----
