@@ -158,7 +158,7 @@ let g:Lf_RgConfig = [
 noremap <Leader>o :LeaderfFunction<CR>
 noremap <Leader>g :LeaderfTag<CR>
 noremap <Leader>l :Leaderf rg --cword<CR>
-noremap <Leader>ff :Leaderf rg<CR>
+noremap <Leader>f :Leaderf rg<CR>
 " ---- end of LeaderF related settings ----
 
 " ---- Editorconfig settings ----
