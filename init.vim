@@ -205,6 +205,7 @@ let g:cpp_posix_standard=1
 " ---- end of C++ highlights settings ----
 "
 " ---- NERDTree settings ----
+let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
