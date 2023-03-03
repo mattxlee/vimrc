@@ -94,7 +94,7 @@ let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
 " ---- TrailerTrim settings ----
-noremap <C-T> :StripWhitespace<CR>
+noremap <leader>t :StripWhitespace<CR>
 " ---- end of TrailerTrim settings ----
 
 " ---- Fugitive settings ----
