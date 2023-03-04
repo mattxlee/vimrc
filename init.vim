@@ -86,6 +86,7 @@ let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark="medium"
 silent! colorscheme gruvbox
 hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
+hi! link Error Normal
 " ---- end of Color scheme ----
 
 " ---- Airline ----
