@@ -9,26 +9,6 @@ if [ ! -x "$(command -v git)" ]; then
     exit 1
 fi
 
-if [ ! -x "$(command -v ctags)" ]; then
-    echo "Please install universal-ctags!"
-fi
-
-if [ ! -x "$(command -v global)" ]; then
-    echo "Please install global (gtags)!"
-fi
-
-if [ ! -x "$(command -v ag)" ]; then
-    echo "Please install silversearcher-ag!"
-fi
-
-if [ ! -x "$(command -v rg)" ]; then
-    echo "Please install ripgrep!"
-fi
-
-if [ ! -x "$(command -v python3)" ]; then
-    echo "Please install python3-dev!"
-fi
-
 VIMRC_PATH=$HOME/vimrc
 if [ ! -d $VIMRC_PATH ]; then
     git clone --depth 1 https://github.com/mattxlee/vimrc $VIMRC_PATH
@@ -67,6 +47,3 @@ if [ -x "$(command -v vim)" ]; then
     instplugins vim
     echo " vim - done"
 fi
-
-echo "Run :LeaderfInstallCExtension to speed up LeaderF"
-echo "\n"
