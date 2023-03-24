@@ -20,6 +20,7 @@ Plug 'airblade/vim-gitgutter'
 
 " format and etc.
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sbdchd/neoformat'
 
 " common code editing
 Plug 'tpope/vim-surround'
@@ -176,8 +177,14 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 let g:ctrlp_show_hidden=1
 " ---- end of CtrlP settings ----
 
+" ---- Find in files settings ----
 noremap <leader>f :CtrlSF<SPACE>
 nmap <leader>l <Plug>CtrlSFCwordPath<CR>
 let g:ctrlsf_position='bottom'
 let g:ctrlsf_winsize='50%'
 let g:ctrlsf_auto_focus={'at':'start'}
+" ---- end of Find in files settings ----
+
+" ---- Format ----
+noremap C :Neoformat<CR>
+" ---- end of Format ----
