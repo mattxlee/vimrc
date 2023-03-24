@@ -136,7 +136,7 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
 
 " ---- Yank to clipboard ----
-vnoremap <leader>y :OSCYank<CR>
+vnoremap <leader>y :OSCYankVisual<CR>
 " ---- end of Yank to clipboard ----
 
 " ---- C++ highlights settings ----
