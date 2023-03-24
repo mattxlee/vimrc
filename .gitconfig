@@ -20,5 +20,8 @@
     rebase = true
 [credential]
     helper = store
+[credential "github.com"]
+    useHttpPath = true
 # [http]
-#     proxy = http://lisa:8080
+    # proxy = http://lisa:8080
+    # sslVerify = false
