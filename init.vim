@@ -2,7 +2,7 @@
 call plug#begin()
 
 " theme
-Plug 'tomasiser/vim-code-dark'
+Plug 'morhetz/gruvbox'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -95,11 +95,13 @@ set go-=m
 " ---- end of Windows settings ----
 
 " ---- Color scheme ----
-let g:codedark_conservative=0
-let g:codedark_italics=1
-let g:codedark_transparent=0
-let g:airline_theme = 'codedark'
-silent! colorscheme codedark
+set t_Co=256
+set t_ut=
+set background=dark
+let g:gruvbox_bold=1
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="medium"
+silent! colorscheme gruvbox
 hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 hi! link Error Normal
 " ---- end of Color scheme ----
