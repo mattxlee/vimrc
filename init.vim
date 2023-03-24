@@ -185,12 +185,13 @@ endif
 " ---- end of CtrlP settings ----
 
 " ---- Find in files settings ----
-noremap <leader>f :CtrlSF<SPACE>
-nmap <leader>l <Plug>CtrlSFCwordPath<CR>
 let g:ctrlsf_position='bottom'
 let g:ctrlsf_winsize='50%'
 let g:ctrlsf_auto_focus={'at':'start'}
 let g:ctrlsf_auto_close={'normal':0, 'compact':0}
+noremap <leader>f :CtrlSF<SPACE>
+noremap <leader>t :CtrlSF 'TODO'<CR>
+nmap <leader>l <Plug>CtrlSFCwordPath<CR>
 " ---- end of Find in files settings ----
 
 " ---- Format ----
