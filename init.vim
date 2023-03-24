@@ -1,29 +1,50 @@
 " ---- All plugins here ----
 call plug#begin()
-Plug 'vim-scripts/a.vim'
-Plug 'morhetz/gruvbox'
+
+" theme
+Plug 'tomasiser/vim-code-dark'
+
+" layouts
 Plug 'vim-airline/vim-airline'
-Plug 'editorconfig/editorconfig-vim'
+
+" jumping
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" global search
+Plug 'dyng/ctrlsf.vim'
+
+" git related
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+
+" format and etc.
+Plug 'editorconfig/editorconfig-vim'
+
+" common code editing
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'preservim/vim-markdown'
+
+" system clipboard
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
-Plug 'easymotion/vim-easymotion'
-Plug 'tomlion/vim-solidity'
+
+" cpp related
+Plug 'vim-scripts/a.vim'
 Plug 'octol/vim-cpp-enhanced-highlight'
+
+" log file
 Plug 'mtdl9/vim-log-highlighting'
+
+" markdown
+Plug 'preservim/vim-markdown'
+
 call plug#end()
 " ---- end of All plugins here ----
 
 " ---- Common settings ----
 let c_no_curly_error=1
-let g:tex_conceal=""
+let g:tex_conceal=''
 set mouse=
 set nu
 set ignorecase
@@ -54,17 +75,17 @@ let mapleader=';'
 noremap N :noh<CR>
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
-noremap <Leader>wj :silent horizontal resize +5<CR>
-noremap <Leader>wk :silent horizontal resize -5<CR>
-noremap <Leader>wl :silent vertical resize +5<CR>
-noremap <Leader>wh :silent vertical resize -5<CR>
+noremap <leader>wj :silent horizontal resize +5<CR>
+noremap <leader>wk :silent horizontal resize -5<CR>
+noremap <leader>wl :silent vertical resize +5<CR>
+noremap <leader>wh :silent vertical resize -5<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
-if has("win32")
+if has('win32')
     set guifont=Consolas:h12
     au GUIEnter * simalt ~x
-elseif has("mac")
+elseif has('mac')
     set guifont=Menlo:h15
 endif
 set go-=T
@@ -74,13 +95,11 @@ set go-=m
 " ---- end of Windows settings ----
 
 " ---- Color scheme ----
-set t_Co=256
-set t_ut=
-set background=dark
-let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="medium"
-silent! colorscheme gruvbox
+let g:codedark_conservative=0
+let g:codedark_italics=1
+let g:codedark_transparent=0
+let g:airline_theme = 'codedark'
+silent! colorscheme codedark
 hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 hi! link Error Normal
 " ---- end of Color scheme ----
@@ -91,17 +110,13 @@ let g:airline_powerline_fonts=0
 let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
-" ---- TrailerTrim settings ----
-noremap <leader>t :StripWhitespace<CR>
-" ---- end of TrailerTrim settings ----
-
 " ---- Fugitive settings ----
 noremap <C-G> :Git<CR>
 " ---- end of Fugitive settings ----
 
 " ---- Editorconfig settings ----
 let g:EditorConfig_preserve_formatoptions=1
-let g:EditorConfig_max_line_indicator="fill"
+let g:EditorConfig_max_line_indicator='fill'
 " ---- end of Editorconfig settings ----
 
 " ---- Json settings ----
@@ -116,7 +131,6 @@ let g:vim_markdown_folding_disabled=1
 " ---- end of Markdown settings ----
 
 " ---- Switch header/source ----
-let g:fsnonewfiles='on'
 let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
@@ -125,18 +139,13 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 vnoremap <leader>y :OSCYank<CR>
 " ---- end of Yank to clipboard ----
 
-" ---- Easymotion settings ----
-let g:EasyMotion_do_mapping=0
-noremap <leader>s <Plug>(easymotion-s)
-" ---- end of Easymotion settings ----
-
 " ---- C++ highlights settings ----
 let g:cpp_class_scope_highlight=1
 let g:cpp_class_decl_highlight=1
 let g:cpp_member_variable_highlight=0
 let g:cpp_posix_standard=1
 " ---- end of C++ highlights settings ----
-"
+
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
@@ -153,14 +162,20 @@ function OpenTree()
     endif
 endfunction
 noremap <C-J> :call OpenTree()<CR>
-noremap <Leader>j :NERDTreeToggle<CR>
+noremap <leader>j :NERDTreeToggle<CR>
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+    \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
 " ---- CtrlP settings ----
 let g:ctrlp_show_hidden=1
 " ---- end of CtrlP settings ----
+
+noremap <leader>f :CtrlSF<SPACE>
+nmap <leader>l <Plug>CtrlSFCwordPath<CR>
+let g:ctrlsf_position='bottom'
+let g:ctrlsf_winsize='50%'
+let g:ctrlsf_auto_focus={'at':'start'}
