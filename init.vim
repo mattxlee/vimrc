@@ -8,7 +8,6 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-airline/vim-airline'
 
 " jumping
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " global search
@@ -39,6 +38,11 @@ Plug 'mtdl9/vim-log-highlighting'
 
 " markdown
 Plug 'preservim/vim-markdown'
+
+" Fzf tags and etc
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 " ---- end of All plugins here ----
@@ -155,8 +159,8 @@ let g:NERDTreeMinimalMenu=1
 let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
+let g:NERDTreeDirArrowExpandable='+'
+let g:NERDTreeDirArrowCollapsible='-'
 function OpenTree()
     if bufname('%') == ''
         :silent! NERDTreeToggle
@@ -172,27 +176,39 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
-" ---- CtrlP settings ----
-let g:ctrlp_show_hidden=1
-if executable('rg')
-    set grepprg=rg\ --color=never
-    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching=0
-else
-    let g:ctrlp_clear_cache_on_exit=0
-endif
-" ---- end of CtrlP settings ----
-
 " ---- Find in files settings ----
 let g:ctrlsf_position='bottom'
 let g:ctrlsf_winsize='50%'
 let g:ctrlsf_auto_focus={'at':'start'}
 noremap <leader>j :CtrlSFToggle<CR>
-noremap <leader>f :CtrlSF<SPACE>
-noremap <leader>t :CtrlSF 'TODO'<CR>
-nmap <leader>l <Plug>CtrlSFCwordPath<CR>
+noremap <leader>h :CtrlSF<SPACE>
 " ---- end of Find in files settings ----
 
 " ---- Format ----
 noremap C :Neoformat<CR>
 " ---- end of Format ----
+
+" ---- Tags searcher settings ----
+set tags=./.tags;,.tags
+let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile='.tags'
+let s:vim_tags=expand('~/.cache/tags')
+let g:gutentags_cache_dir=s:vim_tags
+if !isdirectory(s:vim_tags)
+   silent! call mkdir(s:vim_tags, 'p')
+endif
+let g:gutentags_generate_on_new=1
+let g:gutentags_generate_on_empty_buffer=1
+let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
+let g:fzf_tags_command=''
+" ---- Shortcuts ----
+noremap <leader>f :Rg<CR>
+noremap <leader>l :Rg <C-R><C-W><CR>
+noremap <leader>o :BTags<CR>
+noremap <leader>g :Tags<CR>
+noremap <leader>b :Buffers<CR>
+noremap <C-P> :Files<CR>
+" ---- end of Tags searcher settings ----
