@@ -206,9 +206,9 @@ let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
 let g:fzf_tags_command=''
 " ---- Shortcuts ----
 noremap <leader>f :Rg<CR>
-noremap <leader>l :Rg <C-R><C-W><CR>
 noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
+noremap <leader>l :Tags <C-R><C-W><CR>
 noremap <leader>b :Buffers<CR>
 noremap <C-P> :Files<CR>
 " ---- end of Tags searcher settings ----
