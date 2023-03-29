@@ -77,7 +77,6 @@ set complete=.,w,b,u,t
 " ---- Common shortcuts ----
 set cmdheight=1
 let mapleader=';'
-noremap N :noh<CR>
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>wj :silent horizontal resize +5<CR>
