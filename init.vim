@@ -86,6 +86,7 @@ noremap <leader>wj :silent horizontal resize +5<CR>
 noremap <leader>wk :silent horizontal resize -5<CR>
 noremap <leader>wl :silent vertical resize +5<CR>
 noremap <leader>wh :silent vertical resize -5<CR>
+noremap <leader>h  :silent vertical resize 130<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
@@ -183,7 +184,7 @@ let g:ctrlsf_position='bottom'
 let g:ctrlsf_winsize='50%'
 let g:ctrlsf_auto_focus={'at':'start'}
 noremap <leader>j :CtrlSFToggle<CR>
-noremap <leader>h :CtrlSF<SPACE>
+noremap <leader>s :CtrlSF<SPACE>
 " ---- end of Find in files settings ----
 
 " ---- Format ----
