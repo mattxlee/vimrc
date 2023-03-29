@@ -205,6 +205,7 @@ let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
 let g:fzf_tags_command=''
 " ---- Shortcuts ----
 noremap <leader>f :Rg<CR>
+noremap <leader>r :Rg <C-R><C-W><CR>
 noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
 noremap <leader>l :Tags <C-R><C-W><CR>
