@@ -10,6 +10,9 @@ Plug 'vim-airline/vim-airline'
 " jumping
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" easymotion
+Plug 'easymotion/vim-easymotion'
+
 " global search
 Plug 'dyng/ctrlsf.vim'
 
