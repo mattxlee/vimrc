@@ -32,9 +32,11 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 " system clipboard
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
-" cpp related
+" c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
-Plug 'octol/vim-cpp-enhanced-highlight'
+
+" c++ file highlighting
+Plug 'bfrg/vim-cpp-modern'
 
 " log file
 Plug 'mtdl9/vim-log-highlighting'
@@ -150,10 +152,10 @@ vnoremap <leader>y :OSCYankVisual<CR>
 " ---- end of Yank to clipboard ----
 
 " ---- C++ highlights settings ----
-let g:cpp_class_scope_highlight=1
-let g:cpp_class_decl_highlight=1
-let g:cpp_member_variable_highlight=0
-let g:cpp_posix_standard=1
+let g:cpp_function_highlight=1
+let g:cpp_attributes_highlight=1
+let g:cpp_member_highlight=1
+let g:cpp_simple_highlight=1
 " ---- end of C++ highlights settings ----
 
 " ---- NERDTree settings ----
