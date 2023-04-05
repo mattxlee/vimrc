@@ -46,6 +46,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 
+" Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end()
 " ---- end of All plugins here ----
 
@@ -215,3 +218,5 @@ noremap <leader>l :Tags <C-R><C-W><CR>
 noremap <leader>b :Buffers<CR>
 noremap <C-P> :Files<CR>
 " ---- end of Tags searcher settings ----
+
+source "$HOME/vimrc/coc.vim"
