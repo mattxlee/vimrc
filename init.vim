@@ -76,6 +76,7 @@ set nocindent
 set nosmartindent
 filetype indent off
 set complete=.,w,b,u,t
+autocmd FileType * set formatoptions-=cro
 " ---- Common shortcuts ----
 set cmdheight=1
 let mapleader=';'
