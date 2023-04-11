@@ -26,11 +26,13 @@ cpfile() {
     fi
 }
 
-cpfile .tmux.conf
 cpfile .clang-format
 cpfile .editorconfig
 cpfile .gitconfig
 cpfile .gitignore_global
+cpfile .profile
+cpfile .tmux.conf
+cpfile .zshrc
 
 instplugins() {
     $($1 +PlugInstall! +qa > /dev/null 2>&1)
