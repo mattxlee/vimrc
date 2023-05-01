@@ -71,10 +71,15 @@ set cursorline
 if has('termguicolors')
     set termguicolors
 endif
+" about how to turn auto indent off
+filetype indent off
 set autoindent
 set nocindent
 set nosmartindent
-filetype indent off
+set indentexpr=
+" the following line turn the auto add comment on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" limit the auto-complete entries
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
 set cmdheight=1
