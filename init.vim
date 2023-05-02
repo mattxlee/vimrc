@@ -72,11 +72,9 @@ if has('termguicolors')
     set termguicolors
 endif
 " about how to turn auto indent off
-filetype indent off
 set autoindent
-set nocindent
-set nosmartindent
-set indentexpr=
+set cindent
+set smartindent
 " the following line turn the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " limit the auto-complete entries
