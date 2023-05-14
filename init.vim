@@ -41,6 +41,9 @@ Plug 'mtdl9/vim-log-highlighting'
 " markdown
 Plug 'preservim/vim-markdown'
 
+" React Jsx
+Plug 'maxmellon/vim-jsx-pretty'
+
 " Fzf tags and etc
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
