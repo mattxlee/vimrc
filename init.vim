@@ -79,7 +79,7 @@ set autoindent
 set cindent
 set smartindent
 " the following line turn the auto add comment on new line
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
 " limit the auto-complete entries
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
