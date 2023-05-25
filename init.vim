@@ -25,6 +25,7 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'Eliot00/auto-pairs'
 
 " system clipboard
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
