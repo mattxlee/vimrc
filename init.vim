@@ -151,6 +151,10 @@ let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
 
+" ---- Switch to next window ----
+noremap <leader><leader> <C-W>W
+" ---- end of SwitchABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYankVisual<CR>
 " ---- end of Yank to clipboard ----
