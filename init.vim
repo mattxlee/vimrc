@@ -164,6 +164,15 @@ let g:cpp_function_highlight=1
 let g:cpp_attributes_highlight=1
 let g:cpp_member_highlight=1
 let g:cpp_simple_highlight=1
+let g:cpp_no_cpp11=1
+let g:cpp_no_cpp14=1
+let g:cpp_no_cpp17=1
+let g:cpp_no_cpp20=1
+let g:cpp_no_cpp23=1
+let g:cpp_no_boost=1
+autocmd FileType cpp syntax keyword cppStatement nullptr
+autocmd FileType cpp syntax keyword cppStatement operator
+autocmd FileType cpp syntax keyword cppType char16_t char32_t
 " ---- end of C++ highlights settings ----
 
 " ---- NERDTree settings ----
