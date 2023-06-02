@@ -34,7 +34,7 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'vim-scripts/a.vim'
 
 " c++ file highlighting
-Plug 'bfrg/vim-cpp-modern'
+Plug 'mattxlee/vim-cpp-modern'
 
 " log file
 Plug 'mtdl9/vim-log-highlighting'
@@ -164,15 +164,13 @@ let g:cpp_function_highlight=1
 let g:cpp_attributes_highlight=1
 let g:cpp_member_highlight=1
 let g:cpp_simple_highlight=1
+let g:cpp_no_cpp98=1
 let g:cpp_no_cpp11=1
 let g:cpp_no_cpp14=1
 let g:cpp_no_cpp17=1
 let g:cpp_no_cpp20=1
 let g:cpp_no_cpp23=1
 let g:cpp_no_boost=1
-autocmd FileType cpp syntax keyword cppStatement nullptr
-autocmd FileType cpp syntax keyword cppStatement operator
-autocmd FileType cpp syntax keyword cppType char16_t char32_t
 " ---- end of C++ highlights settings ----
 
 " ---- NERDTree settings ----
