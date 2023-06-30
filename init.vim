@@ -128,6 +128,7 @@ let g:airline#extensions#gutentags#enabled=1
 
 " ---- Fugitive settings ----
 noremap <C-G> :Git<CR>
+noremap <leader>u :Git push<CR>
 " ---- end of Fugitive settings ----
 
 " ---- Editorconfig settings ----
