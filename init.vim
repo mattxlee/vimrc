@@ -203,7 +203,7 @@ let g:ctrlsf_winsize='50%'
 let g:ctrlsf_auto_focus={'at':'start'}
 noremap <leader>j :CtrlSFToggle<CR>
 noremap <leader>s :CtrlSF<SPACE>
-noremap gr :CtrlSF<CR>
+noremap <leader>l :CtrlSF<CR>
 " ---- end of Find in files settings ----
 
 " ---- Format ----
