@@ -13,6 +13,9 @@ Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 " global search
 Plug 'dyng/ctrlsf.vim'
 
+" easy to jump anywhere
+Plug 'easymotion/vim-easymotion'
+
 " git related
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -235,3 +238,9 @@ noremap <leader>l :Tags <C-R><C-W><CR>
 noremap <leader>b :Buffers<CR>
 noremap <C-P> :Files<CR>
 " ---- end of Tags searcher settings ----
+
+" ---- Easy motion settings ----
+let g:EasyMotion_do_mapping=0 " Disable default mappings
+let g:EasyMotion_smartcase=0
+nmap s <Plug>(easymotion-overwin-f)
+" ---- end of Easy motion settings ----
