@@ -241,6 +241,6 @@ noremap <C-P> :Files<CR>
 
 " ---- Easy motion settings ----
 let g:EasyMotion_do_mapping=0 " Disable default mappings
-let g:EasyMotion_smartcase=0
+let g:EasyMotion_smartcase=1
 nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
