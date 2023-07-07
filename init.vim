@@ -11,6 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " global search
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'eugen0329/vim-esearch'
 
 " easy to jump anywhere
@@ -47,10 +48,6 @@ Plug 'preservim/vim-markdown'
 
 " React Jsx
 Plug 'maxmellon/vim-jsx-pretty'
-
-" Fzf tags and etc
-Plug 'Yggdroot/LeaderF'
-Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 " ---- end of All plugins here ----
@@ -125,7 +122,6 @@ hi! link Error Normal
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
-let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
 " ---- Fugitive settings ----
@@ -204,51 +200,6 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 noremap C :Neoformat<CR>
 " ---- end of Format ----
 
-" ---- CTags settings ----
-let g:gutentags_define_advanced_commands=1
-let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
-let g:gutentags_ctags_tagfile='.tags'
-let g:gutentags_generate_on_empty_buffer=1
-let g:gutentags_generate_on_missing=1
-let g:gutentags_modules = []
-if executable('ctags')
-    let g:gutentags_modules+=['ctags']
-endif
-let s:vim_tags=expand('~/.cache/tags')
-let g:gutentags_ctags_exclude=['node_modules', '.ccls-cache']
-let g:gutentags_cache_dir=s:vim_tags
-let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
-let g:gutentags_exclude_filetypes=['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
-if !isdirectory(s:vim_tags)
-    silent! call mkdir(s:vim_tags, 'p')
-endif
-" ---- end of CTags settings ----
-
-" ---- LeaderF related settings ----
-let g:Lf_WindowPosition='popup'
-let g:Lf_ShortcutF='<C-P>'
-let g:Lf_WildIgnore={
-            \ 'dir': ['.svn', '.git', '.hg', '.ccls-cache', 'node_modules'],
-            \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
-            \}
-let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
-let g:Lf_RootMarkers=['.root', '.svn', '.git', '.hg', '.project']
-let g:Lf_WorkingDirectoryMode='Ac'
-let g:Lf_CacheDirectory=expand('~/.vim/cache')
-let g:Lf_ShowRelativePath=0
-let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
-let g:Lf_ShowDevIcons=0
-let g:Lf_RgConfig = [
-    \ "--max-columns=150",
-    \ "--glob=!node_modules/*",
-    \ "--glob=!dist/*",]
-noremap <Leader>o :LeaderfFunction<CR>
-noremap <Leader>g :LeaderfTag<CR>
-noremap <Leader>f :Leaderf rg<CR>
-" ---- end of LeaderF related settings ----
-
 " ---- Easy motion settings ----
 let g:EasyMotion_do_mapping=0 " Disable default mappings
 let g:EasyMotion_smartcase=1
@@ -256,6 +207,36 @@ nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
 
 " ---- esearch settings ----
-noremap <leader>h <plug>(esearch)
+noremap <leader>f <plug>(esearch)
 noremap <leader>l <plug>(operator-esearch-exec)iw
+" settings
+let g:esearch={}
+" Use regex matching with the smart case mode by default and avoid matching text-objects.
+let g:esearch.regex=1
+let g:esearch.textobj=0
+let g:esearch.case='smart'
+" Set the initial pattern content using the highlighted '/' pattern (if
+" v:hlsearch is true), the last searched pattern or the clipboard content.
+let g:esearch.prefill=['hlsearch', 'last', 'clipboard']
+" Override the default files and directories to determine your project root. Set it
+" to blank to always use the current working directory.
+let g:esearch.root_markers=['.git', 'Makefile', 'node_modules']
+" Prevent esearch from adding any default keymaps.
+let g:esearch.default_mappings=1
+" Start the search only when the enter is hit instead of updating the pattern while you're typing.
+let g:esearch.live_update=1
+" Open the search window in a vertical split and reuse it for all further searches.
+let g:esearch.name='[esearch]'
 " ---- end of esearch settings ----
+
+" ---- CtrlP settings ----
+let g:ctrlp_switch_buffer='et'
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
+if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching=0
+else
+    let g:ctrlp_clear_cache_on_exit=0
+endif
+" ---- end of CtrlP settings ----
