@@ -11,7 +11,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " global search
-Plug 'dyng/ctrlsf.vim'
+Plug 'eugen0329/vim-esearch'
 
 " easy to jump anywhere
 Plug 'easymotion/vim-easymotion'
@@ -49,8 +49,7 @@ Plug 'preservim/vim-markdown'
 Plug 'maxmellon/vim-jsx-pretty'
 
 " Fzf tags and etc
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'Yggdroot/LeaderF'
 Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
@@ -200,47 +199,62 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
-" ---- Find in files settings ----
-let g:ctrlsf_position='bottom'
-let g:ctrlsf_winsize='50%'
-let g:ctrlsf_auto_focus={'at':'start'}
-noremap <leader>j :CtrlSFToggle<CR>
-noremap <leader>s :CtrlSF<SPACE>
-noremap <leader>l :CtrlSF<CR>
-" ---- end of Find in files settings ----
-
 " ---- Format ----
 noremap C :Neoformat<CR>
 " ---- end of Format ----
 
-" ---- Tags searcher settings ----
-set tags=./.tags;,.tags
+" ---- CTags settings ----
+let g:gutentags_define_advanced_commands=1
 let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
 let g:gutentags_ctags_tagfile='.tags'
-let s:vim_tags=expand('~/.cache/tags')
-let g:gutentags_cache_dir=s:vim_tags
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
-endif
-let g:gutentags_generate_on_new=1
 let g:gutentags_generate_on_empty_buffer=1
+let g:gutentags_generate_on_missing=1
+let g:gutentags_modules = []
+if executable('ctags')
+    let g:gutentags_modules+=['ctags']
+endif
+let s:vim_tags=expand('~/.cache/tags')
+let g:gutentags_ctags_exclude=['node_modules', '.ccls-cache']
+let g:gutentags_cache_dir=s:vim_tags
 let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
 let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
-let g:fzf_tags_command=''
-" ---- Shortcuts ----
-noremap <leader>f :Rg<CR>
-noremap <leader>r :Rg <C-R><C-W><CR>
-noremap <leader>o :BTags<CR>
-noremap <leader>g :Tags<CR>
-noremap <leader>l :Tags <C-R><C-W><CR>
-noremap <leader>b :Buffers<CR>
-noremap <C-P> :Files<CR>
-" ---- end of Tags searcher settings ----
+let g:gutentags_exclude_filetypes=['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+if !isdirectory(s:vim_tags)
+    silent! call mkdir(s:vim_tags, 'p')
+endif
+" ---- end of CTags settings ----
+
+" ---- LeaderF related settings ----
+let g:Lf_WindowPosition='popup'
+let g:Lf_ShortcutF='<C-P>'
+let g:Lf_WildIgnore={
+            \ 'dir': ['.svn', '.git', '.hg', '.ccls-cache', 'node_modules'],
+            \ 'file': ['*.sw?','*.bak','*.exe','*.o','*.so']
+            \}
+let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
+let g:Lf_RootMarkers=['.root', '.svn', '.git', '.hg', '.project']
+let g:Lf_WorkingDirectoryMode='Ac'
+let g:Lf_CacheDirectory=expand('~/.vim/cache')
+let g:Lf_ShowRelativePath=0
+let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+let g:Lf_ShowDevIcons=0
+let g:Lf_RgConfig = [
+    \ "--max-columns=150",
+    \ "--glob=!node_modules/*",
+    \ "--glob=!dist/*",]
+noremap <Leader>o :LeaderfFunction<CR>
+noremap <Leader>g :LeaderfTag<CR>
+noremap <Leader>f :Leaderf rg<CR>
+" ---- end of LeaderF related settings ----
 
 " ---- Easy motion settings ----
 let g:EasyMotion_do_mapping=0 " Disable default mappings
 let g:EasyMotion_smartcase=1
 nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
+
+" ---- esearch settings ----
+noremap <leader>h <plug>(esearch)
+noremap <leader>l <plug>(operator-esearch-exec)iw
+" ---- end of esearch settings ----
