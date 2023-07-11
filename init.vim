@@ -76,10 +76,10 @@ if has('termguicolors')
 endif
 " about how to turn auto indent off
 set autoindent
-set cindent
 set smartindent
 " the following line turn the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
+autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
 " limit the auto-complete entries
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
