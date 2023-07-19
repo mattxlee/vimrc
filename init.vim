@@ -92,6 +92,7 @@ noremap <leader>wk :silent horizontal resize -5<CR>
 noremap <leader>wl :silent vertical resize +5<CR>
 noremap <leader>wh :silent vertical resize -5<CR>
 noremap <leader>h  :silent vertical resize 130<CR>
+noremap <leader>q :qa<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
