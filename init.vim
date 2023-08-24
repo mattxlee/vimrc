@@ -37,9 +37,6 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 " c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
 
-" c++ file highlighting
-Plug 'mattxlee/vim-cpp-modern'
-
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 
@@ -159,20 +156,6 @@ noremap <leader><leader> <C-W>W
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYankVisual<CR>
 " ---- end of Yank to clipboard ----
-
-" ---- C++ highlights settings ----
-let g:cpp_function_highlight=1
-let g:cpp_attributes_highlight=1
-let g:cpp_member_highlight=1
-let g:cpp_simple_highlight=1
-let g:cpp_no_cpp98=1
-let g:cpp_no_cpp11=1
-let g:cpp_no_cpp14=1
-let g:cpp_no_cpp17=1
-let g:cpp_no_cpp20=1
-let g:cpp_no_cpp23=1
-let g:cpp_no_boost=1
-" ---- end of C++ highlights settings ----
 
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
