@@ -12,7 +12,7 @@ Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " global search
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'eugen0329/vim-esearch'
+Plug 'jremmen/vim-ripgrep'
 
 " easy to jump anywhere
 Plug 'easymotion/vim-easymotion'
@@ -190,28 +190,13 @@ let g:EasyMotion_smartcase=1
 nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
 
-" ---- esearch settings ----
-noremap <leader>f <plug>(esearch)
-noremap <leader>l <plug>(operator-esearch-exec)iw
-" settings
-let g:esearch={}
-" Use regex matching with the smart case mode by default and avoid matching text-objects.
-let g:esearch.regex=0
-let g:esearch.textobj=0
-let g:esearch.case='smart'
-" Set the initial pattern content using the highlighted '/' pattern (if
-" v:hlsearch is true), the last searched pattern or the clipboard content.
-let g:esearch.prefill=['last']
-" Override the default files and directories to determine your project root. Set it
-" to blank to always use the current working directory.
-let g:esearch.root_markers=['.git', 'Makefile', 'node_modules']
-" Prevent esearch from adding any default keymaps.
-let g:esearch.default_mappings=1
-" Start the search only when the enter is hit instead of updating the pattern while you're typing.
-let g:esearch.live_update=1
-" Open the search window in a vertical split and reuse it for all further searches.
-let g:esearch.name='[esearch]'
-" ---- end of esearch settings ----
+" ---- Rg settings ----
+let g:rg_command = 'rg --vimgrep -S'
+noremap <leader>f :Rg<space>
+noremap <leader>l :Rg<space><cword><CR>
+noremap <leader>j :cnext<CR>
+noremap <leader>k :cprev<CR>
+" ---- end of Rg settings ----
 
 " ---- CtrlP settings ----
 let g:ctrlp_switch_buffer='et'
