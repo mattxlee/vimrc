@@ -69,9 +69,6 @@ set nowritebackup
 set noswapfile
 set signcolumn=number
 set cursorline
-if has('termguicolors')
-    set termguicolors
-endif
 " about how to turn auto indent off
 set autoindent
 set smartindent
