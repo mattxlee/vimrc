@@ -210,6 +210,9 @@ else
 endif
 " ---- end of CtrlP settings ----
 
+" Color of inlay-text
+hi CocInlayHint ctermfg=239 guifg=#504945
+
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
 set encoding=utf-8
