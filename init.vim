@@ -3,6 +3,7 @@ call plug#begin()
 
 " theme
 Plug 'morhetz/gruvbox'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -11,7 +12,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " global search
-Plug 'dyng/ctrlsf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep'
+
+" easy to jump anywhere
+Plug 'easymotion/vim-easymotion'
 
 " git related
 Plug 'tpope/vim-fugitive'
@@ -25,6 +30,7 @@ Plug 'sbdchd/neoformat'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'Eliot00/auto-pairs'
 
 " system clipboard
 Plug 'ojroques/vim-oscyank', {'branch': 'main'}
@@ -32,19 +38,14 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 " c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
 
-" c++ file highlighting
-Plug 'bfrg/vim-cpp-modern'
-
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 
 " markdown
 Plug 'preservim/vim-markdown'
 
-" Fzf tags and etc
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ludovicchabant/vim-gutentags'
+" React Jsx
+Plug 'maxmellon/vim-jsx-pretty'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -71,13 +72,13 @@ set nowritebackup
 set noswapfile
 set signcolumn=number
 set cursorline
-if has('termguicolors')
-    set termguicolors
-endif
+" about how to turn auto indent off
 set autoindent
-set nocindent
-set nosmartindent
-filetype indent off
+set smartindent
+" the following line turn the auto add comment on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
+autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
+" limit the auto-complete entries
 set complete=.,w,b,u,t
 autocmd FileType * set formatoptions-=cro
 " ---- Common shortcuts ----
@@ -89,6 +90,7 @@ noremap <leader>wk :silent horizontal resize -5<CR>
 noremap <leader>wl :silent vertical resize +5<CR>
 noremap <leader>wh :silent vertical resize -5<CR>
 noremap <leader>h  :silent vertical resize 130<CR>
+noremap <leader>q :qa<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
@@ -109,21 +111,21 @@ set t_Co=256
 set t_ut=
 set background=dark
 let g:gruvbox_bold=1
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_italic=0
+let g:gruvbox_contrast_dark="middle"
 silent! colorscheme gruvbox
-hi Visual cterm=none ctermfg=gray ctermbg=blue gui=none guifg=gray guibg=blue
 hi! link Error Normal
 " ---- end of Color scheme ----
 
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
-let g:airline#extensions#gutentags#enabled=1
 " ---- end of Airline ----
 
 " ---- Fugitive settings ----
 noremap <C-G> :Git<CR>
+noremap <leader>u :Git push<CR>
+noremap <leader>p :Git pull --rebase<CR>
 " ---- end of Fugitive settings ----
 
 " ---- Editorconfig settings ----
@@ -147,21 +149,18 @@ let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch header/source ----
 
+" ---- Switch to next window ----
+noremap <leader><leader> <C-W>W
+" ---- end of SwitchABCDEFGHIJKLMNOPQRSTUVWXYZ
+
 " ---- Yank to clipboard ----
 vnoremap <leader>y :OSCYankVisual<CR>
 " ---- end of Yank to clipboard ----
 
-" ---- C++ highlights settings ----
-let g:cpp_function_highlight=1
-let g:cpp_attributes_highlight=1
-let g:cpp_member_highlight=1
-let g:cpp_simple_highlight=1
-" ---- end of C++ highlights settings ----
-
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
 let g:NERDTreeDirArrowExpandable='+'
@@ -181,43 +180,35 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
-" ---- Find in files settings ----
-let g:ctrlsf_position='bottom'
-let g:ctrlsf_winsize='50%'
-let g:ctrlsf_auto_focus={'at':'start'}
-noremap <leader>j :CtrlSFToggle<CR>
-noremap <leader>s :CtrlSF<SPACE>
-" ---- end of Find in files settings ----
-
 " ---- Format ----
 noremap C :Neoformat<CR>
 " ---- end of Format ----
 
-" ---- Tags searcher settings ----
-set tags=./.tags;,.tags
-let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
-let g:gutentags_ctags_tagfile='.tags'
-let s:vim_tags=expand('~/.cache/tags')
-let g:gutentags_cache_dir=s:vim_tags
-if !isdirectory(s:vim_tags)
-   silent! call mkdir(s:vim_tags, 'p')
+" ---- Easy motion settings ----
+let g:EasyMotion_do_mapping=0 " Disable default mappings
+let g:EasyMotion_smartcase=1
+nmap s <Plug>(easymotion-overwin-f)
+" ---- end of Easy motion settings ----
+
+" ---- Rg settings ----
+let g:rg_command = 'rg --vimgrep -S'
+noremap <leader>f :Rg<space>
+noremap <leader>l :Rg<space><cword><CR>
+noremap <leader>j :cnext<CR>
+noremap <leader>k :cprev<CR>
+" ---- end of Rg settings ----
+
+" ---- CtrlP settings ----
+let g:ctrlp_switch_buffer='et'
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
+if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching=0
+else
+    let g:ctrlp_clear_cache_on_exit=0
 endif
-let g:gutentags_generate_on_new=1
-let g:gutentags_generate_on_empty_buffer=1
-let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
-let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
-let g:fzf_tags_command=''
-" ---- Shortcuts ----
-noremap <leader>f :Rg<CR>
-noremap <leader>r :Rg <C-R><C-W><CR>
-noremap <leader>o :BTags<CR>
-noremap <leader>g :Tags<CR>
-noremap <leader>l :Tags <C-R><C-W><CR>
-noremap <leader>b :Buffers<CR>
-noremap <C-P> :Files<CR>
-" ---- end of Tags searcher settings ----
+" ---- end of CtrlP settings ----
 
 " May need for Vim (not Neovim) since coc.nvim calculates byte offset by count
 " utf-8 byte sequence
