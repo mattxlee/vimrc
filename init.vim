@@ -79,7 +79,6 @@ autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
 set cmdheight=1
-let mapleader=';'
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>wj :silent horizontal resize +5<CR>
