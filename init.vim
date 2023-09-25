@@ -83,7 +83,6 @@ set complete=.,w,b,u,t
 autocmd FileType * set formatoptions-=cro
 " ---- Common shortcuts ----
 set cmdheight=1
-let mapleader=';'
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>wj :silent horizontal resize +5<CR>
 noremap <leader>wk :silent horizontal resize -5<CR>
