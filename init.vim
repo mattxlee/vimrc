@@ -3,7 +3,6 @@ call plug#begin()
 
 " theme
 Plug 'morhetz/gruvbox'
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 " layouts
 Plug 'vim-airline/vim-airline'
