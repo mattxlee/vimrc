@@ -32,9 +32,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'Eliot00/auto-pairs'
 
-" system clipboard
-Plug 'ojroques/vim-oscyank', {'branch': 'main'}
-
 " c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
 
@@ -148,10 +145,6 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- Switch to next window ----
 noremap <leader><leader> <C-W>W
 " ---- end of SwitchABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-" ---- Yank to clipboard ----
-vnoremap <leader>y :OSCYankVisual<CR>
-" ---- end of Yank to clipboard ----
 
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
