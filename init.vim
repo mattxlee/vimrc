@@ -68,7 +68,7 @@ set cursorline
 " about how to turn auto indent off
 set autoindent
 set smartindent
-" the following line turn the auto add comment on new line
+" the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
 autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
 " limit the auto-complete entries
@@ -143,7 +143,7 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 
 " ---- Switch to next window ----
 noremap <leader><leader> <C-W>W
-" ---- end of SwitchABCDEFGHIJKLMNOPQRSTUVWXYZ
+" ---- end of Switch
 
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
