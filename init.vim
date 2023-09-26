@@ -3,7 +3,6 @@ call plug#begin()
 
 " theme
 Plug 'morhetz/gruvbox'
-Plug 'octol/vim-cpp-enhanced-highlight'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -31,9 +30,6 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'Eliot00/auto-pairs'
-
-" system clipboard
-Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 
 " c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
@@ -75,7 +71,7 @@ set cursorline
 " about how to turn auto indent off
 set autoindent
 set smartindent
-" the following line turn the auto add comment on new line
+" the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
 autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
 " limit the auto-complete entries
@@ -90,6 +86,7 @@ noremap <leader>wl :silent vertical resize +5<CR>
 noremap <leader>wh :silent vertical resize -5<CR>
 noremap <leader>h  :silent vertical resize 130<CR>
 noremap <leader>q :qa<CR>
+noremap K :on<CR>
 " ---- end of Common settings ----
 
 " ---- Windows settings ----
@@ -150,16 +147,12 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 
 " ---- Switch to next window ----
 noremap <leader><leader> <C-W>W
-" ---- end of SwitchABCDEFGHIJKLMNOPQRSTUVWXYZ
-
-" ---- Yank to clipboard ----
-vnoremap <leader>y :OSCYankVisual<CR>
-" ---- end of Yank to clipboard ----
+" ---- end of Switch
 
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
 let g:NERDTreeDirArrowExpandable='+'
