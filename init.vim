@@ -23,7 +23,6 @@ Plug 'airblade/vim-gitgutter'
 
 " format and etc.
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sbdchd/neoformat'
 
 " common code editing
 Plug 'tpope/vim-surround'
@@ -36,12 +35,6 @@ Plug 'vim-scripts/a.vim'
 
 " log file
 Plug 'mtdl9/vim-log-highlighting'
-
-" markdown
-Plug 'preservim/vim-markdown'
-
-" React Jsx
-Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
 " ---- end of All plugins here ----
@@ -130,13 +123,6 @@ let g:EditorConfig_max_line_indicator='fill'
 let g:vim_json_conceal=0
 " ---- end of Json settings ----
 
-" ---- Markdown settings ----
-hi link markdownError NONE
-let g:vim_markdown_conceal=0
-let g:vim_markdown_conceal_code_blocks=0
-let g:vim_markdown_folding_disabled=1
-" ---- end of Markdown settings ----
-
 " ---- Switch header/source ----
 let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
@@ -168,10 +154,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
-
-" ---- Format ----
-noremap C :Neoformat<CR>
-" ---- end of Format ----
 
 " ---- Easy motion settings ----
 let g:EasyMotion_do_mapping=0 " Disable default mappings
