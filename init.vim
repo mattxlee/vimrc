@@ -23,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 
 " format and etc.
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " common code editing
 Plug 'tpope/vim-surround'
@@ -118,6 +119,10 @@ noremap <leader>p :Git pull --rebase<CR>
 let g:EditorConfig_preserve_formatoptions=1
 let g:EditorConfig_max_line_indicator='fill'
 " ---- end of Editorconfig settings ----
+
+" ---- StripWhitespaces settings ----
+noremap <leader>x :StripWhitespace<CR>
+" ---- end of StripWhitespaces settings ----
 
 " ---- Json settings ----
 let g:vim_json_conceal=0
