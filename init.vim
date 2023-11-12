@@ -44,6 +44,7 @@ call plug#end()
 " ---- Common settings ----
 let c_no_curly_error=1
 let g:tex_conceal=''
+set maxmempattern=2000000
 set mouse=
 set nu
 set ignorecase
