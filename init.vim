@@ -30,7 +30,6 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'Eliot00/auto-pairs'
 
 " c/cpp switch header/source
 Plug 'vim-scripts/a.vim'
