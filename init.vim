@@ -65,7 +65,7 @@ set autoindent
 set smartindent
 " the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
-autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
+autocmd FileType c,cpp,objc set nocindent
 " limit the auto-complete entries
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
@@ -101,6 +101,7 @@ let g:gruvbox_italic=0
 let g:gruvbox_contrast_dark="middle"
 silent! colorscheme gruvbox
 hi! link Error Normal
+hi Visual term=None cterm=None gui=None ctermbg=239
 " ---- end of Color scheme ----
 
 " ---- Airline ----
