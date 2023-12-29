@@ -41,6 +41,7 @@ call plug#end()
 " ---- end of All plugins here ----
 
 " ---- Common settings ----
+let mapleader=';'
 let c_no_curly_error=1
 let g:tex_conceal=''
 set maxmempattern=2000000
