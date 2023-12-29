@@ -37,6 +37,9 @@ Plug 'vim-scripts/a.vim'
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 
+" ALE lint
+Plug 'dense-analysis/ale'
+
 call plug#end()
 " ---- end of All plugins here ----
 
@@ -60,7 +63,7 @@ set breakindentopt=shift:8
 set nobackup
 set nowritebackup
 set noswapfile
-set signcolumn=number
+set signcolumn=yes
 set cursorline
 " about how to turn auto indent off
 set autoindent
@@ -100,7 +103,7 @@ set t_ut=
 set background=dark
 let g:gruvbox_bold=1
 let g:gruvbox_italic=0
-let g:gruvbox_contrast_dark="middle"
+let g:gruvbox_contrast_dark='middle'
 silent! colorscheme gruvbox
 hi! link Error Normal
 hi Visual term=None cterm=None gui=None ctermbg=239
@@ -188,3 +191,16 @@ else
     let g:ctrlp_clear_cache_on_exit=0
 endif
 " ---- end of CtrlP settings ----
+
+" ---- ALE lint settings ----
+let g:ale_virtualtext_cursor='disabled'
+let g:ale_linters={ 'cpp': ['clangtidy'] }
+let g:ale_sign_error='>'
+let g:ale_sign_warning='?'
+noremap gd :ALEGoToDefinition<CR>
+noremap gh :ALEHover<CR>
+noremap ]d :ALENext<CR>
+noremap [d :ALEPrevious<CR>
+noremap <leader>d :ALEDetail<CR>
+noremap <leader>rn :ALERename<CR>
+noremap <leader>ca :ALECodeAction<CR>
