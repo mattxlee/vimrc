@@ -45,6 +45,7 @@ let c_no_curly_error=1
 let g:tex_conceal=''
 set maxmempattern=2000000
 set mouse=
+set re=0
 set nu
 set ignorecase
 set smartcase
