@@ -4,6 +4,13 @@ call plug#begin()
 " theme
 Plug 'morhetz/gruvbox'
 
+" c/cpp switching header/source
+Plug 'vim-scripts/a.vim'
+
+" ctrlp and global search
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep'
+
 " enhance syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'luochen1990/rainbow'
@@ -13,10 +20,6 @@ Plug 'vim-airline/vim-airline'
 
 " jumping
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" global search
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
 
 " easy to jump anywhere
 Plug 'easymotion/vim-easymotion'
@@ -34,14 +37,14 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
-" c/cpp switch header/source
-Plug 'vim-scripts/a.vim'
-
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 
 " ALE lint
 Plug 'dense-analysis/ale'
+
+" CTags
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 " ---- end of All plugins here ----
@@ -175,32 +178,11 @@ let g:EasyMotion_smartcase=1
 nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
 
-" ---- Rg settings ----
-let g:rg_command='rg --vimgrep -S'
-noremap <leader>f :Rg<space>
-noremap <leader>l :Rg<space><cword><CR>
-noremap <leader>j :cnext<CR>
-noremap <leader>k :cprev<CR>
-" ---- end of Rg settings ----
-
-" ---- CtrlP settings ----
-let g:ctrlp_switch_buffer='et'
-let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
-if executable('rg')
-    set grepprg=rg\ --color=never
-    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching=0
-else
-    let g:ctrlp_clear_cache_on_exit=0
-endif
-" ---- end of CtrlP settings ----
-
 " ---- ALE lint settings ----
 let g:ale_virtualtext_cursor='disabled'
 let g:ale_linters={ 'cpp': ['clangtidy'] }
 let g:ale_sign_error='>'
 let g:ale_sign_warning='?'
-noremap gd :ALEGoToDefinition<CR>
 noremap gh :ALEHover<CR>
 noremap ]d :ALENext<CR>
 noremap [d :ALEPrevious<CR>
@@ -243,3 +225,37 @@ let g:rainbow_conf={
 \   }
 \}
 " ---- end of Rainbow settings ----
+
+" ---- Rg settings ----
+let g:rg_command='rg --vimgrep -S'
+noremap <leader>f :Rg<space>
+noremap <leader>l :Rg<space><cword><CR>
+noremap <leader>j :cnext<CR>
+noremap <leader>k :cprev<CR>
+" ---- end of Rg settings ----
+
+" ---- CtrlP settings ----
+let g:ctrlp_switch_buffer='et'
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
+if executable('rg')
+    set grepprg=rg\ --color=never
+    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
+    let g:ctrlp_use_caching=0
+else
+    let g:ctrlp_clear_cache_on_exit=0
+endif
+" ---- end of CtrlP settings ----
+
+" ---- CTags settings ----
+let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile='.tags'
+let s:vim_tags=expand('~/.cache/tags')
+let g:gutentags_cache_dir=s:vim_tags
+let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+if !isdirectory(s:vim_tags)
+       silent! call mkdir(s:vim_tags, 'p')
+endif
+noremap gd <c-]>
+" ---- end of CTags settings ----
