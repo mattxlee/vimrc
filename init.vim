@@ -43,9 +43,6 @@ Plug 'mtdl9/vim-log-highlighting'
 " ALE lint
 Plug 'dense-analysis/ale'
 
-" CTags
-Plug 'ludovicchabant/vim-gutentags'
-
 call plug#end()
 " ---- end of All plugins here ----
 
@@ -118,6 +115,7 @@ hi Visual term=None cterm=None gui=None ctermbg=239
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
+let g:airline#extensions#ale#enabled=1
 " ---- end of Airline ----
 
 " ---- Fugitive settings ----
@@ -179,16 +177,18 @@ nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
 
 " ---- ALE lint settings ----
-let g:ale_virtualtext_cursor='disabled'
-let g:ale_linters={ 'cpp': ['clangtidy'] }
-let g:ale_sign_error='>'
+let g:ale_completion_enabled=0
+let g:ale_linters={ 'cpp': ['clangtidy', 'clangd'] }
+let g:ale_sign_error='x'
 let g:ale_sign_warning='?'
+noremap gd :ALEGoToDefinition<CR>
 noremap gh :ALEHover<CR>
 noremap ]d :ALENext<CR>
 noremap [d :ALEPrevious<CR>
 noremap <leader>d :ALEDetail<CR>
 noremap <leader>rn :ALERename<CR>
 noremap <leader>ca :ALECodeAction<CR>
+inoremap <silent><c-l> <c-\><c-o>:ALEComplete<CR>
 " ---- end of ALE lint settings ----
 
 " ---- Rainbow settings ----
@@ -245,17 +245,3 @@ else
     let g:ctrlp_clear_cache_on_exit=0
 endif
 " ---- end of CtrlP settings ----
-
-" ---- CTags settings ----
-let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
-let g:gutentags_ctags_tagfile='.tags'
-let s:vim_tags=expand('~/.cache/tags')
-let g:gutentags_cache_dir=s:vim_tags
-let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+px']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
-if !isdirectory(s:vim_tags)
-       silent! call mkdir(s:vim_tags, 'p')
-endif
-noremap gd <c-]>
-" ---- end of CTags settings ----
