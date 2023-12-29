@@ -173,7 +173,7 @@ nmap s <Plug>(easymotion-overwin-f)
 " ---- end of Easy motion settings ----
 
 " ---- Rg settings ----
-let g:rg_command = 'rg --vimgrep -S'
+let g:rg_command='rg --vimgrep -S'
 noremap <leader>f :Rg<space>
 noremap <leader>l :Rg<space><cword><CR>
 noremap <leader>j :cnext<CR>
