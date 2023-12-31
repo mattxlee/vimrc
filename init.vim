@@ -178,7 +178,6 @@ nmap s <Plug>(easymotion-overwin-f)
 " ---- ALE lint settings ----
 let g:ale_completion_enabled=0
 let g:ale_virtualtext_cursor='disabled'
-let g:ale_linters={ 'cpp': ['clangtidy', 'clangd'] }
 let g:ale_sign_error='x'
 let g:ale_sign_warning='?'
 noremap gd :ALEGoToDefinition<CR>
