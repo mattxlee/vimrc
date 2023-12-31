@@ -13,7 +13,6 @@ Plug 'jremmen/vim-ripgrep'
 
 " enhance syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'luochen1990/rainbow'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -191,41 +190,6 @@ noremap <leader>rn :ALERename<CR>
 noremap <leader>ca :ALECodeAction<CR>
 inoremap <silent><c-l> <c-\><c-o>:ALEComplete<CR>
 " ---- end of ALE lint settings ----
-
-" ---- Rainbow settings ----
-let g:rainbow_active=1
-let g:rainbow_conf={
-\   'guifgs': ['lightblue', 'lightgreen'],
-\   'ctermfgs': ['lightblue', 'lightgreen'],
-\   'guis': [''],
-\   'cterms': [''],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\       '*': {},
-\       'markdown': {
-\           'parentheses_options': 'containedin=markdownCode contained',
-\       },
-\       'lisp': {
-\           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\       },
-\       'haskell': {
-\           'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
-\       },
-\       'vim': {
-\           'parentheses_options': 'containedin=vimFuncBody',
-\       },
-\       'perl': {
-\           'syn_name_prefix': 'perlBlockFoldRainbow',
-\       },
-\       'stylus': {
-\           'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
-\       },
-\       'css': 0,
-\       'nerdtree': 0,
-\   }
-\}
-" ---- end of Rainbow settings ----
 
 " ---- Rg settings ----
 let g:rg_command='rg --vimgrep -S'
