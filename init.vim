@@ -181,6 +181,7 @@ let g:ale_virtualtext_cursor='disabled'
 let g:ale_sign_error='x'
 let g:ale_sign_warning='?'
 noremap gd :ALEGoToDefinition<CR>
+noremap gr :ALEFindReferences<CR>
 noremap gh :ALEHover<CR>
 noremap ]d :ALENext<CR>
 noremap [d :ALEPrevious<CR>
