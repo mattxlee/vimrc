@@ -87,7 +87,7 @@ noremap K :on<CR>
 " ---- end of Common settings ----
 
 " ---- Markdown file settings ----
-autocmd FileType md set breakat=
+autocmd FileType markdown set breakat=
 " ---- end of Markdown file settings ----
 
 " ---- ejs to html ----
