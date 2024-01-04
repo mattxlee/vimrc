@@ -90,6 +90,10 @@ noremap K :on<CR>
 autocmd FileType md set breakat=
 " ---- end of Markdown file settings ----
 
+" ---- ejs to html ----
+au BufNewFile,BufRead *.ejs set filetype=html
+" ---- end of ejs to html ----
+
 " ---- Windows settings ----
 if has('win32')
     set guifont=Consolas:h12
