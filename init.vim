@@ -194,6 +194,7 @@ noremap gh :ALEHover<CR>
 noremap ]d :ALENext<CR>
 noremap [d :ALEPrevious<CR>
 noremap <leader>d :ALEDetail<CR>
+noremap <leader>g :ALESymbolSearch<space>
 noremap <leader>rn :ALERename<CR>
 noremap <leader>ca :ALECodeAction<CR>
 inoremap <silent><c-l> <c-\><c-o>:ALEComplete<CR>
