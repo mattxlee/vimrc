@@ -86,6 +86,10 @@ noremap <leader>q :qa<CR>
 noremap K :on<CR>
 " ---- end of Common settings ----
 
+" ---- Markdown file settings ----
+autocmd FileType md set breakat=
+" ---- end of Markdown file settings ----
+
 " ---- Windows settings ----
 if has('win32')
     set guifont=Consolas:h12
