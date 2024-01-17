@@ -88,6 +88,7 @@ noremap K :on<CR>
 
 " ---- Markdown file settings ----
 autocmd FileType markdown set breakat=
+autocmd FileType markdown set nobreakindent
 " ---- end of Markdown file settings ----
 
 " ---- ejs to html ----
