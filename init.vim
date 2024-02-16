@@ -11,17 +11,11 @@ Plug 'vim-scripts/a.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jremmen/vim-ripgrep'
 
-" enhance syntax
-Plug 'octol/vim-cpp-enhanced-highlight'
-
 " layouts
 Plug 'vim-airline/vim-airline'
 
 " jumping
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" easy to jump anywhere
-Plug 'easymotion/vim-easymotion'
 
 " git related
 Plug 'tpope/vim-fugitive'
@@ -38,9 +32,6 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " log file
 Plug 'mtdl9/vim-log-highlighting'
-
-" ALE lint
-Plug 'dense-analysis/ale'
 
 call plug#end()
 " ---- end of All plugins here ----
@@ -177,29 +168,6 @@ autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTa
 autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
-
-" ---- Easy motion settings ----
-let g:EasyMotion_do_mapping=0 " Disable default mappings
-let g:EasyMotion_smartcase=1
-nmap s <Plug>(easymotion-overwin-f)
-" ---- end of Easy motion settings ----
-
-" ---- ALE lint settings ----
-let g:ale_completion_enabled=0
-let g:ale_virtualtext_cursor='disabled'
-let g:ale_sign_error='x'
-let g:ale_sign_warning='?'
-noremap gd :ALEGoToDefinition<CR>
-noremap gr :ALEFindReferences<CR>
-noremap gh :ALEHover<CR>
-noremap ]d :ALENext<CR>
-noremap [d :ALEPrevious<CR>
-noremap <leader>d :ALEDetail<CR>
-noremap <leader>g :ALESymbolSearch<space>
-noremap <leader>rn :ALERename<CR>
-noremap <leader>ca :ALECodeAction<CR>
-inoremap <silent><c-l> <c-\><c-o>:ALEComplete<CR>
-" ---- end of ALE lint settings ----
 
 " ---- Rg settings ----
 let g:rg_command='rg --vimgrep -S'
