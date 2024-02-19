@@ -60,10 +60,11 @@ set signcolumn=yes
 set cursorline
 " about how to turn auto indent off
 set autoindent
-set smartindent
+set nocindent
+filetype indent off
+filetype plugin indent off
 " the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
-autocmd FileType c,cpp,objc set nocindent
 " limit the auto-complete entries
 set complete=.,w,b,u,t
 " ---- Common shortcuts ----
