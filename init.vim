@@ -33,6 +33,9 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 
+" *.pbxproj
+Plug 'cfdrake/vim-pbxproj'
+
 call plug#end()
 " ---- end of All plugins here ----
 
