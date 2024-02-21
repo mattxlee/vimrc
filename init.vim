@@ -4,18 +4,18 @@ call plug#begin()
 " theme
 Plug 'morhetz/gruvbox'
 
+" c/cpp switching header/source
+Plug 'vim-scripts/a.vim'
+
+" ctrlp and global search
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jremmen/vim-ripgrep'
+
 " layouts
 Plug 'vim-airline/vim-airline'
 
 " jumping
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-
-" global search
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
-
-" easy to jump anywhere
-Plug 'easymotion/vim-easymotion'
 
 " git related
 Plug 'tpope/vim-fugitive'
@@ -23,18 +23,18 @@ Plug 'airblade/vim-gitgutter'
 
 " format and etc.
 Plug 'editorconfig/editorconfig-vim'
+Plug 'ntpeters/vim-better-whitespace'
 
 " common code editing
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
-Plug 'Eliot00/auto-pairs'
-
-" c/cpp switch header/source
-Plug 'vim-scripts/a.vim'
 
 " log file
 Plug 'mtdl9/vim-log-highlighting'
+
+" *.pbxproj
+Plug 'cfdrake/vim-pbxproj'
 
 " Coc
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -43,9 +43,12 @@ call plug#end()
 " ---- end of All plugins here ----
 
 " ---- Common settings ----
+let mapleader=';'
 let c_no_curly_error=1
 let g:tex_conceal=''
+set maxmempattern=2000000
 set mouse=
+set re=0
 set nu
 set ignorecase
 set smartcase
@@ -59,28 +62,36 @@ set breakindentopt=shift:8
 set nobackup
 set nowritebackup
 set noswapfile
-set signcolumn=number
+set signcolumn=yes
 set cursorline
 " about how to turn auto indent off
 set autoindent
-set smartindent
+set nocindent
+filetype indent off
+filetype plugin indent off
 " the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
-autocmd BufEnter *.cpp :setlocal cindent cino=j1,(0,ws,Ws
 " limit the auto-complete entries
 set complete=.,w,b,u,t
 autocmd FileType * set formatoptions-=cro
 " ---- Common shortcuts ----
 set cmdheight=1
 noremap * :keepjumps normal! mi*`i<CR>
-noremap <leader>wj :silent horizontal resize +5<CR>
-noremap <leader>wk :silent horizontal resize -5<CR>
-noremap <leader>wl :silent vertical resize +5<CR>
-noremap <leader>wh :silent vertical resize -5<CR>
-noremap <leader>h  :silent vertical resize 130<CR>
+noremap <leader>h :silent vertical resize 130<CR>
+noremap <leader>n :noh<CR>
+noremap <leader>c :cclose<CR>
 noremap <leader>q :qa<CR>
 noremap K :on<CR>
 " ---- end of Common settings ----
+
+" ---- Markdown file settings ----
+autocmd FileType markdown set breakat=
+autocmd FileType markdown set nobreakindent
+" ---- end of Markdown file settings ----
+
+" ---- ejs to html ----
+au BufNewFile,BufRead *.ejs set filetype=html
+" ---- end of ejs to html ----
 
 " ---- Windows settings ----
 if has('win32')
@@ -101,14 +112,16 @@ set t_ut=
 set background=dark
 let g:gruvbox_bold=1
 let g:gruvbox_italic=0
-let g:gruvbox_contrast_dark="middle"
+let g:gruvbox_contrast_dark='middle'
 silent! colorscheme gruvbox
 hi! link Error Normal
+hi Visual term=None cterm=None gui=None ctermbg=239
 " ---- end of Color scheme ----
 
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
+let g:airline#extensions#ale#enabled=1
 " ---- end of Airline ----
 
 " ---- Fugitive settings ----
@@ -121,6 +134,10 @@ noremap <leader>p :Git pull --rebase<CR>
 let g:EditorConfig_preserve_formatoptions=1
 let g:EditorConfig_max_line_indicator='fill'
 " ---- end of Editorconfig settings ----
+
+" ---- StripWhitespaces settings ----
+noremap <leader>x :StripWhitespace<CR>
+" ---- end of StripWhitespaces settings ----
 
 " ---- Json settings ----
 let g:vim_json_conceal=0
@@ -138,7 +155,7 @@ noremap <leader><leader> <C-W>W
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeQuitOnOpen=0
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
 let g:NERDTreeDirArrowExpandable='+'
@@ -151,6 +168,7 @@ function OpenTree()
     endif
 endfunction
 noremap <C-J> :call OpenTree()<CR>
+noremap <leader>b :NERDTreeToggle<CR>
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
@@ -158,14 +176,8 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
-" ---- Easy motion settings ----
-let g:EasyMotion_do_mapping=0 " Disable default mappings
-let g:EasyMotion_smartcase=1
-nmap s <Plug>(easymotion-overwin-f)
-" ---- end of Easy motion settings ----
-
 " ---- Rg settings ----
-let g:rg_command = 'rg --vimgrep -S'
+let g:rg_command='rg --vimgrep -S'
 noremap <leader>f :Rg<space>
 noremap <leader>l :Rg<space><cword><CR>
 noremap <leader>j :cnext<CR>

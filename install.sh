@@ -27,6 +27,7 @@ cpfile() {
 }
 
 cpfile .clang-format
+cpfile .clang-tidy
 cpfile .editorconfig
 cpfile .gitconfig
 cpfile .gitignore_global
