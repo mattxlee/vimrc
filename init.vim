@@ -79,8 +79,8 @@ set cmdheight=1
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>h :silent vertical resize 130<CR>
 noremap <leader>n :noh<CR>
-noremap <leader>c :cclose<CR>
 noremap <leader>q :qa<CR>
+noremap <leader>cc :cclose<CR>
 noremap K :on<CR>
 " ---- end of Common settings ----
 
