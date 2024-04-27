@@ -64,8 +64,8 @@ set cursorline
 " about how to turn auto indent off
 set autoindent
 set nocindent
-filetype indent off
-filetype plugin indent off
+filetype indent on
+filetype plugin indent on
 " the following line turn off the auto add comment on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o formatoptions+=mM
 " limit the auto-complete entries
