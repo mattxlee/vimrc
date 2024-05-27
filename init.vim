@@ -76,6 +76,7 @@ set complete=.,w,b,u,t
 autocmd FileType * set formatoptions-=cro
 " ---- Common shortcuts ----
 set cmdheight=1
+noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :qa<CR>
