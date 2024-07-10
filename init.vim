@@ -195,8 +195,8 @@ let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard'
 if executable('rg')
     set grepprg=rg\ --color=never
     let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching=0
+    let g:ctrlp_use_caching=1
 else
-    let g:ctrlp_clear_cache_on_exit=0
+    let g:ctrlp_clear_cache_on_exit=1
 endif
 " ---- end of CtrlP settings ----
