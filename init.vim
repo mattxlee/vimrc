@@ -80,6 +80,8 @@ noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :qa<CR>
 noremap <leader>cc :cclose<CR>
+vnoremap <leader>c "*y
+
 " ---- end of Common settings ----
 
 " ---- Markdown file settings ----
