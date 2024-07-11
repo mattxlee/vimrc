@@ -155,8 +155,8 @@ noremap <leader><leader> <C-W>W
 " ---- end of Switch
 
 " ---- File explorer shortcuts ----
-noremap <leader>es :Sexplore<CR>
-noremap <leader>ev :Vexplore<CR>
+noremap <leader>s :sp<CR>
+noremap <leader>v :vs<CR>
 noremap <C-J> :Explore<CR>
 " ---- end of File explorer shortcuts ----
 
