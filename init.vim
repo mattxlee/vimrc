@@ -9,7 +9,7 @@ Plug 'vim-scripts/a.vim'
 
 " ctrlp and global search
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'jremmen/vim-ripgrep'
+Plug 'brooth/far.vim'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -183,8 +183,8 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " ---- Rg settings ----
 let g:rg_command='rg --vimgrep -S'
-noremap <leader>f :Rg<space>
-noremap <leader>l :Rg<space><cword><CR>
+noremap <leader>f :Farf<CR>
+noremap <leader>h :Farr<cr>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
 " ---- end of Rg settings ----
