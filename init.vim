@@ -9,7 +9,6 @@ Plug 'vim-scripts/a.vim'
 
 " ctrlp and global search
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'brooth/far.vim'
 
 " layouts
 Plug 'vim-airline/vim-airline'
@@ -187,11 +186,9 @@ noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
 " ---- Rg settings ----
-let g:rg_command='rg --vimgrep -S'
-noremap <leader>f :Farf<CR>
-noremap <leader>h :Farr<cr>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
+
 " ---- end of Rg settings ----
 
 " ---- CtrlP settings ----
