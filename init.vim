@@ -36,6 +36,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'skywind3000/asyncrun.vim'
 
 " ---- Extra file syntax highlighting ----
+" cpp files
 Plug 'bfrg/vim-cpp-modern'
 " log file
 Plug 'mtdl9/vim-log-highlighting'
