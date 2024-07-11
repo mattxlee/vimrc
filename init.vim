@@ -78,7 +78,6 @@ noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
 noremap <leader>q :qa<CR>
-noremap <leader>cc :cclose<CR>
 vnoremap <leader>c "*y
 
 " ---- end of Common settings ----
@@ -185,11 +184,12 @@ noremap <leader>s :sp<CR>
 noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
-" ---- Rg settings ----
+" ---- Quickfix settings ----
+noremap <leader>cc :cclose<CR>
+noremap <leader>co :copen<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
-
-" ---- end of Rg settings ----
+" ---- end of Quickfix settings ----
 
 " ---- CtrlP settings ----
 let g:ctrlp_switch_buffer='et'
