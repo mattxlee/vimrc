@@ -223,9 +223,10 @@ endif
 " ---- LeaderF settings ----
 let g:Lf_ShortcutF='<c-p>'
 let g:Lf_ShowDevIcons=0
-noremap <c-l> :LeaderfMru<cr>
-noremap <leader>o :LeaderfFunction!<cr>
-noremap <leader>g :LeaderfTag<cr>
+noremap <c-l> :LeaderfMru<CR>
+noremap <leader>o :LeaderfFunction!<CR>
+noremap <leader>g :LeaderfTag<CR>
+noremap <leader>f :Leaderf rg --live<CR>
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
 let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode='Ac'
