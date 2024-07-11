@@ -14,9 +14,6 @@ Plug 'brooth/far.vim'
 " layouts
 Plug 'vim-airline/vim-airline'
 
-" jumping
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " git related
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -157,29 +154,11 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 noremap <leader><leader> <C-W>W
 " ---- end of Switch
 
-" ---- NERDTree settings ----
-let g:NERDTreeWinSize=40
-let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=0
-let g:NERDTreeShowHidden=1
-let g:NERDTreeGitStatusUseNerdFonts=0
-let g:NERDTreeDirArrowExpandable='+'
-let g:NERDTreeDirArrowCollapsible='-'
-function OpenTree()
-    if bufname('%') == ''
-        :silent! NERDTreeToggle
-    else
-        :silent! NERDTreeFind
-    endif
-endfunction
-noremap <C-J> :call OpenTree()<CR>
-noremap <leader>b :NERDTreeToggle<CR>
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
-" ---- end of NERDTree settings ----
+" ---- File explorer shortcuts ----
+noremap <leader>es :Sexplore<CR>
+noremap <leader>ev :Vexplore<CR>
+noremap <C-J> :Explore<CR>
+" ---- end of File explorer shortcuts ----
 
 " ---- Rg settings ----
 let g:rg_command='rg --vimgrep -S'
