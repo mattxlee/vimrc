@@ -7,9 +7,6 @@ Plug 'morhetz/gruvbox'
 " c/cpp switching header/source
 Plug 'mattxlee/vim-fswitch'
 
-" ctrlp and global search
-Plug 'ctrlpvim/ctrlp.vim'
-
 " layouts
 Plug 'vim-airline/vim-airline'
 
@@ -32,12 +29,14 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
-" Run commands async
+" tags
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+
+" run commands async
 Plug 'skywind3000/asyncrun.vim'
 
 " ---- Extra file syntax highlighting ----
-" cpp files
-Plug 'bfrg/vim-cpp-modern'
 " log file
 Plug 'mtdl9/vim-log-highlighting'
 " *.pbxproj
@@ -188,18 +187,6 @@ noremap <leader>s :sp<CR>
 noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
-" ---- CtrlP settings ----
-let g:ctrlp_switch_buffer='et'
-let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
-if executable('rg')
-    set grepprg=rg\ --color=never
-    let g:ctrlp_user_command='rg %s --files --color=never --glob ""'
-    let g:ctrlp_use_caching=1
-else
-    let g:ctrlp_clear_cache_on_exit=1
-endif
-" ---- end of CtrlP settings ----
-
 " ---- Quickfix settings ----
 noremap <leader>mk :copen \| :AsyncRun! make<CR>
 noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
@@ -211,3 +198,41 @@ noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
 " ---- end of Quickfix settings ----
 
+" ---- Vim tags settings ----
+set tags=./.tags;,.tags
+let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_ctags_tagfile='.tags'
+let g:gutentags_modules=[]
+if executable('ctags')
+    let g:gutentags_modules+=['ctags']
+endif
+if executable('gtags-cscope') && executable('gtags')
+    let g:gutentags_modules+=['gtags_cscope']
+endif
+let g:gutentags_cache_dir=expand('~/.cache/tags')
+let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
+let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--c-kinds=+px']
+let g:gutentags_ctags_extra_args+=['--output-format=e-ctags']
+let g:gutentags_auto_add_gtags_cscope=0
+if !isdirectory(g:gutentags_cache_dir)
+    silent! call mkdir(g:gutentags_cache_dir, 'p')
+endif
+" ---- Vim tags settings ----
+
+" ---- LeaderF settings ----
+let g:Lf_ShortcutF='<c-p>'
+let g:Lf_ShowDevIcons=0
+noremap <c-l> :LeaderfMru<cr>
+noremap <leader>o :LeaderfFunction!<cr>
+noremap <leader>g :LeaderfTag<cr>
+let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
+let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
+let g:Lf_WorkingDirectoryMode='Ac'
+let g:Lf_WindowHeight=0.30
+let g:Lf_CacheDirectory=expand('~/.vim/cache')
+let g:Lf_ShowRelativePath=0
+let g:Lf_HideHelp=1
+let g:Lf_StlColorscheme='powerline'
+let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+" ---- end of LeaderF settings ----
