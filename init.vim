@@ -234,5 +234,16 @@ let g:Lf_CacheDirectory=expand('~/.vim/cache')
 let g:Lf_ShowRelativePath=0
 let g:Lf_HideHelp=1
 let g:Lf_StlColorscheme='powerline'
-let g:Lf_PreviewResult={'Function':0, 'BufTag':0}
+let g:Lf_PreviewResult={
+    \ 'File': 0,
+    \ 'Buffer': 0,
+    \ 'Mru': 0,
+    \ 'Tag': 0,
+    \ 'BufTag': 0,
+    \ 'Function': 0,
+    \ 'Line': 0,
+    \ 'Colorscheme': 0,
+    \ 'Rg': 0,
+    \ 'Gtags': 0
+    \}
 " ---- end of LeaderF settings ----
