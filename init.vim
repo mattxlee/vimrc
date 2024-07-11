@@ -131,8 +131,6 @@ let g:airline#extensions#ale#enabled=1
 
 " ---- Fugitive settings ----
 noremap <C-G> :Git<CR>
-noremap <leader>u :Git push<CR>
-noremap <leader>p :Git pull --rebase<CR>
 " ---- end of Fugitive settings ----
 
 " ---- Editorconfig settings ----
