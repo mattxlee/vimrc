@@ -38,6 +38,9 @@ Plug 'mtdl9/vim-log-highlighting'
 " *.pbxproj
 Plug 'cfdrake/vim-pbxproj'
 
+" Run commands async
+Plug 'skywind3000/asyncrun.vim'
+
 call plug#end()
 " ---- end of All plugins here ----
 
@@ -184,14 +187,6 @@ noremap <leader>s :sp<CR>
 noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
-" ---- Quickfix settings ----
-noremap <leader>l :vimgrep <cword> `git ls-files` \| :copen<CR>
-noremap <leader>cc :cclose<CR>
-noremap <leader>co :copen<CR>
-noremap <leader>j :cnext<CR>
-noremap <leader>k :cprev<CR>
-" ---- end of Quickfix settings ----
-
 " ---- CtrlP settings ----
 let g:ctrlp_switch_buffer='et'
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -203,3 +198,14 @@ else
     let g:ctrlp_clear_cache_on_exit=1
 endif
 " ---- end of CtrlP settings ----
+
+" ---- Quickfix settings ----
+noremap <leader>mk :copen \| :AsyncRun! make<CR>
+noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
+noremap <leader>l :copen \| :AsyncRun! grep <cword> `git ls-files`<CR>
+noremap <leader>cc :cclose<CR>
+noremap <leader>co :copen<CR>
+noremap <leader>j :cnext<CR>
+noremap <leader>k :cprev<CR>
+" ---- end of Quickfix settings ----
+
