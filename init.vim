@@ -181,6 +181,11 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
     \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
 " ---- end of NERDTree settings ----
 
+" ---- File explorer shortcuts ----
+noremap <leader>s :sp<CR>
+noremap <leader>v :vs<CR>
+" ---- end of File explorer shortcuts ----
+
 " ---- Rg settings ----
 let g:rg_command='rg --vimgrep -S'
 noremap <leader>f :Farf<CR>

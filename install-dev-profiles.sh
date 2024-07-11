@@ -12,6 +12,5 @@ cpfile .clang-tidy
 cpfile .editorconfig
 cpfile .gitconfig
 cpfile .gitignore_global
-cpfile .profile
 cpfile .tmux.conf
 cpfile .zshrc
