@@ -191,7 +191,6 @@ noremap <leader>v :vs<CR>
 noremap <leader>mk :copen \| :AsyncRun! make<CR>
 noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
 noremap <leader>gu :copen \| :AsyncRun! git push<CR>
-noremap <leader>l :copen \| :AsyncRun! grep <cword> `git ls-files`<CR>
 noremap <leader>cc :cclose<CR>
 noremap <leader>co :copen<CR>
 noremap <leader>j :cnext<CR>
@@ -227,6 +226,7 @@ noremap <c-l> :LeaderfMru<CR>
 noremap <leader>o :LeaderfFunction!<CR>
 noremap <leader>g :LeaderfTag<CR>
 noremap <leader>f :Leaderf rg --live<CR>
+noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
 let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
 let g:Lf_WorkingDirectoryMode='Ac'
