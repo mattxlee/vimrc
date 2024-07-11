@@ -176,6 +176,7 @@ endif
 " ---- Quickfix settings ----
 noremap <leader>mk :copen \| :AsyncRun! make<CR>
 noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
+noremap <leader>gu :copen \| :AsyncRun! git push<CR>
 noremap <leader>l :copen \| :AsyncRun! grep <cword> `git ls-files`<CR>
 noremap <leader>cc :cclose<CR>
 noremap <leader>co :copen<CR>
