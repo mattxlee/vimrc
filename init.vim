@@ -32,14 +32,16 @@ Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
-" log file
-Plug 'mtdl9/vim-log-highlighting'
-
-" *.pbxproj
-Plug 'cfdrake/vim-pbxproj'
-
 " Run commands async
 Plug 'skywind3000/asyncrun.vim'
+
+" ---- Extra file syntax highlighting ----
+Plug 'bfrg/vim-cpp-modern'
+" log file
+Plug 'mtdl9/vim-log-highlighting'
+" *.pbxproj
+Plug 'cfdrake/vim-pbxproj'
+" ---- end of Extra file syntax highlighting ----
 
 call plug#end()
 " ---- end of All plugins here ----
