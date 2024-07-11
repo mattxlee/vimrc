@@ -5,7 +5,7 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 
 " c/cpp switching header/source
-Plug 'vim-scripts/a.vim'
+Plug 'mattxlee/vim-fswitch'
 
 " ctrlp and global search
 Plug 'ctrlpvim/ctrlp.vim'
@@ -152,8 +152,8 @@ let g:vim_json_conceal=0
 " ---- end of Json settings ----
 
 " ---- Switch header/source ----
-let g:alternateNoDefaultAlternate=1
-noremap <C-H> :silent A<CR>\|:e<CR>
+let g:fsnonewfiles=1
+noremap <C-H> :FSHere<CR>
 " ---- end of Switch header/source ----
 
 " ---- Switch to next window ----
