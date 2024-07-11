@@ -185,6 +185,7 @@ noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
 " ---- Quickfix settings ----
+noremap <leader>l :vimgrep <cword> `git ls-files` \| :copen<CR>
 noremap <leader>cc :cclose<CR>
 noremap <leader>co :copen<CR>
 noremap <leader>j :cnext<CR>
