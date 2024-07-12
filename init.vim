@@ -28,7 +28,7 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+Plug 'Yggdroot/LeaderF'
 
 " run commands async
 Plug 'skywind3000/asyncrun.vim'
