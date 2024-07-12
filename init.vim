@@ -79,7 +79,7 @@ set cmdheight=1
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
-noremap <leader>q :qa<CR>
+noremap <leader>q :cclose<CR>
 vnoremap <leader>c "*y
 
 " ---- end of Common settings ----
