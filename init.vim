@@ -82,7 +82,6 @@ set cmdheight=1
 noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
-noremap <leader>q :cclose<CR>
 vnoremap <leader>c "*y
 
 " ---- end of Common settings ----
@@ -191,10 +190,18 @@ noremap <leader>v :vs<CR>
 noremap <leader>mk :copen \| :AsyncRun! make<CR>
 noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
 noremap <leader>gu :copen \| :AsyncRun! git push<CR>
-noremap <leader>cc :cclose<CR>
-noremap <leader>co :copen<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+noremap <leader>q :call ToggleQuickFix()<CR>
+" ensure the quickfix use full width
+autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
 " ---- end of Quickfix settings ----
 
 " ---- Vim tags settings ----
