@@ -124,7 +124,6 @@ hi SignColumn term=None cterm=None ctermbg=Black guibg=Black
 " ---- Airline ----
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
-let g:airline#extensions#ale#enabled=1
 " ---- end of Airline ----
 
 " ---- Fugitive settings ----
