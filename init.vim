@@ -203,9 +203,11 @@ noremap <leader>q :call ToggleQuickFix()<CR>
 autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
 " ---- end of Quickfix settings ----
 
+let the_root=['.root', '.svn', '.git', '.hg', '.project']
+
 " ---- Vim tags settings ----
 set tags=./.tags;,.tags
-let g:gutentags_project_root=['.root', '.svn', '.git', '.hg', '.project']
+let g:gutentags_project_root=the_root
 let g:gutentags_ctags_tagfile='.tags'
 let g:gutentags_modules=[]
 if executable('ctags')
@@ -234,7 +236,7 @@ noremap <leader>g :LeaderfTag<CR>
 noremap <leader>f :Leaderf rg --live<CR>
 noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
-let g:Lf_RootMarkers=['.project', '.root', '.svn', '.git']
+let g:Lf_RootMarkers=the_root
 let g:Lf_WorkingDirectoryMode='Ac'
 let g:Lf_WindowHeight=0.30
 let g:Lf_CacheDirectory=expand('~/.vim/cache')
