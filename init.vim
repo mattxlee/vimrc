@@ -223,7 +223,7 @@ endif
 let g:Lf_ShortcutF='<c-p>'
 let g:Lf_ShowDevIcons=0
 noremap <c-l> :LeaderfMru<CR>
-noremap <leader>o :LeaderfFunction!<CR>
+noremap <leader>o :LeaderfBufTag<CR>
 noremap <leader>g :LeaderfTag<CR>
 noremap <leader>f :Leaderf rg --live<CR>
 noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
