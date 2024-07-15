@@ -4,9 +4,6 @@ call plug#begin()
 " theme
 Plug 'morhetz/gruvbox'
 
-" c/cpp switching header/source
-Plug 'mattxlee/vim-fswitch'
-
 " layouts
 Plug 'vim-airline/vim-airline'
 
@@ -146,11 +143,6 @@ noremap <leader>t :Neoformat<CR>
 " ---- Json settings ----
 let g:vim_json_conceal=0
 " ---- end of Json settings ----
-
-" ---- Switch header/source ----
-let g:fsnonewfiles=1
-noremap <C-H> :FSHere<CR>
-" ---- end of Switch header/source ----
 
 " ---- Switch to next window ----
 noremap <leader><leader> <C-W>W
