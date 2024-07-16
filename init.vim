@@ -30,6 +30,9 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'Yggdroot/LeaderF'
 
+" easy motion jumping plug
+Plug 'easymotion/vim-easymotion'
+
 " run commands async
 Plug 'skywind3000/asyncrun.vim'
 
