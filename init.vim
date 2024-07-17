@@ -148,7 +148,7 @@ let g:vim_json_conceal=0
 " ---- end of Json settings ----
 
 " ---- Switch to next window ----
-noremap <leader><leader> <C-W>W
+noremap <leader>w <C-W>W
 " ---- end of Switch
 
 " ---- NERDTree settings ----
