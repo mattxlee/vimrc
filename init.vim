@@ -232,7 +232,8 @@ noremap <leader>f :Leaderf rg --live<CR>
 noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
 let g:Lf_RootMarkers=the_root
-let g:Lf_WorkingDirectoryMode='Ac'
+let g:Lf_WorkingDirectoryMode='ac'
+let g:Lf_ExternalCommand='cd %s && git ls-files --recurse-submodules'
 let g:Lf_WindowHeight=0.30
 let g:Lf_CacheDirectory=expand('~/.vim/cache')
 let g:Lf_ShowRelativePath=0
