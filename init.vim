@@ -201,7 +201,7 @@ autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | en
 let the_root=['.root', '.svn', '.git', '.hg', '.project']
 
 " ---- Vim tags settings ----
-set tags=./.tags;,.tags
+set tags=~/.cache/tags
 let g:gutentags_project_root=the_root
 let g:gutentags_ctags_tagfile='.tags'
 let g:gutentags_modules=[]
@@ -225,6 +225,7 @@ endif
 " ---- LeaderF settings ----
 let g:Lf_ShortcutF='<c-p>'
 let g:Lf_ShowDevIcons=0
+let g:Lf_UseCache=0
 noremap <c-l> :LeaderfMru<CR>
 noremap <leader>o :LeaderfBufTag<CR>
 noremap <leader>g :LeaderfTag<CR>
@@ -235,7 +236,7 @@ let g:Lf_RootMarkers=the_root
 let g:Lf_WorkingDirectoryMode='ac'
 let g:Lf_ExternalCommand='cd %s && git ls-files --recurse-submodules'
 let g:Lf_WindowHeight=0.30
-let g:Lf_CacheDirectory=expand('~/.vim/cache')
+let g:Lf_CacheDirectory=expand('~/.cache/tags')
 let g:Lf_ShowRelativePath=0
 let g:Lf_HideHelp=1
 let g:Lf_StlColorscheme='powerline'
