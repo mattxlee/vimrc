@@ -234,7 +234,6 @@ noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR
 let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
 let g:Lf_RootMarkers=the_root
 let g:Lf_WorkingDirectoryMode='ac'
-let g:Lf_ExternalCommand='cd %s && git ls-files --recurse-submodules'
 let g:Lf_WindowHeight=0.30
 let g:Lf_CacheDirectory=expand('~/.cache/tags')
 let g:Lf_ShowRelativePath=0
