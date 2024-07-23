@@ -117,7 +117,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark='middle'
 silent! colorscheme gruvbox
 hi! link Error Normal
-hi Visual term=None cterm=None ctermbg=235
+hi Visual term=None cterm=None ctermbg=239
 hi SignColumn term=None cterm=None ctermbg=235
 " ---- end of Color scheme ----
 
