@@ -198,7 +198,9 @@ noremap <leader>q :call ToggleQuickFix()<CR>
 autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
 " ---- end of Quickfix settings ----
 
+" ---- Define the way to find root dir for projects
 let the_root=['.root', '.svn', '.git', '.hg', '.project']
+" ---- end of define the way to find root dir for projects
 
 " ---- Vim tags settings ----
 set tags=~/.cache/tags
