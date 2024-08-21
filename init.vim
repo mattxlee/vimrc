@@ -10,6 +10,9 @@ Plug 'vim-airline/vim-airline'
 " jumping
 Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 
+" switch header/source
+Plug 'vim-scripts/a.vim'
+
 " git related
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -150,6 +153,10 @@ let g:vim_json_conceal=0
 " ---- Switch to next window ----
 noremap <leader>w <C-W>W
 " ---- end of Switch
+
+" ---- Switch between header/source
+let g:alternateNoDefaultAlternate=1
+noremap <C-H> :silent A<CR>\|:e<CR>
 
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
