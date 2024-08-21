@@ -40,9 +40,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'skywind3000/asyncrun.vim'
 
 " ---- Extra file syntax highlighting ----
+" c++ files
+Plug 'bfrg/vim-cpp-modern'
+" dart files
+Plug 'dart-lang/dart-vim-plugin'
 " log file
 Plug 'mtdl9/vim-log-highlighting'
-" *.pbxproj
+" pbxproj
 Plug 'cfdrake/vim-pbxproj'
 " ---- end of Extra file syntax highlighting ----
 
