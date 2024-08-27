@@ -31,7 +31,10 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " tags
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'Yggdroot/LeaderF'
+
+" fuzzy search and more
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " easy motion jumping plug
 Plug 'easymotion/vim-easymotion'
@@ -236,32 +239,8 @@ endif
 " ---- Vim tags settings ----
 
 " ---- LeaderF settings ----
-let g:Lf_ShortcutF='<c-p>'
-let g:Lf_ShowDevIcons=0
-let g:Lf_UseCache=0
-noremap <c-l> :LeaderfMru<CR>
-noremap <leader>o :LeaderfBufTag<CR>
-noremap <leader>g :LeaderfTag<CR>
-noremap <leader>f :Leaderf rg --live<CR>
-noremap <leader>l :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR><CR>
-let g:Lf_StlSeparator={'left': '', 'right': '', 'font': ''}
-let g:Lf_RootMarkers=the_root
-let g:Lf_WorkingDirectoryMode='ac'
-let g:Lf_WindowHeight=0.30
-let g:Lf_CacheDirectory=expand('~/.cache/tags')
-let g:Lf_ShowRelativePath=0
-let g:Lf_HideHelp=1
-let g:Lf_StlColorscheme='powerline'
-let g:Lf_PreviewResult={
-    \ 'File': 0,
-    \ 'Buffer': 0,
-    \ 'Mru': 0,
-    \ 'Tag': 0,
-    \ 'BufTag': 0,
-    \ 'Function': 0,
-    \ 'Line': 0,
-    \ 'Colorscheme': 0,
-    \ 'Rg': 0,
-    \ 'Gtags': 0
-    \}
-" ---- end of LeaderF settings ----
+noremap <c-p> :Files<CR>
+noremap <leader>o :BTags<CR>
+noremap <leader>g :Tags<CR>
+noremap <leader>f :Rg<CR>
+noremap <leader>l :Rg <C-R><C-W><CR>
