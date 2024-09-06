@@ -227,6 +227,9 @@ endif
 if executable('gtags-cscope') && executable('gtags')
     let g:gutentags_modules+=['gtags_cscope']
 endif
+if executable('rg')
+    let g:gutentags_file_list_command='rg --files'
+endif
 let g:gutentags_cache_dir=expand('~/.cache/tags')
 let g:gutentags_ctags_extra_args=['--fields=+niazS', '--extra=+q']
 let g:gutentags_ctags_extra_args+=['--c++-kinds=+px']
@@ -238,9 +241,13 @@ if !isdirectory(g:gutentags_cache_dir)
 endif
 " ---- Vim tags settings ----
 
-" ---- LeaderF settings ----
+" ---- FzF settings ----
+let g:fzf_vim={}
+let g:fzf_vim.preview_window=[]
+let g:fzf_layout={'down':'20%'}
 noremap <c-p> :Files<CR>
 noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
 noremap <leader>f :Rg<CR>
 noremap <leader>l :Rg <C-R><C-W><CR>
+" ---- end of FzF settings ----
