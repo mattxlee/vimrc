@@ -45,6 +45,8 @@ Plug 'skywind3000/asyncrun.vim'
 " ---- Extra file syntax highlighting ----
 " c++ files
 Plug 'bfrg/vim-cpp-modern'
+" rust files
+Plug 'rust-lang/rust.vim'
 " dart files
 Plug 'dart-lang/dart-vim-plugin'
 " log file
