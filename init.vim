@@ -193,7 +193,6 @@ noremap <leader>v :vs<CR>
 " ---- Quickfix settings ----
 noremap <leader>mk :copen \| :AsyncRun! make<CR>
 noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
-noremap <leader>gu :copen \| :AsyncRun! git push<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
 function! ToggleQuickFix()
