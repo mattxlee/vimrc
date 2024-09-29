@@ -14,7 +14,6 @@ Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/a.vim'
 
 " git related
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " format and etc.
@@ -93,7 +92,7 @@ noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
 vnoremap <leader>c "*y
-
+noremap <C-G> :!lazygit<CR><CR>
 " ---- end of Common settings ----
 
 " ---- Markdown file settings ----
@@ -135,10 +134,6 @@ hi SignColumn term=None cterm=None ctermbg=235
 let g:airline_symbols_ascii=1
 let g:airline_powerline_fonts=0
 " ---- end of Airline ----
-
-" ---- Fugitive settings ----
-noremap <C-G> :Git<CR>
-" ---- end of Fugitive settings ----
 
 " ---- Editorconfig settings ----
 let g:EditorConfig_preserve_formatoptions=1
