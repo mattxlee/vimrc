@@ -105,3 +105,5 @@ cdpath=($HOME)
 #
 source $HOME/.profile
 export GPG_TTY=$(tty)
+
+TZ='Asia/Shanghai'; export TZ
