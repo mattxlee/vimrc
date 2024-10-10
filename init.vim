@@ -35,9 +35,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" easy motion jumping plug
-Plug 'easymotion/vim-easymotion'
-
 " run commands async
 Plug 'skywind3000/asyncrun.vim'
 
