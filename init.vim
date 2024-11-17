@@ -43,7 +43,7 @@ Plug 'skywind3000/asyncrun.vim'
 " c++ files
 Plug 'bfrg/vim-cpp-modern'
 " rust files
-Plug 'rust-lang/rust.vim'
+Plug 'lunacookies/vim-rust-syntax-ext'
 " dart files
 Plug 'dart-lang/dart-vim-plugin'
 " log file
