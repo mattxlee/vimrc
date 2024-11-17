@@ -15,6 +15,7 @@ Plug 'vim-scripts/a.vim'
 
 " git related
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " format and etc.
 Plug 'editorconfig/editorconfig-vim'
@@ -89,7 +90,6 @@ noremap K :on<CR>
 noremap * :keepjumps normal! mi*`i<CR>
 noremap <leader>n :noh<CR>
 vnoremap <leader>c "*y
-noremap <C-G> :!lazygit<CR><CR>
 " ---- end of Common settings ----
 
 " ---- Markdown file settings ----
@@ -203,6 +203,10 @@ noremap <leader>q :call ToggleQuickFix()<CR>
 " ensure the quickfix use full width
 autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | endif
 " ---- end of Quickfix settings ----
+
+" ---- Git related settings ----
+noremap <C-G> :Git<CR>
+" ---- end of Git related settings ----
 
 " ---- ColumnCount setup for different file type ----
 autocmd FileType rust set cc=101
