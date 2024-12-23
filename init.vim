@@ -140,7 +140,7 @@ noremap <leader>x :StripWhitespace<CR>
 " ---- end of StripWhitespaces settings ----
 
 " ---- Format settings ----
-noremap <leader>t :Neoformat<CR>
+noremap <leader>i :Neoformat<CR>
 " ---- end of Format settings ----
 
 " ---- Json settings ----
