@@ -159,7 +159,7 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- NERDTree settings ----
 let g:NERDTreeWinSize=40
 let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeShowHidden=1
 let g:NERDTreeGitStatusUseNerdFonts=0
 let g:NERDTreeDirArrowExpandable='+'
@@ -243,7 +243,7 @@ endif
 let g:fzf_vim={}
 let g:fzf_vim.preview_window=[]
 let g:fzf_layout={'down':'20%'}
-noremap <c-p> :Files<CR>
+noremap <c-p> :NERDTreeClose\|Files<CR>
 noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
 noremap <leader>f :Rg<CR>
