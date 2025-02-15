@@ -36,9 +36,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-" run commands async
-Plug 'skywind3000/asyncrun.vim'
-
 " ---- Extra file syntax highlighting ----
 " c++ files
 Plug 'bfrg/vim-cpp-modern'
@@ -186,8 +183,6 @@ noremap <leader>v :vs<CR>
 " ---- end of File explorer shortcuts ----
 
 " ---- Quickfix settings ----
-noremap <leader>mk :copen \| :AsyncRun! make<CR>
-noremap <leader>cb :copen \| :AsyncRun! cmake --build build<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprev<CR>
 function! ToggleQuickFix()
