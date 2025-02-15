@@ -244,4 +244,6 @@ noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
 noremap <leader>f :Rg<CR>
 noremap <leader>l :Rg <C-R><C-W><CR>
+noremap <leader>b :Buffers<CR>
+noremap <leader>e :GFiles?<CR>
 " ---- end of FzF settings ----
