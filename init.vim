@@ -206,10 +206,6 @@ autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | en
 noremap <C-G> :Git<CR>
 " ---- end of Git related settings ----
 
-" ---- ColumnCount setup for different file type ----
-autocmd FileType rust set cc=101
-" ---- end of ColumnCount setup for different file type ----
-
 " ---- Define the way to find root dir for projects
 let the_root=['.root', '.svn', '.git', '.hg', '.project']
 " ---- end of define the way to find root dir for projects
