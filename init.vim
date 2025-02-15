@@ -50,6 +50,9 @@ Plug 'mtdl9/vim-log-highlighting'
 Plug 'cfdrake/vim-pbxproj'
 " ---- end of Extra file syntax highlighting ----
 
+" ---- Copilot ----
+Plug 'github/copilot.vim'
+
 call plug#end()
 " ---- end of All plugins here ----
 
