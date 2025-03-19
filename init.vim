@@ -115,7 +115,7 @@ set t_ut=
 set background=dark
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='middle'
+let g:gruvbox_contrast_dark='soft'
 silent! colorscheme gruvbox
 hi! link Error Normal
 hi Visual term=None cterm=None ctermbg=239
