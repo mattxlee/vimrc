@@ -120,6 +120,7 @@ silent! colorscheme gruvbox
 hi! link Error Normal
 hi Visual term=None cterm=None ctermbg=239
 hi SignColumn term=None cterm=None ctermbg=235
+hi! link SignColumn LineNr
 " ---- end of Color scheme ----
 
 " ---- Airline ----
