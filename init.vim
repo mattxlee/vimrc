@@ -120,7 +120,7 @@ set t_ut=
 set background=dark
 let g:gruvbox_bold=1
 let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='soft'
+let g:gruvbox_contrast_dark='medium'
 silent! colorscheme gruvbox
 hi! link Error Normal
 hi! link SignColumn LineNr
