@@ -167,7 +167,7 @@ function OpenTree()
         :silent! NERDTreeFind
     endif
 endfunction
-noremap <C-J> :call OpenTree()<CR>
+noremap <C-J> :edit .<CR>
 noremap <leader>b :NERDTreeToggle<CR>
 " Close the tab if NERDTree is the only window remaining in it.
 autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
@@ -233,7 +233,7 @@ endif
 let g:fzf_vim={}
 let g:fzf_vim.preview_window=[]
 let g:fzf_layout={'down':'20%'}
-noremap <c-p> :NERDTreeClose\|Files<CR>
+noremap <c-p> :Files<CR>
 noremap <leader>o :BTags<CR>
 noremap <leader>g :Tags<CR>
 noremap <leader>f :Rg<CR>
