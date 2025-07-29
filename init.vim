@@ -7,9 +7,6 @@ Plug 'morhetz/gruvbox'
 " layouts
 Plug 'vim-airline/vim-airline'
 
-" jumping
-Plug 'preservim/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-
 " switch header/source
 Plug 'vim-scripts/a.vim'
 
@@ -137,6 +134,12 @@ noremap <leader>x :StripWhitespace<CR>
 
 " ---- Format settings ----
 noremap <leader>i :Neoformat<CR>
+let g:neoformat_rust_rustfmt = {
+    \ 'exe': 'rustfmt',
+    \ 'args': ['--edition=2024'],
+    \ 'replace': 1
+    \ }
+let g:neoformat_enabled_rust = ['rustfmt']
 " ---- end of Format settings ----
 
 " ---- Json settings ----
@@ -151,34 +154,12 @@ noremap <leader>W <C-W>W
 " ---- Switch between header/source
 let g:alternateNoDefaultAlternate=1
 noremap <C-H> :silent A<CR>\|:e<CR>
-
-" ---- NERDTree settings ----
-let g:NERDTreeWinSize=40
-let g:NERDTreeMinimalMenu=1
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeShowHidden=1
-let g:NERDTreeGitStatusUseNerdFonts=0
-let g:NERDTreeDirArrowExpandable='+'
-let g:NERDTreeDirArrowCollapsible='-'
-function OpenTree()
-    if bufname('%') == ''
-        :silent! NERDTreeToggle
-    else
-        :silent! NERDTreeFind
-    endif
-endfunction
-noremap <C-J> :edit .<CR>
-noremap <leader>b :NERDTreeToggle<CR>
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-" If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute 'normal! \<C-W>w' | execute 'buffer'.buf | endif
-" ---- end of NERDTree settings ----
+" ---- end of Switch between header/source
 
 " ---- File explorer shortcuts ----
 noremap <leader>s :sp<CR>
 noremap <leader>v :vs<CR>
+noremap <C-J> :Expl<CR>
 " ---- end of File explorer shortcuts ----
 
 " ---- Quickfix settings ----
