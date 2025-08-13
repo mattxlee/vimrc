@@ -33,6 +33,9 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" copy/paste with system clipboard
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+
 " ---- Extra file syntax highlighting ----
 " c++ files
 Plug 'bfrg/vim-cpp-modern'
@@ -208,7 +211,7 @@ let g:gutentags_auto_add_gtags_cscope=0
 if !isdirectory(g:gutentags_cache_dir)
     silent! call mkdir(g:gutentags_cache_dir, 'p')
 endif
-" ---- Vim tags settings ----
+" ---- end of Vim tags settings ----
 
 " ---- FzF settings ----
 let g:fzf_vim={}
@@ -232,3 +235,9 @@ let g:fzf_action = {
   \ 'ctrl-q': function('s:build_quickfix_list') }
 let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " ---- end of FzF settings ----
+
+" ---- OSCYank settings ----
+nmap <leader>c <Plug>OSCYankOperator
+nmap <leader>cc <leader>c_
+vmap <leader>c <Plug>OSCYankVisual
+" ---- end of OSCYank settings ----
