@@ -239,7 +239,7 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " ---- end of FzF settings ----
 
 " ---- OSCYank settings ----
-nmap <leader>c <Plug>OSCYankOperator
-nmap <leader>cc <leader>c_
-vmap <leader>c <Plug>OSCYankVisual
+nmap <leader>y <Plug>OSCYankOperator
+nmap <leader>yy <leader>y_
+vmap <leader>y <Plug>OSCYankVisual
 " ---- end of OSCYank settings ----
