@@ -14,6 +14,9 @@ delpath ~/.vimrc
 delpath ~/.vim
 
 delpath ~/.clang-format
+delpath ~/.clang-tidy
 delpath ~/.editorconfig
 delpath ~/.gitconfig
 delpath ~/.gitignore_global
+delpath ~/.tmux.conf
+delpath ~/.zshrc
