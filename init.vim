@@ -152,6 +152,7 @@ let g:vim_json_conceal=0
 " ---- Switch to next window ----
 noremap <leader>w <C-W>w
 noremap <leader>W <C-W>W
+noremap <leader><leader> <C-W>w
 " ---- end of Switch
 
 " ---- Switch between header/source
