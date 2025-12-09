@@ -183,7 +183,41 @@ autocmd FileType qf if (getwininfo(win_getid())[0].loclist != 1) | wincmd J | en
 " ---- end of Quickfix settings ----
 
 " ---- Git related settings ----
-noremap <C-G> :Git<CR>
+let s:save_winid = 0
+
+function! s:IsFugitiveBuf(winid)
+    let l:buf = winbufnr(a:winid)
+    let l:filetype = getbufvar(l:buf, '&filetype')
+    return l:filetype ==# 'fugitive' || l:filetype ==# 'gitcommit'
+endfunction
+
+function! s:OpenFugitiveStatus()
+    let l:winid = win_getid()
+    if !s:IsFugitiveBuf(l:winid)
+        let s:save_winid = l:winid
+    endif
+    Git
+endfunction
+
+function! s:CloseFugitiveStatus()
+    let l:do_restore = 0
+    let l:curr_winid = win_getid()
+    for l:winid in range(1, winnr('$'))
+        let l:win_id = win_getid(l:winid)
+        if s:IsFugitiveBuf(l:win_id)
+            if l:curr_winid == l:win_id
+                let l:do_restore = 1
+            endif
+            execute l:winid . 'wincmd c'
+        endif
+    endfor
+    if l:do_restore && s:save_winid != 0 && win_id2win(s:save_winid) != 0
+        execute win_id2win(s:save_winid) . 'wincmd w'
+    endif
+endfunction
+
+nnoremap <C-g> :call <SID>OpenFugitiveStatus()<CR>
+nnoremap <C-h> :call <SID>CloseFugitiveStatus()<CR>
 " ---- end of Git related settings ----
 
 " ---- Define the way to find root dir for projects
