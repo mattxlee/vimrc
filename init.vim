@@ -119,6 +119,7 @@ let g:gruvbox_contrast_dark='medium'
 silent! colorscheme gruvbox
 hi! link Error Normal
 hi! link SignColumn LineNr
+hi! Visual cterm=None
 " ---- end of Color scheme ----
 
 " ---- Airline ----
