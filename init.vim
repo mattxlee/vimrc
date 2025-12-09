@@ -161,6 +161,7 @@ noremap <C-H> :silent A<CR>\|:e<CR>
 " ---- end of Switch between header/source
 
 " ---- File explorer shortcuts ----
+let g:netrw_banner=0
 noremap <leader>s :sp<CR>
 noremap <leader>v :vs<CR>
 noremap <C-J> :Expl<CR>
