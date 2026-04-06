@@ -101,9 +101,14 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 setopt auto_cd
-cdpath=($HOME)
-#
+cdpath=($HOME $HOME/Workspace/)
 source $HOME/.profile
 export GPG_TTY=$(tty)
 
-TZ='Asia/Shanghai'; export TZ
+# uncomment to override the locale
+# TZ='Asia/Shanghai'; export TZ
+
+# apply path for node version manager (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
